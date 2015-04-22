@@ -130,6 +130,8 @@
      <Compile Include="Assets\Code\parallaxing.cs" />
      <Compile Include="Assets\Code\rotateToMouse.cs" />
      <Compile Include="Assets\Code\zeroGravMovement.cs" />
+     <Compile Include="Assets\DeleteTestGrapple.cs" />
+     <Compile Include="Assets\triggerToBox.cs" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
      <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
      <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />

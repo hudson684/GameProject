@@ -55,11 +55,14 @@ public class GrappleControl : MonoBehaviour {
 
 
 	//shoot the grapple in the direction of the mouse
-	void Shoot(Vector3 firePointPos ,Vector3 mousePosition){
-		print (mousePosition);
+	void Shoot(Vector3 firePointPos ,Vector3 mousePos){
+		print (mousePos);
 
-		RaycastHit2D hit = Physics2D.Raycast (firePointPos, (mousePosition - firePointPos), maxGrappleDisance, notToHit);
-		gameObject.transform.TransformPoint(mousePosition);		
+		//RaycastHit2D hit = Physics2D.Raycast (firePointPos, (mousePosition - firePointPos), maxGrappleDisance, notToHit);
+		//Ray hit = Physics.Raycast (firePointPos, (mousePosition - firePointPos), maxGrappleDisance, notToHit);
+		//Ray hits = Physics.Raycast (firePoint, (mousePosition - firePointPos));
+		gameObject.transform.TransformPoint(mousePos);		
+
 	}
 
 
