@@ -119,4 +119,10 @@ public class PlayerControl : MonoBehaviour {
 			GetComponent<Rigidbody2D>().angularVelocity = 0;
 		}
 	}
+
+	public void Kill(){
+
+		Debug.Log ("you dead");
+
+	}
 }
