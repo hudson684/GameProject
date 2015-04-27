@@ -25,28 +25,24 @@ public class GrappleControl : MonoBehaviour {
 	public LayerMask notToHit;
 	public float maxGrappleDisance = 100;
 	public GameObject cursor;
-
-	Transform firePoint;
-
+	public GameObject grapple;
+	public Vector3 mousePosition;
+	
 	//initialize the fire point for the gun
 	void Awake () {
-		firePoint = transform.FindChild("FirePoint");
-		if (firePoint == null) {
-			Debug.LogError("No firepoint found");
-		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float mousex = Input.mousePosition.x;
 		float mousey = Input.mousePosition.y;
-		Vector3 firePointPos = new Vector3 (firePoint.position.x, firePoint.position.y, 10);
-		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3 (mousex,mousey,10));
+		Vector3 firePointPos = new Vector3 (transform.position.x, transform.position.y, 10);
+		mousePosition = cursor.transform.position;
 
 
 
 		if (Input.GetButtonDown("Fire1")){
-			Shoot(firePointPos, mousePosition);
+			Shoot(firePointPos);
 		}
 		
 	}
@@ -55,13 +51,13 @@ public class GrappleControl : MonoBehaviour {
 
 
 	//shoot the grapple in the direction of the mouse
-	void Shoot(Vector3 firePointPos ,Vector3 mousePos){
-		print (mousePos);
+	void Shoot(Vector3 firePointPos){
+		print (mousePosition);	
 
-		//RaycastHit2D hit = Physics2D.Raycast (firePointPos, (mousePosition - firePointPos), maxGrappleDisance, notToHit);
-		//Ray hit = Physics.Raycast (firePointPos, (mousePosition - firePointPos), maxGrappleDisance, notToHit);
-		//Ray hits = Physics.Raycast (firePoint, (mousePosition - firePointPos));
-		gameObject.transform.TransformPoint(mousePos);		
+		GameObject clone;
+		Quaternion zeroRotation = new Quaternion (0, 0, 0, 0);
+		clone = Instantiate(grapple, transform.position, zeroRotation) as GameObject;
+		clone.GetComponent<Rigidbody>().MovePosition(mousePosition * 10);
 
 	}
 
