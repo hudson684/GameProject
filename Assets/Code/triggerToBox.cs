@@ -23,7 +23,7 @@ public class triggerToBox : MonoBehaviour {
 		if (!triggered) {
 			triggered = !triggered;
 			spriteRenderer.sprite = Active;
-			Destroy(listener.gameObject);
+			listener.SetActive(false);
 
 		}
 	}

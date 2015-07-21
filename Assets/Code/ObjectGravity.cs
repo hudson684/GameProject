@@ -20,14 +20,14 @@ public class ObjectGravity : MonoBehaviour {
 		} else if (other.tag == "halfGravZone"){
 			
 			GetComponent<Rigidbody2D>().gravityScale = HALF_GRAVITY_SCALE;
-			GetComponent<Rigidbody2D>().rotation = 0f;
-			GetComponent<Rigidbody2D>().fixedAngle = true;
+			//GetComponent<Rigidbody2D>().rotation = 0f;
+			GetComponent<Rigidbody2D>().fixedAngle = false;
 			
 		} else if (other.tag == "fullGravZone"){
 			
 			GetComponent<Rigidbody2D>().gravityScale= FULL_GRAVITY_SCALE;
-			GetComponent<Rigidbody2D>().rotation = 0f;
-			GetComponent<Rigidbody2D>().fixedAngle = true;
+			//GetComponent<Rigidbody2D>().rotation = 0f;
+			GetComponent<Rigidbody2D>().fixedAngle = false;
 		}
 	}
 }
