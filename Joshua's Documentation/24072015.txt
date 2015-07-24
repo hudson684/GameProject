@@ -1,0 +1,28 @@
+Work for today
+
+smaller workload, as i only have about 2 hours total for working on the game today (will suppliment this with a full day of work tomorrow). Most of todays work is prep and settup.
+
+Things that need to be done (will update as i do)
+
+-As requested by Liam move code into _scripts folder (done)
+-fix problems that moving the code will cause
+-Grapple bugs:
+
+sugestion: Have the grapple always shoot, and only retract if it doesnt hit anything?
+
+Grappling onto other objects that are moving faster than the grapple.
+
+Grappling while touching the ground should still allow you to walk?
+sub point: walking on the ground while holding an object
+
+Grappling while in zero g should be a different control scheme?
+
+Grappling in zero g while on an object not a wall.
+
+note: will not get all of this done today, but will work on this today and tomorrow.
+
+
+other things to do:
+- redo the player character to remove dependancies on seperate invisable objects, get grapple attached to the arm instead of the fake arm.
+
+-Prove mantle works, fully impliment it into game
