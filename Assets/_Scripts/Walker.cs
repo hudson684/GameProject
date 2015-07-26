@@ -10,85 +10,92 @@ public class Walker : MonoBehaviour {
 	
 	private bool triggered = false;
 	private bool patroling = true;
+	
+	public float Speed = 1f;
 
-	public Material alert;
-	public Material normal;
-
-	private DynamicLight light2D;
-
-	public float waitTime = 1.5f;
-	public float Speed = 10f;
+	bool oneWayDone = false;
 
 
 
 	//set up the patrolers 2d light asset
 	void Start()
 	{
-		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
-		light2D.setMainMaterial(normal);
-
-		//finds all the childern of the patroler (for use in player detection);
-		hitBarrier = transform.GetComponentsInChildren<Transform>();
 
 	}
 
 	//if player is found, and hasn't already been triggered, stop the patroling and wait a few seconds, then shoot at player
 	void Update(){
-		if (foundPlayer() && !triggered) {
-			light2D.setMainMaterial(alert);
-			patroling = false;
-			StartCoroutine("waitSeconds");
-		}
-	}
+
+		while (!oneWayDone) {
 
 
-	//delay for shooting at player
-	IEnumerator waitSeconds(){
-		triggered = true;
-		yield return new WaitForSeconds(waitTime);
-		shootAtPlayer();
-	}
-
-	
-
-	//if the player is still in its line of sight after the wait time, then shoot the player and go back to normal
-	//if not, just go back to normal.
-	void shootAtPlayer(){
-
-		if (foundPlayer ()) {
-			StartCoroutine ("seekDestroy");
-			patroling = true;
-			light2D.setMainMaterial(normal);
-
-		} else {
-
-			triggered = false;
-			patroling = true;
-			light2D.setMainMaterial(normal);
-		}
-	}
-
-
-	//checks to see if the player has been detected by its array of nodes
-	private bool foundPlayer(){
-		for(int i = 0; i < (hitBarrier.Length -1); i++){
-			if(hitBarrier[i].tag == "PatrolViewNodes"){
-				float distance = Vector3.Distance(this.transform.position, hitBarrier[i].position);
-				
-				RaycastHit2D hit = Physics2D.Raycast (this.transform.position, (hitBarrier[i].position - this.transform.position), distance, toHit);
-				
-				if(hit.collider != null){
-					if(hit.collider.tag == "Player"){
-						return true;
-					} 
-				} 
+			for (int i = 1; i < patrolPoints.Length; i++) {
+				if (patrolPoints [i - 1].y == patrolPoints [i].y) {
+					if (patrolPoints [i - 1].x < patrolPoints [i].x) {
+						StartCoroutine (move (patrolPoints [i].x, patrolPoints [i].y, true, true));
+					} else {
+						StartCoroutine (move (patrolPoints [i].x, patrolPoints [i].y, true, false));
+					}
+				} else {
+					//more complicated code...
+				}
 			}
+
+			Debug.Log(oneWayDone.ToString());
+
 		}
-		return false;
+
+		/*while (oneWayDone) {
+
+			for (int i = patrolPoints.Length - 1; i > 0; i--) {
+				if (patrolPoints [i].y == patrolPoints [i - 1].y) {
+					if (patrolPoints [i].x < patrolPoints [i - 1].x) {
+						StartCoroutine (move (patrolPoints [i - 1].x, patrolPoints [i - 1].y, true, true));
+					} else {
+						StartCoroutine (move (patrolPoints [i - 1].x, patrolPoints [i - 1].y, true, false));
+					}
+				} else {
+					//more complicated code...
+				}
+			}
+		}*/
 	}
 
 
-	//CODE BY LIAM, TO MAKE DEVELOPMENT EASIER
+	/// <summary>
+	/// move the walked from any position along a fixed axis 
+	/// 	/// </summary>
+	/// <param name="xEnd">X ending location.</param>
+	/// <param name="yEnd">Y ending location.</param>
+	/// <param name="toX">If set to <c>true</c> then the walked is moveing along x, if not
+	/// the walker is moving along y.</param>
+	/// <param name="toLeftOrUp">If set to <c>true</c> then the walker is moving to either
+	/// left or up depending on the variable toX.</param>
+	IEnumerator move(float xEnd, float yEnd, bool toX, bool toLeftOrUp){
+
+		if (toX && toLeftOrUp) {
+			while(this.transform.position.x < xEnd){
+				this.transform.Translate(new Vector2(Speed * 0.01f, 0f));
+				yield return null;
+			}
+		} else if (toX && !toLeftOrUp) {
+			while(this.transform.position.x > xEnd){
+				this.transform.Translate(new Vector2(-Speed * 0.01f, 0f));
+				yield return null;
+			}
+		} else if (!toX && toLeftOrUp) {
+
+			yield return null;
+		} else if (!toX && !toLeftOrUp) {
+
+			yield return null;
+		}
+
+		oneWayDone = !oneWayDone;
+	}
+
+
+	//Development code
 	void OnDrawGizmos(){
 
 		for (int i = 1; i < patrolPoints.Length; i++) {

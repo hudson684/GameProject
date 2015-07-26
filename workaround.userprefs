@@ -1,14 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Walker.cs">
     <Files>
-      <File FileName="Assets\_Scripts\GrappleControl.cs" Line="22" Column="52" />
-      <File FileName="Assets\Gizmos\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\PlayerControl.cs" Line="261" Column="21" />
-      <File FileName="Assets\_Scripts\Grounded.cs" Line="12" Column="4" />
-      <File FileName="Assets\_Scripts\Aimoving.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Partol.cs" Line="129" Column="3" />
-      <File FileName="Assets\_Scripts\Walker.cs" Line="34" Column="2" />
+      <File FileName="Assets\_Scripts\Walker.cs" Line="61" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
