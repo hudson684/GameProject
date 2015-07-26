@@ -1,0 +1,4 @@
+Things i have done today:
+
+
+made it that you can walk around while controling the grapple hook and grounded. will instantly stop when off the ground.
