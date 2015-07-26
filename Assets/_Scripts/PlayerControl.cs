@@ -77,6 +77,8 @@ public class PlayerControl : MonoBehaviour {
 
 	//WHILE THE PLAYER IS NOT DEAD, MOVE THE PLAYER UNDER THREE CATAGORIES; GRAPPLING, NORMAL GRAV AND ZERO GRAV
 	void Update () {
+		CurrentSetting ();
+
 		if (!deathNode.getDeath()) {
 			if (!isGrappling) {
 				if (currentGravity == FULL_GRAVITY)
@@ -87,6 +89,13 @@ public class PlayerControl : MonoBehaviour {
 				grapleMovement ();
 			}	
 		}
+	}
+
+
+
+	//temporary holders 
+	void CurrentSetting(){
+		isGrounded = groundedCode.getGrounded ();
 	}
 	
 	
@@ -136,7 +145,7 @@ public class PlayerControl : MonoBehaviour {
 	// D: Right
 	// LEFT CTRL: Crouch
 	void normalMovement(){
-		if(Input.GetKeyDown(KeyCode.Space) && groundedCode.getGrounded()){
+		if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
 		}
 
@@ -247,11 +256,31 @@ public class PlayerControl : MonoBehaviour {
 		}
 		
 		if (currentGravity == FULL_GRAVITY) {
-			if (Input.GetKey (KeyCode.A)) {
-				GetComponent<Rigidbody2D> ().AddForce (Vector2.right * -grappleSpeed);
-			}
-			if (Input.GetKey (KeyCode.D)) {
-				GetComponent<Rigidbody2D> ().AddForce (Vector2.right * grappleSpeed);
+
+			if(isGrounded){
+				Debug.Log("Is grounded and grappling");
+				if(Input.GetKeyDown(KeyCode.Space)){
+					GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
+				}
+				
+				if (Input.GetKey(KeyCode.A)) {
+					GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
+					isLeft = true;
+				} 
+				
+				if (Input.GetKey(KeyCode.D)) {
+					GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
+					isLeft = false;
+				}
+
+			} else {
+				Debug.Log("Is not grounded and grappling");
+				if (Input.GetKey (KeyCode.A)) {
+					GetComponent<Rigidbody2D> ().AddForce (Vector2.right * -grappleSpeed);
+				}
+				if (Input.GetKey (KeyCode.D)) {
+					GetComponent<Rigidbody2D> ().AddForce (Vector2.right * grappleSpeed);
+				}
 			}
 		} else {
 			
