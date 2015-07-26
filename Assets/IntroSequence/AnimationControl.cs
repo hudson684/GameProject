@@ -29,7 +29,7 @@ public class AnimationControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float move = Input.GetAxis("Horizontal");
+		float move = Input.GetAxisRaw("Horizontal");
 		anim.SetFloat(runHash, move);
 		anim.SetBool(groundHash, controlComponent.getGrounded());
 		anim.SetBool(grapHash, controlComponent.getIsGrappling());
