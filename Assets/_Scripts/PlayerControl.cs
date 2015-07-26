@@ -259,10 +259,6 @@ public class PlayerControl : MonoBehaviour {
 
 			if(isGrounded){
 				Debug.Log("Is grounded and grappling");
-				if(Input.GetKeyDown(KeyCode.Space)){
-					GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
-				}
-				
 				if (Input.GetKey(KeyCode.A)) {
 					GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
 					isLeft = true;
@@ -273,6 +269,14 @@ public class PlayerControl : MonoBehaviour {
 					isLeft = false;
 				}
 
+				if(Input.GetKeyDown("a")){
+					rotation.eulerAngles = new Vector2(0,180);
+					transform.rotation = rotation;
+				}
+				if(Input.GetKeyDown("d")){
+					rotation.eulerAngles = new Vector2(0,0);
+					transform.rotation = rotation;
+				}
 			} else {
 				Debug.Log("Is not grounded and grappling");
 				if (Input.GetKey (KeyCode.A)) {

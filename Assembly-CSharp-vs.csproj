@@ -98,6 +98,7 @@
      <Compile Include="Assets\_Scripts\SoundCollider.cs" />
      <Compile Include="Assets\_Scripts\TeleportCamera.cs" />
      <Compile Include="Assets\_Scripts\Vision.cs" />
+     <Compile Include="Assets\_Scripts\Walker.cs" />
      <Compile Include="Assets\_Scripts\cursor.cs" />
      <Compile Include="Assets\_Scripts\lightOnOff.cs" />
      <Compile Include="Assets\_Scripts\objSpawn.cs" />
