@@ -48,22 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\2DLightAssets\Editor\DynamicLightEditor.cs" />
      <Compile Include="Assets\2DLightAssets\Editor\TagLayerClass.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\AnimationLinkEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\AstarPathEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\AstarUpdateWindow.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\EditorGUIx.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\EditorUtilities.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphEditors\GraphEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphEditors\GridGeneratorEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphEditors\NavMeshGeneratorEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphEditors\PointGeneratorEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphUpdateSceneEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\Misc\AstarEnumFlagDrawer.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\ModifierEditors\RaycastModifierEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\ModifierEditors\SmoothModifierEditor.cs" />
-     <Compile Include="Assets\AstarPathfindingProject\Editor\SeekerEditor.cs" />
      <Compile Include="Assets\Gizmos\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
      <None Include="Assets\_Materials\Temp.txt" />
      <None Include="Assets\_Scripts\Temp.txt" />
      <None Include="Assets\2DLightAssets\Shaders\Gradient-NoTexture-Radial-SingleColor-ToTransparent-RegularUV-AlphaBlend.shader" />
@@ -73,18 +58,11 @@
      <None Include="Assets\_Textures\Temp.txt" />
      <None Include="Assets\_Scenes\Temp.txt" />
      <None Include="Assets\_Prefabs\Temp.txt" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
      <None Include="Assets\2DLightAssets\Shaders\OffsetShader.shader" />
      <None Include="Assets\_Scenes\_DevTesting\temp.txt" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
      <None Include="Assets\2DLightAssets\Shaders\VertexColor.shader" />
-     <None Include="Assets\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\2DLightAssets\Shaders\Gradient-ZFighting.shader" />
-     <None Include="Assets\AstarPathfindingProject\Readme_upgrading.txt" />
-     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
-     <None Include="Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
      <None Include="Assets\_Animations\Temp.txt" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/Users/Joshua/Desktop/SolitudeStationRepo/branches/workaround/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
@@ -103,12 +81,6 @@
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>C:/Users/Joshua/Desktop/SolitudeStationRepo/branches/workaround/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
- </Reference>
- <Reference Include="Pathfinding.JsonFx">
- <HintPath>C:/Users/Joshua/Desktop/SolitudeStationRepo/branches/workaround/Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
