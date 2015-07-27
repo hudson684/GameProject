@@ -1,0 +1,6 @@
+Today:
+
+Had meeting with liam where we worked out how to merge the player control code and the player animation code so that we dont need two almost identicle coding systems.
+
+
+Added object avoidance for the walker. a box or small object that the walker doesn't expect will cause the walker to jump over them. If it is a larger wall it will rotate to the correct direction and keep going.
