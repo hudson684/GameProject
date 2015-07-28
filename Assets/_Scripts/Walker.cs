@@ -8,6 +8,11 @@ public class Walker : MonoBehaviour {
 
 	private Transform[] hitBarrier;
 	public LayerMask toHit;
+
+	public Material alert;
+	public Material normal;
+	
+	private DynamicLight light2D;
 	
 	private bool triggered = false;
 	private bool patroling = true;
@@ -53,6 +58,13 @@ public class Walker : MonoBehaviour {
 
 
 	void Awake(){
+
+		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
+		light2D.setMainMaterial(normal);
+		
+		//finds all the childern of the patroler (for use in player detection);
+		hitBarrier = transform.GetComponentsInChildren<Transform>();
+
 		bodyControl = transform.FindChild ("root");
 
 		this.transform.position = patrolPoints [0];
@@ -63,18 +75,6 @@ public class Walker : MonoBehaviour {
 		UpdateRotation (curRotInt);
 		UpdateDownwardsForce (curDownInt);
 
-
-		//the x axis of the RotTable
-		//private const int LEFT = 0;
-		//private const int RIGHT = 1;
-		//private const int UP = 2;
-		//private const int DOWN = 3;
-		
-		//the y axis for the RotTable
-		//private const int DOWNGRAV = 0;
-		//private const int RIGHTGRAV = 1;
-		//private const int UPGRAV = 2;
-		//private const int LEFTGRAV = 3;
 
 		indexis = new int[4, 4, 3] {
 			//Left <-             Right ->             up ^                down v 
@@ -122,7 +122,15 @@ public class Walker : MonoBehaviour {
 
 			} else {
 				Debug.Log("Should Jump");
-				this.GetComponent<Rigidbody2D>().velocity = new Vector3(jumpChecker.x, jumpChecker.y * 20f);
+
+				if(curDownInt == DOWNGRAV || curDownInt == UPGRAV){ 
+
+				this.GetComponent<Rigidbody2D>().velocity = new Vector3(jumpChecker.x, jumpChecker.y * 50f);
+
+				} else {
+
+					this.GetComponent<Rigidbody2D>().velocity = new Vector3(jumpChecker.x * 50f, jumpChecker.y);
+				}
 				                                                    
 
 			}
@@ -131,6 +139,7 @@ public class Walker : MonoBehaviour {
 
 
 		this.GetComponent<Rigidbody2D> ().velocity += downWardsForce;
+		Debug.Log ("applied downwards force: " + downWardsForce.ToString());
 	}
 
 	private void rotateWalker(){
@@ -242,6 +251,26 @@ public class Walker : MonoBehaviour {
 			Gizmos.DrawLine(patrolPoints[patrolPoints.Length - 1], patrolPoints[0]);
 		}
 
+	}
+
+
+	
+	//checks to see if the player has been detected by its array of nodes
+	private bool foundPlayer(){
+		for(int i = 0; i < (hitBarrier.Length -1); i++){
+			if(hitBarrier[i].tag == "PatrolViewNodes"){
+				float distance = Vector3.Distance(this.transform.position, hitBarrier[i].position);
+				
+				RaycastHit2D hit = Physics2D.Raycast (this.transform.position, (hitBarrier[i].position - this.transform.position), distance, toHit);
+				
+				if(hit.collider != null){
+					if(hit.collider.tag == "Player"){
+						return true;
+					} 
+				} 
+			}
+		}
+		return false;
 	}
 
 }
