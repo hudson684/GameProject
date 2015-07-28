@@ -110,6 +110,7 @@
      <Compile Include="Assets\_Scripts\rotateToMouse.cs" />
      <Compile Include="Assets\_Scripts\triggerToBox.cs" />
      <Compile Include="Assets\_Scripts\triggerToLight.cs" />
+     <Compile Include="Assets\_Scripts\zeroGravMovement.cs" />
      <None Include="Assets\_Materials\Temp.txt" />
      <None Include="Assets\_Scripts\Temp.txt" />
      <None Include="Assets\2DLightAssets\Shaders\Gradient-NoTexture-Radial-SingleColor-ToTransparent-RegularUV-AlphaBlend.shader" />

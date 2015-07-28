@@ -39,12 +39,13 @@ public class Walker : MonoBehaviour {
 	private const int GRAVITYINDEX = 2;
 
 
-	private GameObject bodyControl;
+	private Transform bodyControl;
 
 	private int curRotInt;
 	private int curDownInt;
 
 	private Vector3 currentRotation;
+	private Vector3 jumpChecker;
 	private Vector2 downWardsForce;
 
 
@@ -56,14 +57,31 @@ public class Walker : MonoBehaviour {
 
 		this.transform.position = patrolPoints [0];
 
-		curRotInt = 0;
+		curRotInt = 1;
 		curDownInt = 0;
 
+		UpdateRotation (curRotInt);
+		UpdateDownwardsForce (curDownInt);
+
+
+		//the x axis of the RotTable
+		//private const int LEFT = 0;
+		//private const int RIGHT = 1;
+		//private const int UP = 2;
+		//private const int DOWN = 3;
+		
+		//the y axis for the RotTable
+		//private const int DOWNGRAV = 0;
+		//private const int RIGHTGRAV = 1;
+		//private const int UPGRAV = 2;
+		//private const int LEFTGRAV = 3;
+
 		indexis = new int[4, 4, 3] {
-			{{90,2 ,3}, {-90,2,1}, {0,-1,-1}, {0,-1,-1}}, 
-			{{0,-1,-1}, {0,-1,-1}, {90,1 ,2}, {-90,1,0}},
-			{{-90,3,3}, {90,3 ,1}, {0,-1,-1}, {0,-1,-1}},
-			{{0,-1,-1}, {0,-1,-1}, {-90,0,2}, {90,0 ,0}}
+			//Left <-             Right ->             up ^                down v 
+			{{90, UP ,LEFTGRAV},  {-90,UP,RIGHTGRAV},  {0,-1,-1},          {0,-1,-1}},            //down grav
+			{{0,-1,-1},           {0,-1,-1},           {-90,LEFT ,UPGRAV}, {90,LEFT,DOWNGRAV}},   //right grav
+			{{-90,DOWN,LEFTGRAV}, {90,DOWN ,RIGHTGRAV},{0,-1,-1},          {0,-1,-1}},            //up grav
+			{{0,-1,-1},           {0,-1,-1},           {90,RIGHT,UPGRAV},  {-90,RIGHT ,DOWNGRAV}} //left grav
 		};
 	}
 
@@ -104,7 +122,7 @@ public class Walker : MonoBehaviour {
 
 			} else {
 				Debug.Log("Should Jump");
-				this.GetComponent<Rigidbody2D>().velocity = new Vector3(1.0f, 150f);
+				this.GetComponent<Rigidbody2D>().velocity = new Vector3(jumpChecker.x, jumpChecker.y * 20f);
 				                                                    
 
 			}
@@ -113,9 +131,6 @@ public class Walker : MonoBehaviour {
 
 
 		this.GetComponent<Rigidbody2D> ().velocity += downWardsForce;
-		Debug.Log ("applied downwards force: " + downWardsForce.ToString ());
-		Debug.Log ("current velocity: " + this.GetComponent<Rigidbody2D> ().velocity.ToString ());
-
 	}
 
 	private void rotateWalker(){
@@ -137,10 +152,25 @@ public class Walker : MonoBehaviour {
 		// 270 (rightgrab) 0,-1,-1   0,-1,-1    -90,0,2     90,0, 0
 
 
+		//chaging the rotation of the child object
 
+		Debug.Log ("should be trying to acess rotInt: " + curRotInt + " downInt: " + curDownInt + " and section: "  + ROTATION );
 
+		bodyControl.Rotate (new Vector3(indexis[curDownInt, curRotInt, ROTATION], 0, 0));
 
-		//bodyControl.transform.Rotate
+		UpdateRotation (indexis [curDownInt, curRotInt, ROTATIONINDEX]);
+		UpdateDownwardsForce (indexis [curDownInt, curRotInt, GRAVITYINDEX]);
+
+		int tempRotInt = curRotInt;
+		
+		curRotInt = indexis [curDownInt, curRotInt, ROTATIONINDEX];
+		Debug.Log ("Changed Rotation index to : " + curRotInt);
+		
+		curDownInt = indexis [curDownInt, tempRotInt, GRAVITYINDEX];
+		Debug.Log ("Changed Downwards index to : " + curDownInt);
+
+		Debug.Log ("Jump Checker: " + jumpChecker.ToString());
+
 
 	}
 
@@ -148,29 +178,28 @@ public class Walker : MonoBehaviour {
 	private void UpdateRotation(int i){
 
 		switch (i) {
-		case LEFT: currentRotation = -transform.right; break;
-		case RIGHT: currentRotation = transform.right; break;
-		case UP: currentRotation = transform.up; break;
-		case DOWN: currentRotation = -transform.up; break;
+		case LEFT: currentRotation = -transform.right; jumpChecker.x = -3.0f; break;
+		case RIGHT: currentRotation = transform.right; jumpChecker.x =  3.0f; break;
+		case UP: currentRotation = transform.up; jumpChecker.y = 4.0f; break;
+		case DOWN: currentRotation = -transform.up; jumpChecker.y = -4.0f; break;
 
 		}
 	}
 
-
+	
 	private void UpdateDownwardsForce(int i){
 		
 		switch (i) {
-		case DOWNGRAV: downWardsForce = new Vector2(0, -fauxGravity); break;
-		case UPGRAV: downWardsForce = new Vector2(0, fauxGravity); break;
-		case LEFTGRAV: downWardsForce = new Vector2(-fauxGravity, 0); break;
-		case RIGHTGRAV: downWardsForce = new Vector2(fauxGravity, 0); break;
-			
+		case DOWNGRAV: downWardsForce = new Vector2(0, -fauxGravity); jumpChecker.y = 4.0f; break;
+		case UPGRAV: downWardsForce = new Vector2(0, fauxGravity); jumpChecker.y = -4.0f; break;
+		case LEFTGRAV: downWardsForce = new Vector2(-fauxGravity, 0); jumpChecker.x = 3.0f; break;
+		case RIGHTGRAV: downWardsForce = new Vector2(fauxGravity, 0); jumpChecker.x = -3.0f; break;	
 		}
 	}
 
 	private bool shouldNotJump(){
 
-		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + 1f), new Vector2 (currentRotation.x + 2.5f, currentRotation.y + 3f), 5f, toHit);
+		RaycastHit2D detection = Physics2D.Raycast (this.transform.position, jumpChecker, 5f, toHit);
 		
 		
 		if (detection.collider != null) {
@@ -185,7 +214,8 @@ public class Walker : MonoBehaviour {
 	//detecting to see if there is an object right infront of the walker;
 	private bool collisionAhead(){
 
-		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + 1f), currentRotation, 3f, toHit);
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + 1f)
+		                                            , currentRotation, 3f, toHit);
 
 
 		if (detection.collider != null) {
@@ -200,7 +230,7 @@ public class Walker : MonoBehaviour {
 		Ray rayT = new Ray(new Vector3 (this.transform.position.x, this.transform.position.y + 1f,0f),  currentRotation);
 
 		Gizmos.DrawRay (rayT);
-		Gizmos.DrawRay(new Vector2 (this.transform.position.x, this.transform.position.y + 1f), new Vector2 (currentRotation.x + 2f, currentRotation.y + 3f));
+		Gizmos.DrawRay(this.transform.position, jumpChecker);
 
 
 		for (int i = 1; i < patrolPoints.Length; i++) {
