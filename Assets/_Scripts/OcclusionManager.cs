@@ -12,7 +12,6 @@ public class OcclusionManager : MonoBehaviour {
 	}
 	
 	void OnTriggerStay2D(Collider2D other){
-		Debug.Log ("collision with" + other.tag);
 		if(other.tag == "Player"){
 			for(int i = 0; i < occluders.Length; i++){
 				occluders[i].Toggle = false;

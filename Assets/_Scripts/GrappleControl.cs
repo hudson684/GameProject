@@ -174,7 +174,7 @@ public class GrappleControl : MonoBehaviour {
 					GameObject previous = ropeArr[i - 1];
 					GameObject rope = Instantiate (cable, this.transform.position, zeroRotation) as GameObject;
 
-					Debug.Log("made rope object at: " + head.transform.position.ToString());
+					//Debug.Log("made rope object at: " + head.transform.position.ToString());
 
 					rope.name = "rope:" + i;
 
@@ -189,7 +189,7 @@ public class GrappleControl : MonoBehaviour {
 					previous = ropeArr[i - 1];
 					GameObject ropeTwo = Instantiate (cable, this.transform.position, zeroRotation) as GameObject;
 					
-					Debug.Log("made rope object at: " + head.transform.position.ToString());
+					//Debug.Log("made rope object at: " + head.transform.position.ToString());
 					
 					ropeTwo.name = "rope:" + i;
 					
@@ -204,7 +204,7 @@ public class GrappleControl : MonoBehaviour {
 					previous = ropeArr[i - 1];
 					GameObject ropeThree = Instantiate (cable, this.transform.position, zeroRotation) as GameObject;
 					
-					Debug.Log("made rope object at: " + head.transform.position.ToString());
+					//Debug.Log("made rope object at: " + head.transform.position.ToString());
 					
 					ropeThree.name = "rope:" + i;
 					
