@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class AICamera : MonoBehaviour {
@@ -17,7 +17,14 @@ public class AICamera : MonoBehaviour {
 	private DynamicLight light2D;
 
 	public float waitTime = 0.1f;
-	
+
+
+	public float maxSwing = -90f;
+	public float minSwing =  90f;
+	private float[] swingPoints;
+	private int swingPoint = 0;
+	private Vector3 rotation;
+
 
 	private Color green = Color.green;
 	private Color red = Color.red;
@@ -25,8 +32,11 @@ public class AICamera : MonoBehaviour {
 	private bool triggered = false;
 	private bool active = true;
 
+
 	// Use this for initialization
 	void Start () {
+		swingPoints = new float[2] {maxSwing, minSwing};
+
 		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
 		hitBarrier = transform.GetComponentsInChildren<Transform>();
 
@@ -52,6 +62,28 @@ public class AICamera : MonoBehaviour {
 				StartCoroutine ("waitSeconds");
 			}
 		} 
+	}
+
+
+	void rotateCamrea(){
+
+		if (swingPoint < 2) {
+			float nextPoint = swingPoints [swingPoint];
+			float rotationDirection = nextPoint - this.transform.rotation.z;
+			
+			rotation = this.transform.rotation.eulerAngles;
+			
+			if (rotation.z - nextPoint < 5) {
+				swingPoint++;
+			} else {
+				rotation.z += rotation.z - nextPoint / 10f; 
+			} 
+		} else {
+			swingPoint = 0;
+		}
+
+
+
 	}
 
 	

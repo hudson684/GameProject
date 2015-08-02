@@ -16,15 +16,25 @@ public class Walker : MonoBehaviour {
 	
 	private bool triggered = false;
 	private bool patroling = true;
+	private bool stopped = false;
 	
 	public float Speed = 10f;
 	private float distance = 0.1f;
+	private float slowSpeedForward = 2f;
 	public bool loop = false;
+	public float jumpFactor = 5f;
+
+	/// <summary>
+	/// The minimum drop that is needed to decide to rotate the oposite direction 
+	/// for cliffs
+	/// </summary>
+	public float canyionDistance = 10f;
 
 	
 	public float fauxGravity = -50f;
 
 	int[,,] indexis;
+	int[,,] reverseIndexis;
 
 
 	//the x axis of the RotTable
@@ -43,6 +53,8 @@ public class Walker : MonoBehaviour {
 	private const int ROTATIONINDEX = 1;
 	private const int GRAVITYINDEX = 2;
 
+	private const float forwardSpeedMod = 2f;
+
 
 	private Transform bodyControl;
 
@@ -52,7 +64,9 @@ public class Walker : MonoBehaviour {
 	private Vector3 currentRotation;
 	private Vector3 jumpChecker;
 	private Vector2 downWardsForce;
+	private Vector3 downDirection;
 
+	private bool rotated = false;
 
 
 
@@ -81,19 +95,52 @@ public class Walker : MonoBehaviour {
 			{{90, UP ,LEFTGRAV},  {-90,UP,RIGHTGRAV},  {0,-1,-1},          {0,-1,-1}},            //down grav
 			{{0,-1,-1},           {0,-1,-1},           {-90,LEFT ,UPGRAV}, {90,LEFT,DOWNGRAV}},   //right grav
 			{{-90,DOWN,LEFTGRAV}, {90,DOWN ,RIGHTGRAV},{0,-1,-1},          {0,-1,-1}},            //up grav
-			{{0,-1,-1},           {0,-1,-1},           {90,RIGHT,UPGRAV},  {-90,RIGHT ,DOWNGRAV}} //left grav
+			{{0,-1,-1},           {0,-1,-1},           {90,RIGHT,UPGRAV},  {-90,RIGHT,DOWNGRAV}} //left grav
+		};
+
+
+		/*indexis = new int[4, 4, 3] {
+			//<- -> ^  v 
+			{-1, 1, 0, 0},     //down grav
+			{0,  0, 1,-1},     //right grav
+			{1,  1, 0, 0},     //up grav
+			{90, -90, 0, 0},     //left grav
+		};*/
+
+
+		reverseIndexis = new int[4, 4, 3] {
+			//Left <-             Right ->             up ^                down v 
+			{{-90, DOWN ,RIGHTGRAV},{90,DOWN,LEFTGRAV},  {0,-1,-1},            {0,-1,-1}},            //down grav
+			{{0,-1,-1},             {0,-1,-1},           {90,RIGHT ,DOWNGRAV}, {-90,RIGHT, UPGRAV}},   //right grav
+			{{90,UP,RIGHTGRAV},     {-90,UP ,LEFTGRAV},  {0,-1,-1},            {0,-1,-1}},            //up grav
+			{{0,-1,-1},             {0,-1,-1},           {-90,LEFT,DOWNGRAV},  {90,LEFT, UPGRAV}} //left grav
 		};
 	}
 
 	void Update(){
+		//Debug.Log ("rotate oposite check: " + shouldNotTurnBackwards().ToString());
+
+		stopped = checkStoppedTest ();
 		                                                       
-		if (!collisionAhead()) {
+		if (!collisionAhead () && shouldNotTurnBackwards ()) {
+
+			rotated = false;
 
 			Vector3 velocity = Vector3.zero;
 
 			if (currentPoint < patrolPoints.Length) {
 				Vector3 nextPoint = patrolPoints [currentPoint];
+
+				Debug.Log("next point: " + nextPoint.ToString());
+				Debug.Log("current position: " + transform.position.ToString());
+
 				Vector3 moveDirection = nextPoint - this.transform.position;
+
+				//if( nextPoint.magnitude >= this.transform.position.magnitude){
+					//moveDirection = nextPoint - this.transform.position;
+				//} else {
+					//moveDirection = this.transform.position - nextPoint;
+				//}
 
 				velocity = this.GetComponent<Rigidbody2D> ().velocity;
 
@@ -101,6 +148,8 @@ public class Walker : MonoBehaviour {
 					currentPoint++;
 				} else {
 					velocity = moveDirection.normalized * Speed;
+
+					Debug.Log("Move Direction: " + moveDirection.normalized * Speed);
 				} 
 			} else {
 				if (loop) {
@@ -113,57 +162,131 @@ public class Walker : MonoBehaviour {
 			this.GetComponent<Rigidbody2D> ().velocity = velocity;
 		} else {
 
-			if(shouldNotJump()){
+			if (shouldNotJump ()) {
 				//rotate to the new axis
-				Debug.Log("Shouldn't Jump");
-				this.GetComponent<Rigidbody2D> ().velocity = Vector3.zero;
-				rotateWalker();
+				//Debug.Log("Shouldn't Jump");
+
+				if (!rotated) {
+					rotated = true;
+					rotateWalker ();
+				}
 
 
-			} else {
+			} else if (collisionAhead ()) {
 				Debug.Log("Should Jump");
 
-				if(curDownInt == DOWNGRAV || curDownInt == UPGRAV){ 
+				//rotated = true; //TODO: replace this with a better bool
+				if (curDownInt == DOWNGRAV || curDownInt == UPGRAV) { 
 
-				this.GetComponent<Rigidbody2D>().velocity = new Vector3(jumpChecker.x, jumpChecker.y * 50f);
+					this.GetComponent<Rigidbody2D> ().velocity = new Vector3 (jumpChecker.x, jumpChecker.y * jumpFactor,0f);
 
 				} else {
 
-					this.GetComponent<Rigidbody2D>().velocity = new Vector3(jumpChecker.x * 50f, jumpChecker.y);
+					this.GetComponent<Rigidbody2D> ().velocity = new Vector3 (jumpChecker.x * jumpFactor, jumpChecker.y,0f);
 				}
-				                                                    
+			                                                    
 
-			}
+			} else if (!shouldNotTurnBackwards ()) {
+
+				if (!rotated) {
+					rotated = true;
+					rotateWalkerOposite ();
+				}
+
+			}// else if (reverseFlip ()) {
+			//	this.transform.Rotate (180f, 0, 0);
+			//}
 
 		}
 
-
 		this.GetComponent<Rigidbody2D> ().velocity += downWardsForce;
 		Debug.Log ("applied downwards force: " + downWardsForce.ToString());
+
+
+
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2(transform.position.x, transform.position.y ), downDirection, 2f, toHit);
+
+		Debug.Log("Current Speed of x: " + this.GetComponent<Rigidbody2D> ().velocity.x.ToString ());
+		Debug.Log("Current Speed of y: " + this.GetComponent<Rigidbody2D> ().velocity.y.ToString ());
+
+
+
+		if (detection.collider != null && stopped) {
+			stopped = false;
+			moveForward ();
+			Debug.Log("try and move forward");
+		}
 	}
 
+	private bool checkStoppedTest(){
+		
+		
+		//Debug.Log("Current Speed of x: " + this.GetComponent<Rigidbody2D> ().velocity.x.ToString ());
+		//Debug.Log("Current Speed of y: " + this.GetComponent<Rigidbody2D> ().velocity.y.ToString ());
+		//Debug.Log ("Current Rotation: " + curRotInt.ToString());
+		
+		if (this.GetComponent<Rigidbody2D> ().velocity.x >= -slowSpeedForward && curRotInt == LEFT) {
+			return true;
+		} else if (this.GetComponent<Rigidbody2D> ().velocity.x <= slowSpeedForward && curRotInt == RIGHT) {
+			return true;
+		} else if (this.GetComponent<Rigidbody2D> ().velocity.y <= slowSpeedForward && curRotInt == UP) {
+			return true;
+		} else if (this.GetComponent<Rigidbody2D> ().velocity.y >= -slowSpeedForward && curRotInt == DOWN) {
+			return true;
+		}
+
+		return false;
+		
+	}
+
+
+
+	private void moveForward(){
+
+		
+		//Debug.Log("Current Speed of x: " + this.GetComponent<Rigidbody2D> ().velocity.x.ToString ());
+		//Debug.Log("Current Speed of y: " + this.GetComponent<Rigidbody2D> ().velocity.y.ToString ());
+		//Debug.Log ("Current Rotation: " + curRotInt.ToString());
+
+		if (curRotInt == LEFT) {
+			this.GetComponent<Rigidbody2D> ().velocity += new Vector2 (-Speed * forwardSpeedMod, 0f);
+
+		} else if (curRotInt == RIGHT) {
+			this.GetComponent<Rigidbody2D> ().velocity += new Vector2 (Speed * forwardSpeedMod, 0f);
+		
+		} else if (curRotInt == UP) {
+			this.GetComponent<Rigidbody2D> ().velocity += new Vector2 (0f, Speed * forwardSpeedMod);
+
+		} else if (curRotInt == DOWN) {
+			this.GetComponent<Rigidbody2D> ().velocity += new Vector2 (0f, -Speed * forwardSpeedMod);
+		}
+
+	}
+
+	//the table below is the indexis table defigned in the awake function.
+	//
+	//when the walker comes to an wall that it cannot jump over it has to rotate
+	//this is represented by a table along with indexis of what the new values for
+	//the current rotation index and the new downwards force.
+	//
+	//for example indexis[2,1,0] is the rotation that happens the walker is is rotated to the left and walkig up.
+	//this is simplified by making constants so the actual expression would be
+	//indexis[LEFT, UPGRAV, ROTATION]
+	//
+	//                 facing:
+	// Angle           left      right      up          down
+	// 0    (downgrav) 90, 2,3   -90,2,1    0,-1,-1   	0,-1,-1    (x rotation, direction, gravity)
+	// 90   (leftgrav) 0,-1,-1   0,-1,-1    90,1, 2     -90, 1, 0
+	// 180    (upGrav) -90,3,3   90,3, 1    0,-1,-1 	0,-1,-1
+	// 270 (rightgrab) 0,-1,-1   0,-1,-1    -90,0,2     90,0, 0
+
+	
+	
+	//chaging the rotation of the child object
+
 	private void rotateWalker(){
-		//the table below is the indexis table defigned in the awake function.
-		//
-		//when the walker comes to an wall that it cannot jump over it has to rotate
-		//this is represented by a table along with indexis of what the new values for
-		//the current rotation index and the new downwards force.
-		//
-		//for example indexis[2,1,0] is the rotation that happens the walker is is rotated to the left and walkig up.
-		//this is simplified by making constants so the actual expression would be
-		//indexis[LEFT, UPGRAV, ROTATION]
-		//
-		//                 facing:
-		// Angle           left      right      up          down
-		// 0    (downgrav) 90, 2,3   -90,2,1    0,-1,-1   	0,-1,-1
-		// 90   (leftgrav) 0,-1,-1   0,-1,-1    90,1, 2     -90, 1, 0
-		// 180    (upGrav) -90,3,3   90,3, 1    0,-1,-1 	0,-1,-1
-		// 270 (rightgrab) 0,-1,-1   0,-1,-1    -90,0,2     90,0, 0
-
-
-		//chaging the rotation of the child object
-
-		Debug.Log ("should be trying to acess rotInt: " + curRotInt + " downInt: " + curDownInt + " and section: "  + ROTATION );
+		Debug.Log ("normal rotation");
+		//Debug.Log ("should be trying to acess rotInt: " + curRotInt + " downInt: " + curDownInt + " and section: "  + ROTATION );
 
 		bodyControl.Rotate (new Vector3(indexis[curDownInt, curRotInt, ROTATION], 0, 0));
 
@@ -184,6 +307,61 @@ public class Walker : MonoBehaviour {
 	}
 
 
+
+	//the table below is the indexis table defigned in the awake function.
+	//
+	//when the walker comes to an end of a wath and then there is a 270 degree turn to a steep drop off, the
+	//walker will rotate down towards the next edge 
+	//the x axis of the RotTable
+	//private const int LEFT = 0;
+	//private const int RIGHT = 1;
+	//private const int UP = 2;
+	//private const int DOWN = 3;
+	
+	//the y axis for the RotTable
+	//private const int DOWNGRAV = 0;
+	//private const int RIGHTGRAV = 1;
+	//private const int UPGRAV = 2;
+	//private const int LEFTGRAV = 3;
+	//
+	//                 facing:
+	// Angle           left      right      up          down
+	// 0    (downgrav) -90,3,1   90,3, 3    0,-1,-1   	0,-1,-1  (rotation, direction, gravity)
+	// 90   (leftgrav) 0,-1,-1   0,-1,-1    -90,0,0     90, 0, 2
+	// 180    (upGrav) 90,2, 1   -90,2,3    0,-1,-1 	0,-1,-1
+	// 270 (rightgrab) 0,-1,-1   0,-1,-1    90,1,0     -90,1, 2
+	
+	
+	
+	//chaging the rotation of the child object
+	
+	private void rotateWalkerOposite(){
+
+		Debug.Log ("backwards rotation:");
+		
+		//Debug.Log ("should be rotating backwards");
+		bodyControl.Rotate (new Vector3(reverseIndexis[curDownInt, curRotInt, ROTATION], 0, 0));
+		
+		UpdateRotation (reverseIndexis [curDownInt, curRotInt, ROTATIONINDEX]);
+		UpdateDownwardsForce (reverseIndexis [curDownInt, curRotInt, GRAVITYINDEX]);
+
+		Debug.Log ("Rotated : " + reverseIndexis [curDownInt, curRotInt, ROTATION] + "Towards gravity: " + reverseIndexis [curDownInt, curRotInt, GRAVITYINDEX]);
+		
+		int tempRotInt = curRotInt;
+		
+		curRotInt = reverseIndexis [curDownInt, curRotInt, ROTATIONINDEX];
+		Debug.Log ("Changed Rotation index to : " + curRotInt);
+		
+		curDownInt = reverseIndexis [curDownInt, tempRotInt, GRAVITYINDEX];
+		Debug.Log ("Changed Downwards index to : " + curDownInt);
+		
+		Debug.Log ("Jump Checker: " + jumpChecker.ToString());
+		
+		
+	}
+
+	
+
 	private void UpdateRotation(int i){
 
 		switch (i) {
@@ -199,19 +377,21 @@ public class Walker : MonoBehaviour {
 	private void UpdateDownwardsForce(int i){
 		
 		switch (i) {
-		case DOWNGRAV: downWardsForce = new Vector2(0, -fauxGravity); jumpChecker.y = 4.0f; break;
-		case UPGRAV: downWardsForce = new Vector2(0, fauxGravity); jumpChecker.y = -4.0f; break;
-		case LEFTGRAV: downWardsForce = new Vector2(-fauxGravity, 0); jumpChecker.x = 3.0f; break;
-		case RIGHTGRAV: downWardsForce = new Vector2(fauxGravity, 0); jumpChecker.x = -3.0f; break;	
+		case DOWNGRAV: downWardsForce = new Vector2(0, -fauxGravity); jumpChecker.y = 4.0f; downDirection = new Vector2 (0f, -1f); break;
+		case UPGRAV: downWardsForce = new Vector2(0, fauxGravity); jumpChecker.y = -4.0f; downDirection = new Vector2 (0f, 1f); break;
+		case LEFTGRAV: downWardsForce = new Vector2(-fauxGravity, 0); jumpChecker.x = 3.0f; downDirection = new Vector2 (-1f, 0f); break;
+		case RIGHTGRAV: downWardsForce = new Vector2(fauxGravity, 0); jumpChecker.x = -3.0f; downDirection = new Vector2 (1f, 0f); break;	
 		}
 	}
 
 	private bool shouldNotJump(){
 
-		RaycastHit2D detection = Physics2D.Raycast (this.transform.position, jumpChecker, 5f, toHit);
-		
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2(transform.position.x, transform.position.y + 1f), jumpChecker, 5f, toHit);
+
+		Debug.Log ("Detection is towards: " + jumpChecker.ToString());
 		
 		if (detection.collider != null) {
+			Debug.Log(detection.collider.gameObject.ToString());
 			return true;
 		} else {
 			return false;
@@ -219,6 +399,37 @@ public class Walker : MonoBehaviour {
 
 
 	}
+
+	private bool shouldNotTurnBackwards(){
+		
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2(transform.position.x, transform.position.y ), downDirection, canyionDistance, toHit);
+		
+		Debug.Log ("Detection is towards: " + downDirection.ToString());
+		
+		if (detection.collider != null) {
+			//Debug.Log(detection.collider.gameObject.ToString());
+			return true;
+		} else {
+			return false;
+		}
+		
+		
+	}
+
+
+	/*private bool reverseFlip(){
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2(transform.position.x, transform.position.y + 1f), -downDirection, 2f, toHit);
+
+
+		if (detection.collider != null) {
+			Debug.Log(detection.collider.gameObject.ToString());
+			return true;
+		} else {
+			return false;
+		}
+
+
+	}*/
 
 	//detecting to see if there is an object right infront of the walker;
 	private bool collisionAhead(){
@@ -233,6 +444,7 @@ public class Walker : MonoBehaviour {
 			return false;
 		}
 	}
+
 	//Development code
 	void OnDrawGizmos(){
 
@@ -240,6 +452,8 @@ public class Walker : MonoBehaviour {
 
 		Gizmos.DrawRay (rayT);
 		Gizmos.DrawRay(this.transform.position, jumpChecker);
+		Gizmos.DrawRay (this.transform.position, downDirection);
+		Gizmos.DrawRay (this.transform.position, -downDirection);
 
 
 		for (int i = 1; i < patrolPoints.Length; i++) {
@@ -259,9 +473,9 @@ public class Walker : MonoBehaviour {
 	private bool foundPlayer(){
 		for(int i = 0; i < (hitBarrier.Length -1); i++){
 			if(hitBarrier[i].tag == "PatrolViewNodes"){
-				float distance = Vector3.Distance(this.transform.position, hitBarrier[i].position);
+				float FoundDistance = Vector3.Distance(this.transform.position, hitBarrier[i].position);
 				
-				RaycastHit2D hit = Physics2D.Raycast (this.transform.position, (hitBarrier[i].position - this.transform.position), distance, toHit);
+				RaycastHit2D hit = Physics2D.Raycast (this.transform.position, (hitBarrier[i].position - this.transform.position), FoundDistance, toHit);
 				
 				if(hit.collider != null){
 					if(hit.collider.tag == "Player"){
