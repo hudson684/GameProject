@@ -86,6 +86,7 @@
      <Compile Include="Assets\_Scripts\Grounded.cs" />
      <Compile Include="Assets\_Scripts\HallLazers.cs" />
      <Compile Include="Assets\_Scripts\Key.cs" />
+     <Compile Include="Assets\_Scripts\LevelLoad.cs" />
      <Compile Include="Assets\_Scripts\Lock.cs" />
      <Compile Include="Assets\_Scripts\MainMenuController.cs" />
      <Compile Include="Assets\_Scripts\Mantle.cs" />

@@ -17,9 +17,11 @@ public class Walker : MonoBehaviour {
 	private bool triggered = false;
 	private bool patroling = true;
 	private bool stopped = false;
+
+	private GameObject player;
 	
 	public float Speed = 10f;
-	private float distance = 0.1f;
+	public float GoalMargine = 0.1f;
 	private float slowSpeedForward = 2f;
 	public bool loop = false;
 	public float jumpFactor = 5f;
@@ -65,6 +67,8 @@ public class Walker : MonoBehaviour {
 	private Vector3 jumpChecker;
 	private Vector2 downWardsForce;
 	private Vector3 downDirection;
+
+	public float chasePlayerTime = 30f;
 
 	private bool rotated = false;
 
@@ -120,6 +124,11 @@ public class Walker : MonoBehaviour {
 	void Update(){
 		//Debug.Log ("rotate oposite check: " + shouldNotTurnBackwards().ToString());
 
+		if (!triggered) {
+			triggered = foundPlayer();
+			StartCoroutine("countDown");
+		}
+
 		stopped = checkStoppedTest ();
 		                                                       
 		if (!collisionAhead () && shouldNotTurnBackwards ()) {
@@ -128,23 +137,41 @@ public class Walker : MonoBehaviour {
 
 			Vector3 velocity = Vector3.zero;
 
+
 			if (currentPoint < patrolPoints.Length) {
-				Vector3 nextPoint = patrolPoints [currentPoint];
+				Vector3 nextPoint;
+				if(!triggered){
+					nextPoint = patrolPoints [currentPoint];
+				} else {
+					nextPoint = player.transform.position;
+				}
 
 				Debug.Log("next point: " + nextPoint.ToString());
 				Debug.Log("current position: " + transform.position.ToString());
 
 				Vector3 moveDirection = nextPoint - this.transform.position;
 
-				//if( nextPoint.magnitude >= this.transform.position.magnitude){
-					//moveDirection = nextPoint - this.transform.position;
-				//} else {
-					//moveDirection = this.transform.position - nextPoint;
-				//}
+				/*if(moveDirection.x > 0 && curRotInt == LEFT){
+				
+					flipWalker(true);
+					UpdateRotation(RIGHT);
+				} else if (moveDirection.x < 0 && curRotInt == RIGHT){
+
+					flipWalker(true);
+					UpdateRotation(LEFT);
+				} else if (moveDirection.y < 0 && curRotInt == UP){
+
+					flipWalker(false);
+					UpdateRotation(DOWN);
+				} else if (moveDirection.y > 0 && curRotInt == DOWN){
+
+					flipWalker(false);
+					UpdateRotation(UP);
+				}*/
 
 				velocity = this.GetComponent<Rigidbody2D> ().velocity;
 
-				if (moveDirection.magnitude < distance) {
+				if (moveDirection.magnitude < GoalMargine) {
 					currentPoint++;
 				} else {
 					velocity = moveDirection.normalized * Speed;
@@ -218,6 +245,14 @@ public class Walker : MonoBehaviour {
 		}
 	}
 
+
+	private IEnumerator countDown(){
+
+
+		yield return new WaitForSeconds (chasePlayerTime);
+		triggered = false;
+	}
+
 	private bool checkStoppedTest(){
 		
 		
@@ -240,6 +275,19 @@ public class Walker : MonoBehaviour {
 	}
 
 
+	private void flipWalker(bool leftRight){
+		if (leftRight) {
+
+			this.transform.Rotate(new Vector3(0f, 180f, 0f));
+		} else {
+
+			this.transform.Rotate(new Vector3(180f, 0f, 0f));
+		}
+
+
+	}
+
+
 
 	private void moveForward(){
 
@@ -259,7 +307,7 @@ public class Walker : MonoBehaviour {
 
 		} else if (curRotInt == DOWN) {
 			this.GetComponent<Rigidbody2D> ().velocity += new Vector2 (0f, -Speed * forwardSpeedMod);
-		}
+		} 
 
 	}
 
@@ -479,6 +527,7 @@ public class Walker : MonoBehaviour {
 				
 				if(hit.collider != null){
 					if(hit.collider.tag == "Player"){
+						player = hit.collider.gameObject;
 						return true;
 					} 
 				} 
