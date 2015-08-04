@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using System.Collections;
 
 public class AICamera : MonoBehaviour {
@@ -51,6 +51,8 @@ public class AICamera : MonoBehaviour {
 		activation();
 
 		if (active) {
+
+			rotateCamrea();
 
 			if (foundPlayer () && !triggered) {
 

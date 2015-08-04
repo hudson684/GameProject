@@ -68,14 +68,22 @@ public class Walker : MonoBehaviour {
 	private Vector2 downWardsForce;
 	private Vector3 downDirection;
 
+	private BoxCollider2D col;
+
 	public float chasePlayerTime = 30f;
 
 	private bool rotated = false;
 
-
-
-
+	private GameObject deathNodeObject;
+	private DeathNode deathNode;
+	
 	void Awake(){
+
+		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
+		deathNode = (DeathNode) deathNodeObject.GetComponentInParent(typeof(DeathNode));
+
+
+		col = this.GetComponent<BoxCollider2D> ();
 
 		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
 		light2D.setMainMaterial(normal);
@@ -144,30 +152,13 @@ public class Walker : MonoBehaviour {
 					nextPoint = patrolPoints [currentPoint];
 				} else {
 					nextPoint = player.transform.position;
+					playerKillZone(); 
 				}
 
 				Debug.Log("next point: " + nextPoint.ToString());
 				Debug.Log("current position: " + transform.position.ToString());
 
 				Vector3 moveDirection = nextPoint - this.transform.position;
-
-				/*if(moveDirection.x > 0 && curRotInt == LEFT){
-				
-					flipWalker(true);
-					UpdateRotation(RIGHT);
-				} else if (moveDirection.x < 0 && curRotInt == RIGHT){
-
-					flipWalker(true);
-					UpdateRotation(LEFT);
-				} else if (moveDirection.y < 0 && curRotInt == UP){
-
-					flipWalker(false);
-					UpdateRotation(DOWN);
-				} else if (moveDirection.y > 0 && curRotInt == DOWN){
-
-					flipWalker(false);
-					UpdateRotation(UP);
-				}*/
 
 				velocity = this.GetComponent<Rigidbody2D> ().velocity;
 
@@ -275,13 +266,14 @@ public class Walker : MonoBehaviour {
 	}
 
 
+	
 	private void flipWalker(bool leftRight){
 		if (leftRight) {
 
-			this.transform.Rotate(new Vector3(0f, 180f, 0f));
+			bodyControl.Rotate(new Vector3(0f, 180f, 0f));
 		} else {
 
-			this.transform.Rotate(new Vector3(180f, 0f, 0f));
+			bodyControl.Rotate(new Vector3(180f, 0f, 0f));
 		}
 
 
@@ -423,12 +415,35 @@ public class Walker : MonoBehaviour {
 
 	
 	private void UpdateDownwardsForce(int i){
-		
-		switch (i) {
-		case DOWNGRAV: downWardsForce = new Vector2(0, -fauxGravity); jumpChecker.y = 4.0f; downDirection = new Vector2 (0f, -1f); break;
-		case UPGRAV: downWardsForce = new Vector2(0, fauxGravity); jumpChecker.y = -4.0f; downDirection = new Vector2 (0f, 1f); break;
-		case LEFTGRAV: downWardsForce = new Vector2(-fauxGravity, 0); jumpChecker.x = 3.0f; downDirection = new Vector2 (-1f, 0f); break;
-		case RIGHTGRAV: downWardsForce = new Vector2(fauxGravity, 0); jumpChecker.x = -3.0f; downDirection = new Vector2 (1f, 0f); break;	
+
+		if (i == DOWNGRAV) {
+			downWardsForce = new Vector2(0, -fauxGravity);
+			jumpChecker.y = 4.0f; 
+			downDirection = new Vector2 (0f, -1f); 
+			col.offset = new Vector2(0f, 0.03f);
+			col.size = new Vector2(0.11f, 0.06f);
+
+		} else if (i == UPGRAV) {
+			downWardsForce = new Vector2(0, fauxGravity);
+			jumpChecker.y = -4.0f; 
+			downDirection = new Vector2 (0f, 1f); 
+			col.offset = new Vector2(0f, 0.02f);
+			col.size = new Vector2(0.12f, 0.07f);
+
+		} else if (i == LEFTGRAV) {
+			downWardsForce = new Vector2(-fauxGravity, 0);
+			jumpChecker.x = 3.0f;
+			downDirection = new Vector2 (-1f, 0f);
+			col.offset = new Vector2(0f, 0.023f);
+			col.size = new Vector2(0.06f, 0.11f);
+
+		} else if (i == RIGHTGRAV) {
+			downWardsForce = new Vector2(fauxGravity, 0);
+			jumpChecker.x = -3.0f;
+			downDirection = new Vector2 (1f, 0f);
+			col.offset = new Vector2(0f, 0.025f);
+			col.size = new Vector2(0.07f, 0.11f);
+
 		}
 	}
 
@@ -465,6 +480,7 @@ public class Walker : MonoBehaviour {
 	}
 
 
+	//NOT CURRENTLY IN USE TODO: DETERMINE IF NESSISARY
 	/*private bool reverseFlip(){
 		RaycastHit2D detection = Physics2D.Raycast (new Vector2(transform.position.x, transform.position.y + 1f), -downDirection, 2f, toHit);
 
@@ -493,6 +509,21 @@ public class Walker : MonoBehaviour {
 		}
 	}
 
+
+	private bool playerKillZone(){
+		
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + 1f)
+		                                            , currentRotation, 3f, toHit);
+		
+		
+		if (detection.collider != null && detection.collider.tag == "Player") {
+			deathNode.setDeath(true);
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	//Development code
 	void OnDrawGizmos(){
 
@@ -515,7 +546,7 @@ public class Walker : MonoBehaviour {
 
 	}
 
-
+	  
 	
 	//checks to see if the player has been detected by its array of nodes
 	private bool foundPlayer(){
