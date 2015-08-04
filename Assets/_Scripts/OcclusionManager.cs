@@ -4,7 +4,8 @@ using System.Collections;
 public class OcclusionManager : MonoBehaviour {
 
 	Occluder[] occluders;
-	public float dampening;
+	public float dampeningTo = 3f;
+	public float dampeningFrom = 8f;
 	
 
 	// Use this for initialization

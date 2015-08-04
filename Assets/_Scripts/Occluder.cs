@@ -25,14 +25,14 @@ public class Occluder : MonoBehaviour {
 		if(toggle){
 			if(rendererComponent.color.a < 0.95){
 				//Debug.Log ("toggle on "+ rendererComponent.color.a);
-				rendererComponent.color = Color.Lerp(rendererComponent.color, Color.black, Time.deltaTime * manager.dampening);
+				rendererComponent.color = Color.Lerp(rendererComponent.color, Color.black, Time.deltaTime * manager.dampeningFrom);
 			}else{
 				rendererComponent.color = Color.black;
 			}
 		}else{
 			if(rendererComponent.color.a > 0.05){
 				//Debug.Log ("toggle off "+ rendererComponent.color.a);
-				rendererComponent.color = Color.Lerp(rendererComponent.color, Color.clear, Time.deltaTime * manager.dampening);
+				rendererComponent.color = Color.Lerp(rendererComponent.color, Color.clear, Time.deltaTime * manager.dampeningTo);
 			}else{
 				rendererComponent.color = Color.clear;
 			 }
