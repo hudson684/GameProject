@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< .mine
+guid: e0671707787531043b67ecc9270f6968
+timeCreated: 1437964886
+=======
 guid: a421fbd499d77bc498f69e52c156186f
 timeCreated: 1437873995
+>>>>>>> .r95
 licenseType: Free
 NativeFormatImporter:
   userData: 

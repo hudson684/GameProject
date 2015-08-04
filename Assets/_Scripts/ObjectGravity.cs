@@ -7,7 +7,7 @@ public class ObjectGravity : MonoBehaviour {
 	public float HALF_GRAVITY_SCALE = 1.5f;
 	public float ZERO_GRAVITY_SCALE = 0;
 
-	void OnTriggerStay2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other){
 		
 		//All gravity zones in this game are defigned by a large invisable sprite that covers the entire 
 		//area that uses the specific gravity in question.

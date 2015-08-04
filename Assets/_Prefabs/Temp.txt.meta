@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< .mine
+guid: b07265a243d936e4b9f6631838e7bdf6
+timeCreated: 1437647788
+=======
 guid: 974a49e5672f8f747821879793098313
 timeCreated: 1437704074
+>>>>>>> .r95
 licenseType: Free
 TextScriptImporter:
   userData: 
