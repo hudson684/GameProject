@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 0322738162e588946b00c2e4c74c3987
+timeCreated: 1439175597
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - laserClip: {fileID: 8300000, guid: 972431c01bd2f0846bde715e7d672a8a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
