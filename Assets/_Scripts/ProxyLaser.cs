@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ProxyLaser : Laser {
 
+	public string target = "Object";
 	public float toggleDistance;
 	public float delay;
 	private float adjust;
@@ -24,10 +25,10 @@ public class ProxyLaser : Laser {
 	void proxyToggle(){
 		//Error controll
 		//Prevents null exception erros
-		if(GameObject.FindGameObjectWithTag("Object")){
+		if(GameObject.FindGameObjectWithTag(target)){
 			
-			//find objects with the tag "Object"
-			GameObject[] Boxs = GameObject.FindGameObjectsWithTag("Object");
+			//find objects with the tag in target
+			GameObject[] Boxs = GameObject.FindGameObjectsWithTag(target);
 			
 			//calculate distance of object to Laser
 			for(int i = 0; i < Boxs.Length; i++){

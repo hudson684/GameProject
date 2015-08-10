@@ -18,19 +18,8 @@ public class Laser : MonoBehaviour {
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
 	private AudioSource audioSource;
-
-	// Use this for initialization
-	/*
-	void Start () {
-		//Laser Variables
-		laserLine = gameObject.GetComponent<LineRenderer>();
-		laserLine.SetWidth(thickness, thickness);
-		
-		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
-		deathNode = (DeathNode) deathNodeObject.GetComponentInParent(typeof(DeathNode));
-	}
-	*/
 	
+
 	// Update is called once per frame
 	void Update () {
 		traceLaser();
