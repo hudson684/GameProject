@@ -24,7 +24,7 @@ public class GrappleControl : MonoBehaviour {
 	 */
 	public LayerMask toHit;
 	public int maxGrappleDisance = 10;
-	public GameObject cursor;
+	private GameObject cursor;
 	public GameObject grapple;
 	public GameObject cable;
 	public float grappleSpeed = 3;
@@ -39,6 +39,7 @@ public class GrappleControl : MonoBehaviour {
 	public AudioClip audError;
 	AudioSource playerAudio;
 
+	private string objName = " ";
 
 
 
@@ -56,15 +57,14 @@ public class GrappleControl : MonoBehaviour {
 	private bool playerKilled = false;
 
 
+
 	Vector3 firePointPosition;
 
 	private int oldLayer = -1;
 	private int playerLayer;
 
 	void Start(){
-		if(GameObject.FindGameObjectWithTag(cursor.tag.ToString()) == null){
-			cursor = Instantiate(cursor);
-		}
+		cursor = GameObject.FindGameObjectWithTag ("Cursor");
 		player = (PlayerControl) this.GetComponentInParent(typeof(PlayerControl));
 		playerGameObj = this.transform.parent.gameObject;
 		playerAudio = GetComponent<AudioSource>();
@@ -253,8 +253,9 @@ public class GrappleControl : MonoBehaviour {
 				HingeJoint2D grappleHinge = ropeArr[0].GetComponent<HingeJoint2D> ();
 				grappleHinge.enabled = true;
 
-				if(hit.collider.tag == "Object"){
+				if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Object")){
 					grappleHinge.connectedBody = hit.collider.attachedRigidbody;
+					objName = hit.collider.name;
 				} else {
 					grappleHinge.connectedAnchor = hit.point;
 				}
@@ -285,6 +286,7 @@ public class GrappleControl : MonoBehaviour {
 
 		ropeArr [0].GetComponent<HingeJoint2D> ().connectedBody = null;
 
+		objName = " ";
 
 		while (i <= totalLength) {
 
@@ -341,6 +343,15 @@ public class GrappleControl : MonoBehaviour {
 
 	}
 
+	public void retractGrapple()
+	{
+		StartCoroutine ("retract");
+	}
+
+
+	public string getObjName(){
+		return objName;
+	}
 
 	public void setPlayerKilled(bool value){
 

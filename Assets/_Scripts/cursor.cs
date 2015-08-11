@@ -3,9 +3,17 @@ using System.Collections;
 
 public class cursor : MonoBehaviour {
 
+	private static cursor mouse;
+
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+		if (mouse == null) {
+			DontDestroyOnLoad (this.gameObject);
+			mouse = this;
+		} else if (mouse != this) {
+
+			Destroy(this.gameObject);
+		}
 	}
 	
 	// Update is called once per frame

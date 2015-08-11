@@ -12,6 +12,8 @@ public class Partol : MonoBehaviour {
 	public LayerMask toHit;
 	
 	public GameObject bullet;
+
+
 	
 	private bool triggered = false;
 	private bool patroling = true;
@@ -31,6 +33,8 @@ public class Partol : MonoBehaviour {
 	//set up the patrolers 2d light asset
 	IEnumerator Start()
 	{
+
+
 		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
 		light2D.setMainMaterial(normal);
 

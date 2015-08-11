@@ -9,6 +9,7 @@ public class AICamera : MonoBehaviour {
 
 	public GameObject lightBox;
 	private Light cameraLight;
+	public Transform camHead;
 
 	public GameObject bullet;
 
@@ -25,6 +26,8 @@ public class AICamera : MonoBehaviour {
 	private int swingPoint = 0;
 	private Vector3 rotation;
 
+	public float swingSpeed = 2f;
+
 
 	private Color green = Color.green;
 	private Color red = Color.red;
@@ -33,14 +36,16 @@ public class AICamera : MonoBehaviour {
 	private bool active = true;
 
 
+
+
 	// Use this for initialization
 	void Start () {
 		swingPoints = new float[2] {maxSwing, minSwing};
 
-		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
+		//light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
 		hitBarrier = transform.GetComponentsInChildren<Transform>();
 
-		cameraLight = lightBox.GetComponent<Light>();
+		//cameraLight = lightBox.GetComponent<Light>();
 		//spotLight = spot.GetComponent<Light>();
 	}
 	
@@ -70,21 +75,36 @@ public class AICamera : MonoBehaviour {
 	void rotateCamrea(){
 
 		if (swingPoint < 2) {
+
+			//Debug.Log("should be rotating");
 			float nextPoint = swingPoints [swingPoint];
-			float rotationDirection = nextPoint - this.transform.rotation.z;
+			float rotationDirection = nextPoint - camHead.transform.rotation.eulerAngles.x;
+
+
+			Debug.Log("current x: " + camHead.transform.rotation.eulerAngles.x.ToString());
+			Debug.Log("next point leway min: " + (rotationDirection - 5f).ToString());
+			Debug.Log("next point leway max: " + (rotationDirection + 5f).ToString());
+
+			//rotation = camHead.transform.rotation.eulerAngles;
 			
-			rotation = this.transform.rotation.eulerAngles;
-			
-			if (rotation.z - nextPoint < 5) {
+			if (camHead.transform.rotation.eulerAngles.x >= nextPoint - 5f && camHead.transform.rotation.eulerAngles.x <= nextPoint + 5f) {
+				Debug.Log("dont need to do anything");
 				swingPoint++;
 			} else {
-				rotation.z += rotation.z - nextPoint / 10f; 
+				camHead.Rotate(new Vector3(((rotationDirection) / 100f) * swingSpeed, 0f, 0f)); 
+
+				//Debug.Log("rotation of x: " + rotation.x.ToString());
+				Debug.Log("next point dev 10: " + (((rotationDirection) / 100f) * swingSpeed).ToString());
+
+				//Debug.Log((0f + -9).ToString());
 			} 
 		} else {
 			swingPoint = 0;
 		}
 
 
+
+		//camHead.Rotate (rotation.x, 0f, 0f);
 
 	}
 
@@ -159,14 +179,14 @@ public class AICamera : MonoBehaviour {
 
 		if (active) {
 			if (changeColour) {
-				cameraLight.color = green;
+				//cameraLight.color = green;
 
-				light2D.gameObject.SetActive(true);
+				//light2D.gameObject.SetActive(true);
 			}
 		} else {
 			if (changeColour) {
-				cameraLight.color = Color.black;
-				light2D.gameObject.SetActive(false);
+				//cameraLight.color = Color.black;
+				//light2D.gameObject.SetActive(false);
 			}
 
 		}

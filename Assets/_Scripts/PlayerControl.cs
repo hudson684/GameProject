@@ -25,6 +25,9 @@ public class PlayerControl : MonoBehaviour {
 	private GameObject CheckPointMarker;
 	private Grounded groundedCode;
 
+	private GameObject heldObject;
+	private bool isHolding = false;
+	private string tempHeldLayer = " ";
 
 	//public variables
 	public float jumpHeight = 7f;
@@ -89,8 +92,13 @@ public class PlayerControl : MonoBehaviour {
 				grapleMovement ();
 			}	
 		}
-	}
 
+
+		if (isHolding) {
+			keepHoldingOn();
+		}
+
+	}
 
 
 	//temporary holders 
@@ -132,12 +140,54 @@ public class PlayerControl : MonoBehaviour {
 			deathNode.setDeath(true);
 		}
 
+		GrappleControl grapple = (GrappleControl)this.GetComponentInChildren (typeof(GrappleControl));
+
+		if(isGrappling){
+			if(other.collider.gameObject.layer == LayerMask.NameToLayer("Object") && other.collider.name == grapple.getObjName() && currentGravity == ZERO_GRAVITY){
+				grapple.retractGrapple();
+
+				startHoldingOn(other.gameObject);
+			}
+
+		}
+
 	}
 	
-	
-	
-	
-	
+
+	private void startHoldingOn(GameObject obj){
+		if (isHolding) {
+			stopHoldingOn();
+		}
+
+		obj.transform.SetParent (this.transform);
+		heldObject = obj;
+		tempHeldLayer = heldObject.tag;
+		heldObject.tag = "Player";
+		heldObject.layer = LayerMask.NameToLayer ("Player");
+		isHolding = true;
+
+		Debug.Log ("started holding");
+	}
+
+	private void keepHoldingOn(){
+		float disX = 1f + ((heldObject.transform.lossyScale.x -1f)/ 2f);
+		float disY = 1f + ((heldObject.transform.lossyScale.y -1f)/ 2f);
+
+		heldObject.transform.localPosition = new Vector3 (disX, disY, 0f);
+
+	}
+
+	private void stopHoldingOn(){
+		Debug.Log ("Stopped Holding");
+
+
+		heldObject.tag = tempHeldLayer;
+		heldObject.layer = LayerMask.NameToLayer ("Object");
+		heldObject.transform.SetParent (null);
+		heldObject = null;
+		isHolding = false;
+	}
+
 	//NORMAL MOVEMENT CODE
 	//
 	// SPACE: up
@@ -145,6 +195,13 @@ public class PlayerControl : MonoBehaviour {
 	// D: Right
 	// LEFT CTRL: Crouch
 	void normalMovement(){
+
+		if (isHolding) {
+
+			stopHoldingOn();
+		}
+
+
 		if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
 		}
@@ -189,6 +246,10 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 	}
+
+
+	int doubleTapCounter = 0;
+	float doubleTapTimer = 0.5f;
 	
 	//ZERO GRAVITY MOVEMENT CODE
 	//
@@ -232,6 +293,14 @@ public class PlayerControl : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			GetComponent<Rigidbody2D>().angularVelocity = 0;
+		}
+
+
+		if (isHolding) {
+			if(Input.GetKeyDown(KeyCode.F))
+			{
+				stopHoldingOn();
+			}
 		}
 	}
 

@@ -155,8 +155,8 @@ public class Walker : MonoBehaviour {
 					playerKillZone(); 
 				}
 
-				Debug.Log("next point: " + nextPoint.ToString());
-				Debug.Log("current position: " + transform.position.ToString());
+				//Debug.Log("next point: " + nextPoint.ToString());
+				//Debug.Log("current position: " + transform.position.ToString());
 
 				Vector3 moveDirection = nextPoint - this.transform.position;
 
@@ -167,7 +167,7 @@ public class Walker : MonoBehaviour {
 				} else {
 					velocity = moveDirection.normalized * Speed;
 
-					Debug.Log("Move Direction: " + moveDirection.normalized * Speed);
+					//Debug.Log("Move Direction: " + moveDirection.normalized * Speed);
 				} 
 			} else {
 				if (loop) {
@@ -191,7 +191,7 @@ public class Walker : MonoBehaviour {
 
 
 			} else if (collisionAhead ()) {
-				Debug.Log("Should Jump");
+				//Debug.Log("Should Jump");
 
 				//rotated = true; //TODO: replace this with a better bool
 				if (curDownInt == DOWNGRAV || curDownInt == UPGRAV) { 
@@ -218,21 +218,21 @@ public class Walker : MonoBehaviour {
 		}
 
 		this.GetComponent<Rigidbody2D> ().velocity += downWardsForce;
-		Debug.Log ("applied downwards force: " + downWardsForce.ToString());
+		//Debug.Log ("applied downwards force: " + downWardsForce.ToString());
 
 
 
 		RaycastHit2D detection = Physics2D.Raycast (new Vector2(transform.position.x, transform.position.y ), downDirection, 2f, toHit);
 
-		Debug.Log("Current Speed of x: " + this.GetComponent<Rigidbody2D> ().velocity.x.ToString ());
-		Debug.Log("Current Speed of y: " + this.GetComponent<Rigidbody2D> ().velocity.y.ToString ());
+		//Debug.Log("Current Speed of x: " + this.GetComponent<Rigidbody2D> ().velocity.x.ToString ());
+		//Debug.Log("Current Speed of y: " + this.GetComponent<Rigidbody2D> ().velocity.y.ToString ());
 
 
 
 		if (detection.collider != null && stopped) {
 			stopped = false;
 			moveForward ();
-			Debug.Log("try and move forward");
+			//Debug.Log("try and move forward");
 		}
 	}
 
@@ -325,7 +325,7 @@ public class Walker : MonoBehaviour {
 	//chaging the rotation of the child object
 
 	private void rotateWalker(){
-		Debug.Log ("normal rotation");
+		//Debug.Log ("normal rotation");
 		//Debug.Log ("should be trying to acess rotInt: " + curRotInt + " downInt: " + curDownInt + " and section: "  + ROTATION );
 
 		bodyControl.Rotate (new Vector3(indexis[curDownInt, curRotInt, ROTATION], 0, 0));
@@ -336,12 +336,12 @@ public class Walker : MonoBehaviour {
 		int tempRotInt = curRotInt;
 		
 		curRotInt = indexis [curDownInt, curRotInt, ROTATIONINDEX];
-		Debug.Log ("Changed Rotation index to : " + curRotInt);
+		//Debug.Log ("Changed Rotation index to : " + curRotInt);
 		
 		curDownInt = indexis [curDownInt, tempRotInt, GRAVITYINDEX];
-		Debug.Log ("Changed Downwards index to : " + curDownInt);
+		//Debug.Log ("Changed Downwards index to : " + curDownInt);
 
-		Debug.Log ("Jump Checker: " + jumpChecker.ToString());
+		//Debug.Log ("Jump Checker: " + jumpChecker.ToString());
 
 
 	}
@@ -377,7 +377,7 @@ public class Walker : MonoBehaviour {
 	
 	private void rotateWalkerOposite(){
 
-		Debug.Log ("backwards rotation:");
+		//Debug.Log ("backwards rotation:");
 		
 		//Debug.Log ("should be rotating backwards");
 		bodyControl.Rotate (new Vector3(reverseIndexis[curDownInt, curRotInt, ROTATION], 0, 0));
@@ -385,17 +385,17 @@ public class Walker : MonoBehaviour {
 		UpdateRotation (reverseIndexis [curDownInt, curRotInt, ROTATIONINDEX]);
 		UpdateDownwardsForce (reverseIndexis [curDownInt, curRotInt, GRAVITYINDEX]);
 
-		Debug.Log ("Rotated : " + reverseIndexis [curDownInt, curRotInt, ROTATION] + "Towards gravity: " + reverseIndexis [curDownInt, curRotInt, GRAVITYINDEX]);
+		//Debug.Log ("Rotated : " + reverseIndexis [curDownInt, curRotInt, ROTATION] + "Towards gravity: " + reverseIndexis [curDownInt, curRotInt, GRAVITYINDEX]);
 		
 		int tempRotInt = curRotInt;
 		
 		curRotInt = reverseIndexis [curDownInt, curRotInt, ROTATIONINDEX];
-		Debug.Log ("Changed Rotation index to : " + curRotInt);
+		//Debug.Log ("Changed Rotation index to : " + curRotInt);
 		
 		curDownInt = reverseIndexis [curDownInt, tempRotInt, GRAVITYINDEX];
-		Debug.Log ("Changed Downwards index to : " + curDownInt);
+		//Debug.Log ("Changed Downwards index to : " + curDownInt);
 		
-		Debug.Log ("Jump Checker: " + jumpChecker.ToString());
+		//Debug.Log ("Jump Checker: " + jumpChecker.ToString());
 		
 		
 	}
@@ -451,10 +451,10 @@ public class Walker : MonoBehaviour {
 
 		RaycastHit2D detection = Physics2D.Raycast (new Vector2(transform.position.x, transform.position.y + 1f), jumpChecker, 5f, toHit);
 
-		Debug.Log ("Detection is towards: " + jumpChecker.ToString());
+		//Debug.Log ("Detection is towards: " + jumpChecker.ToString());
 		
 		if (detection.collider != null) {
-			Debug.Log(detection.collider.gameObject.ToString());
+			//Debug.Log(detection.collider.gameObject.ToString());
 			return true;
 		} else {
 			return false;
@@ -467,7 +467,7 @@ public class Walker : MonoBehaviour {
 		
 		RaycastHit2D detection = Physics2D.Raycast (new Vector2(transform.position.x, transform.position.y ), downDirection, canyionDistance, toHit);
 		
-		Debug.Log ("Detection is towards: " + downDirection.ToString());
+		//Debug.Log ("Detection is towards: " + downDirection.ToString());
 		
 		if (detection.collider != null) {
 			//Debug.Log(detection.collider.gameObject.ToString());
@@ -498,7 +498,7 @@ public class Walker : MonoBehaviour {
 	//detecting to see if there is an object right infront of the walker;
 	private bool collisionAhead(){
 
-		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + 1f)
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + 0.3f)
 		                                            , currentRotation, 3f, toHit);
 
 
