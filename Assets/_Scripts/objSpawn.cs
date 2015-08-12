@@ -13,6 +13,7 @@ public class objSpawn : MonoBehaviour {
 	void Start () {
 		//start Timer
 		remainingTime = startingTime;
+		spawnObject.tag = "Object";
 	}
 	
 	// Update is called once per frame

@@ -4,7 +4,7 @@ using System.Collections;
 public class MainMenuController : MonoBehaviour {
 
 	public void loadNextScene(){
-		Application.LoadLevel("Stage1");
+		Application.LoadLevel(Application.loadedLevel + 1);
 	}
 
 	public void exitGame(){
