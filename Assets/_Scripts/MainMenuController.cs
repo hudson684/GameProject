@@ -11,4 +11,8 @@ public class MainMenuController : MonoBehaviour {
 		Application.Quit();
 	}
 
+	public void loadSave(){
+		Application.LoadLevel(PlayerPrefs.GetString("SaveLevelKey"));
+	}
+
 }

@@ -8,6 +8,7 @@ public class Laser : MonoBehaviour {
 
 	//Public Variables
 	public float thickness = 0.2f;
+	public float length = 400f;
 	public LayerMask hitLayers;
 	public Vector2 direction;
 	public AudioClip laserClip;
@@ -45,7 +46,7 @@ public class Laser : MonoBehaviour {
 			laserLine.SetPosition(0,transform.position);
 			
 			//find laser end point
-			hit = Physics2D.Raycast(transform.position,direction,400,hitLayers);
+			hit = Physics2D.Raycast(transform.position,direction,length,hitLayers);
 			
 			//if ray hits object
 			if(hit.collider){
