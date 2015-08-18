@@ -109,10 +109,12 @@
      <Compile Include="Assets\_Scripts\ProxyLaser.cs" />
      <Compile Include="Assets\_Scripts\RandomSound.cs" />
      <Compile Include="Assets\_Scripts\SoundCollider.cs" />
+     <Compile Include="Assets\_Scripts\Swivel.cs" />
      <Compile Include="Assets\_Scripts\TeleportCamera.cs" />
      <Compile Include="Assets\_Scripts\TimerLaser.cs" />
      <Compile Include="Assets\_Scripts\Vision.cs" />
      <Compile Include="Assets\_Scripts\Walker.cs" />
+     <Compile Include="Assets\_Scripts\ZeroGravObjectMover.cs" />
      <Compile Include="Assets\_Scripts\cursor.cs" />
      <Compile Include="Assets\_Scripts\displayText.cs" />
      <Compile Include="Assets\_Scripts\lightOnOff.cs" />
@@ -122,9 +124,11 @@
      <Compile Include="Assets\_Scripts\playerAnimator.cs" />
      <Compile Include="Assets\_Scripts\playerStealth.cs" />
      <Compile Include="Assets\_Scripts\rotateToMouse.cs" />
+     <Compile Include="Assets\_Scripts\sweeperLaser.cs" />
      <Compile Include="Assets\_Scripts\triggerToBox.cs" />
      <Compile Include="Assets\_Scripts\triggerToLight.cs" />
      <Compile Include="Assets\_Scripts\zeroGravMovement.cs" />
+     <Compile Include="Assets\disableLaser.cs" />
      <None Include="Assets\_Materials\Temp.txt" />
      <None Include="Assets\_Scripts\Temp.txt" />
      <None Include="Assets\_Prefabs\Temp.txt" />
