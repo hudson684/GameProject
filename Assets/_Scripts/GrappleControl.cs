@@ -95,7 +95,7 @@ public class GrappleControl : MonoBehaviour {
 		mousePosition = cursor.transform.position;
 
 
-		if (Input.GetMouseButtonDown(0)){
+		if (Input.GetMouseButtonDown(0) && Time.timeScale != 0f){
 
 			if(!grappling){
 				if (!madeLast && !shooting) {

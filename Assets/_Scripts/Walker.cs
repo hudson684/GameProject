@@ -162,6 +162,8 @@ public class Walker : MonoBehaviour {
 
 				velocity = this.GetComponent<Rigidbody2D> ().velocity;
 
+				shouldFlip(moveDirection);
+
 				if (moveDirection.magnitude < GoalMargine) {
 					currentPoint++;
 				} else {
@@ -237,6 +239,39 @@ public class Walker : MonoBehaviour {
 	}
 
 
+	private void shouldFlip(Vector3 direction){
+		if (curRotInt == RIGHT) {
+			if(direction.x < 0f){
+				bodyControl.Rotate(new Vector3(0f, 180f, 0f));
+				UpdateRotation(LEFT);
+				curRotInt = LEFT;
+			}
+		} else if (curRotInt == LEFT) {
+			if(direction.x > 0f){
+				bodyControl.Rotate(new Vector3(0f, 180f, 0f));
+				UpdateRotation(RIGHT);
+				curRotInt = RIGHT;
+			}
+
+		} else if (curRotInt == UP) {
+			if(direction.y > 0f){
+				bodyControl.Rotate(new Vector3(180f, 0f, 0f));
+				UpdateRotation(DOWN);
+				curRotInt = DOWN;
+			}
+
+		} else if (curRotInt == DOWN) {
+			if(direction.y < 0f){
+				bodyControl.Rotate(new Vector3(180f, 0f, 0f));
+				UpdateRotation(UP);
+				curRotInt = UP;
+			}
+
+		}
+
+	}
+	
+
 	private IEnumerator countDown(){
 
 
@@ -264,22 +299,6 @@ public class Walker : MonoBehaviour {
 		return false;
 		
 	}
-
-
-	
-	private void flipWalker(bool leftRight){
-		if (leftRight) {
-
-			bodyControl.Rotate(new Vector3(0f, 180f, 0f));
-		} else {
-
-			bodyControl.Rotate(new Vector3(180f, 0f, 0f));
-		}
-
-
-	}
-
-
 
 	private void moveForward(){
 
