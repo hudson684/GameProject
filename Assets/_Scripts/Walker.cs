@@ -141,6 +141,7 @@ public class Walker : MonoBehaviour {
 		}
 
 		stopped = checkStoppedTest ();
+		lightControl ();
 		                                                       
 		if (!collisionAhead () && shouldNotTurnBackwards ()) {
 
@@ -246,10 +247,10 @@ public class Walker : MonoBehaviour {
 
 	private void lightControl(){
 		if (counterClockwise) {
-			lightHolder.transform.rotation= Quaternion.Euler(new Vector3 (0, 270, 0));
+			lightHolder.transform.rotation = Quaternion.Euler(new Vector3 (0f, 0f, 0f));
 
 		} else {
-			lightHolder.transform.rotation = Quaternion.Euler(new Vector3 (0, 270, 180));
+			lightHolder.transform.rotation = Quaternion.Euler(new Vector3 (0f, 0f, 180f));
 
 		}
 

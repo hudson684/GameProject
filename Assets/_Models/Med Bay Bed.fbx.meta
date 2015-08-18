@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 15d5ead4f2b8e344d97418e672432662
+timeCreated: 1439894866
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: MedBay_base_1
+    100004: MedBay_base_2
+    100006: MedBay_bed
+    100008: MedBay_bed_base
+    100010: MedBay_bottom_cushion
+    100012: MedBay_head_cushion
+    100014: MedBay_mid_cushion
+    100016: MedBay_ring
+    100018: MedBay_ring_base_1
+    100020: MedBay_ring_base_2
+    400000: //RootNode
+    400002: MedBay_base_1
+    400004: MedBay_base_2
+    400006: MedBay_bed
+    400008: MedBay_bed_base
+    400010: MedBay_bottom_cushion
+    400012: MedBay_head_cushion
+    400014: MedBay_mid_cushion
+    400016: MedBay_ring
+    400018: MedBay_ring_base_1
+    400020: MedBay_ring_base_2
+    2300000: MedBay_base_1
+    2300002: MedBay_base_2
+    2300004: MedBay_bed
+    2300006: MedBay_bed_base
+    2300008: MedBay_bottom_cushion
+    2300010: MedBay_head_cushion
+    2300012: MedBay_mid_cushion
+    2300014: MedBay_ring
+    2300016: MedBay_ring_base_1
+    2300018: MedBay_ring_base_2
+    3300000: MedBay_base_1
+    3300002: MedBay_base_2
+    3300004: MedBay_bed
+    3300006: MedBay_bed_base
+    3300008: MedBay_bottom_cushion
+    3300010: MedBay_head_cushion
+    3300012: MedBay_mid_cushion
+    3300014: MedBay_ring
+    3300016: MedBay_ring_base_1
+    3300018: MedBay_ring_base_2
+    4300000: MedBay_base_1
+    4300002: MedBay_base_2
+    4300004: MedBay_ring_base_1
+    4300006: MedBay_ring
+    4300008: MedBay_bed_base
+    4300010: MedBay_bed
+    4300012: MedBay_bottom_cushion
+    4300014: MedBay_mid_cushion
+    4300016: MedBay_head_cushion
+    4300018: MedBay_ring_base_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
