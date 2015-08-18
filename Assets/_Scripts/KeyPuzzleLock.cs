@@ -33,6 +33,7 @@ public class KeyPuzzleLock : MonoBehaviour {
 		if (other.gameObject.tag == "KeyPuzzleKey") {
 			Debug.Log("the key is in the hole");
 			child = other.gameObject;
+			child.GetComponent<Rigidbody2D>().fixedAngle = true;
 		}
 
 	}
