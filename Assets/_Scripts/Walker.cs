@@ -13,6 +13,7 @@ public class Walker : MonoBehaviour {
 	public Material normal;
 	
 	private DynamicLight light2D;
+	public GameObject lightHolder;
 	
 	private bool triggered = false;
 	private bool patroling = true;
@@ -25,6 +26,8 @@ public class Walker : MonoBehaviour {
 	private float slowSpeedForward = 2f;
 	public bool loop = false;
 	public float jumpFactor = 5f;
+
+	private bool counterClockwise = true;
 
 	/// <summary>
 	/// The minimum drop that is needed to decide to rotate the oposite direction 
@@ -85,7 +88,7 @@ public class Walker : MonoBehaviour {
 
 		col = this.GetComponent<BoxCollider2D> ();
 
-		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
+		light2D = (DynamicLight) lightHolder.GetComponentInChildren(typeof(DynamicLight));
 		light2D.setMainMaterial(normal);
 		
 		//finds all the childern of the patroler (for use in player detection);
@@ -128,7 +131,7 @@ public class Walker : MonoBehaviour {
 			{{0,-1,-1},             {0,-1,-1},           {-90,LEFT,DOWNGRAV},  {90,LEFT, UPGRAV}} //left grav
 		};
 	}
-
+	
 	void Update(){
 		//Debug.Log ("rotate oposite check: " + shouldNotTurnBackwards().ToString());
 
@@ -163,6 +166,8 @@ public class Walker : MonoBehaviour {
 				velocity = this.GetComponent<Rigidbody2D> ().velocity;
 
 				shouldFlip(moveDirection);
+
+				Debug.Log("current point: " + currentPoint.ToString());
 
 				if (moveDirection.magnitude < GoalMargine) {
 					currentPoint++;
@@ -239,32 +244,57 @@ public class Walker : MonoBehaviour {
 	}
 
 
+	private void lightControl(){
+		if (counterClockwise) {
+			lightHolder.transform.rotation= Quaternion.Euler(new Vector3 (0, 270, 0));
+
+		} else {
+			lightHolder.transform.rotation = Quaternion.Euler(new Vector3 (0, 270, 180));
+
+		}
+
+	}
+
+
+
+
 	private void shouldFlip(Vector3 direction){
+		Debug.Log("direction: " + direction.ToString());
+
 		if (curRotInt == RIGHT) {
 			if(direction.x < 0f){
+				Debug.Log("flipped left");
 				bodyControl.Rotate(new Vector3(0f, 180f, 0f));
 				UpdateRotation(LEFT);
 				curRotInt = LEFT;
+				counterClockwise = !counterClockwise;
+
 			}
 		} else if (curRotInt == LEFT) {
 			if(direction.x > 0f){
+				Debug.Log("flipped right");
 				bodyControl.Rotate(new Vector3(0f, 180f, 0f));
 				UpdateRotation(RIGHT);
 				curRotInt = RIGHT;
+				counterClockwise = !counterClockwise;
 			}
 
 		} else if (curRotInt == UP) {
-			if(direction.y > 0f){
+			if(direction.y < 0f){
+				Debug.Log("flipped down");
 				bodyControl.Rotate(new Vector3(180f, 0f, 0f));
 				UpdateRotation(DOWN);
 				curRotInt = DOWN;
+				counterClockwise = !counterClockwise;
 			}
 
 		} else if (curRotInt == DOWN) {
-			if(direction.y < 0f){
+			if(direction.y > 0f){
+				Debug.Log("flipped up");
 				bodyControl.Rotate(new Vector3(180f, 0f, 0f));
 				UpdateRotation(UP);
 				curRotInt = UP;
+				counterClockwise = !counterClockwise;
 			}
 
 		}

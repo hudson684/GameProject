@@ -2,22 +2,21 @@
 using System.Collections;
 
 public class AICamera : MonoBehaviour {
-	private Transform[] hitBarrier;
-	public LayerMask toHit;
-	
-	public bool changeColour = true;
 
-	public GameObject lightBox;
-	private Light cameraLight;
+	public LayerMask toHit;
+
 	public Transform camHead;
 
-	public GameObject bullet;
+	public GameObject origin;
+	public GameObject target;
 
 	public Material alert;
 
-	private DynamicLight light2D;
+	public DynamicLight light2D;
 
 	public float waitTime = 0.1f;
+
+	private GameObject player;
 
 
 	public float maxSwing = -90f;
@@ -26,11 +25,10 @@ public class AICamera : MonoBehaviour {
 	private int swingPoint = 0;
 	private Vector3 rotation;
 
+	public GameObject[] nodes;
+
 	public float swingSpeed = 2f;
-
-
-	private Color green = Color.green;
-	private Color red = Color.red;
+	
 
 	private bool triggered = false;
 	private bool active = true;
@@ -42,11 +40,7 @@ public class AICamera : MonoBehaviour {
 	void Start () {
 		swingPoints = new float[2] {maxSwing, minSwing};
 
-		//light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
-		hitBarrier = transform.GetComponentsInChildren<Transform>();
-
-		//cameraLight = lightBox.GetComponent<Light>();
-		//spotLight = spot.GetComponent<Light>();
+		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
 	}
 	
 	
@@ -61,11 +55,7 @@ public class AICamera : MonoBehaviour {
 
 			if (foundPlayer () && !triggered) {
 
-				Debug.Log ("should change colour now");
-				if (changeColour) {
-					light2D.setMainMaterial(alert);
-				}
-				//shootAtPlayer();
+				light2D.setMainMaterial(alert);
 				StartCoroutine ("waitSeconds");
 			}
 		} 
@@ -80,23 +70,12 @@ public class AICamera : MonoBehaviour {
 			float nextPoint = swingPoints [swingPoint];
 			float rotationDirection = nextPoint - camHead.transform.rotation.eulerAngles.x;
 
-
-			Debug.Log("current x: " + camHead.transform.rotation.eulerAngles.x.ToString());
-			Debug.Log("next point leway min: " + (rotationDirection - 5f).ToString());
-			Debug.Log("next point leway max: " + (rotationDirection + 5f).ToString());
-
-			//rotation = camHead.transform.rotation.eulerAngles;
-			
 			if (camHead.transform.rotation.eulerAngles.x >= nextPoint - 5f && camHead.transform.rotation.eulerAngles.x <= nextPoint + 5f) {
-				Debug.Log("dont need to do anything");
+				//Debug.Log("dont need to do anything");
 				swingPoint++;
 			} else {
 				camHead.Rotate(new Vector3(((rotationDirection) / 100f) * swingSpeed, 0f, 0f)); 
 
-				//Debug.Log("rotation of x: " + rotation.x.ToString());
-				Debug.Log("next point dev 10: " + (((rotationDirection) / 100f) * swingSpeed).ToString());
-
-				//Debug.Log((0f + -9).ToString());
 			} 
 		} else {
 			swingPoint = 0;
@@ -104,14 +83,11 @@ public class AICamera : MonoBehaviour {
 
 
 
-		//camHead.Rotate (rotation.x, 0f, 0f);
-
 	}
 
 	
 	IEnumerator waitSeconds(){
 		triggered = true;
-		//yield return null;
 		yield return new WaitForSeconds(waitTime);
 		Debug.Log ("shootingPlayer");
 		shootAtPlayer();
@@ -122,54 +98,40 @@ public class AICamera : MonoBehaviour {
 		if (foundPlayer ()) {
 			triggered = true;
 			Debug.Log ("shooting at player");
-			StartCoroutine ("seekDestroy");	
 
-			if (changeColour) {
-				cameraLight.color = green;
-			}
+
+			target.SetActive(true);
+			target.transform.position = player.transform.position;
+
+			origin.SetActive(true);
+
+
 		} else {
 			Debug.Log("missed");
 			triggered = false;
-			if (changeColour) {
-				cameraLight.color = green;
-			}
+
 		}
 	}
 
 	
 
-
-
-	IEnumerator seekDestroy(){
-		GameObject instaKill = Instantiate(bullet,this.transform.position, this.transform.rotation) as GameObject;
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-		float t = 0.0f;
-
-
-		while (t < 1){
-			t += 0.1f;
-			instaKill.transform.position = Vector3.Lerp(this.transform.position,player.transform.position, t);
-			
-			yield return null;
-		}
-		triggered = false;
-
-	}
-
+	
 	bool foundPlayer(){
-		for(int i = 0; i < (hitBarrier.Length -1); i++){
-			if(hitBarrier[i].tag == "CameraNodes"){
-				float distance = Vector3.Distance(this.transform.position, hitBarrier[i].position);
-				
-				RaycastHit2D hit = Physics2D.Raycast (this.transform.position, (hitBarrier[i].position - this.transform.position), distance, toHit);
-				
-				if(hit.collider != null){
-					if(hit.collider.tag == "Player"){
-						return true;
-					} 
+
+		Debug.Log ("trying to find the player");
+		for(int i = 0; i < (nodes.Length -1); i++){
+			float distance = Vector3.Distance(camHead.transform.position, nodes[i].transform.position);
+			
+			RaycastHit2D hit = Physics2D.Raycast (camHead.transform.position, (nodes[i].transform.position - camHead.transform.position), distance, toHit);
+			
+			if(hit.collider != null){
+				if(hit.collider.tag == "Player"){
+					Debug.Log("found player");
+					player = hit.collider.gameObject;
+					return true;
 				} 
-			}
+			} 
+			
 		}
 		return false;
 	}
@@ -178,17 +140,9 @@ public class AICamera : MonoBehaviour {
 	void activation(){
 
 		if (active) {
-			if (changeColour) {
-				//cameraLight.color = green;
-
-				//light2D.gameObject.SetActive(true);
-			}
+			light2D.gameObject.SetActive(true);
 		} else {
-			if (changeColour) {
-				//cameraLight.color = Color.black;
-				//light2D.gameObject.SetActive(false);
-			}
-
+			light2D.gameObject.SetActive(false);
 		}
 	}
 

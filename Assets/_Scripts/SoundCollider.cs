@@ -16,15 +16,14 @@ public class SoundCollider : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log("should work");
-		if (other.tag == "Player") {
-			Debug.Log("should work");
+		if (other.tag == "Player" && !objectAudio.isPlaying) {
+
 			objectAudio.PlayOneShot(audEnter);
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){
-		if (other.tag == "Player") {
+		if (other.tag == "Player" && !objectAudio.isPlaying) {
 			objectAudio.PlayOneShot(audExit);
 		}
 	}

@@ -124,6 +124,7 @@
      <Compile Include="Assets\_Scripts\playerAnimator.cs" />
      <Compile Include="Assets\_Scripts\playerStealth.cs" />
      <Compile Include="Assets\_Scripts\rotateToMouse.cs" />
+     <Compile Include="Assets\_Scripts\soundTriggered.cs" />
      <Compile Include="Assets\_Scripts\sweeperLaser.cs" />
      <Compile Include="Assets\_Scripts\triggerToBox.cs" />
      <Compile Include="Assets\_Scripts\triggerToLight.cs" />
