@@ -1,0 +1,139 @@
+fileFormatVersion: 2
+guid: 02c751c7dbdb4f244ba1df0b2c8ea4df
+timeCreated: 1439907445
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: EC_main
+    100002: EC_rollerdoor_1
+    100004: EC_rollerdoor_10
+    100006: EC_rollerdoor_11
+    100008: EC_rollerdoor_12
+    100010: EC_rollerdoor_2
+    100012: EC_rollerdoor_3
+    100014: EC_rollerdoor_4
+    100016: EC_rollerdoor_5
+    100018: EC_rollerdoor_6
+    100020: EC_rollerdoor_7
+    100022: EC_rollerdoor_8
+    100024: EC_rollerdoor_9
+    100026: EC_side
+    100028: //RootNode
+    400000: EC_main
+    400002: EC_rollerdoor_1
+    400004: EC_rollerdoor_10
+    400006: EC_rollerdoor_11
+    400008: EC_rollerdoor_12
+    400010: EC_rollerdoor_2
+    400012: EC_rollerdoor_3
+    400014: EC_rollerdoor_4
+    400016: EC_rollerdoor_5
+    400018: EC_rollerdoor_6
+    400020: EC_rollerdoor_7
+    400022: EC_rollerdoor_8
+    400024: EC_rollerdoor_9
+    400026: EC_side
+    400028: //RootNode
+    2300000: EC_main
+    2300002: EC_rollerdoor_1
+    2300004: EC_rollerdoor_10
+    2300006: EC_rollerdoor_11
+    2300008: EC_rollerdoor_12
+    2300010: EC_rollerdoor_2
+    2300012: EC_rollerdoor_3
+    2300014: EC_rollerdoor_4
+    2300016: EC_rollerdoor_5
+    2300018: EC_rollerdoor_6
+    2300020: EC_rollerdoor_7
+    2300022: EC_rollerdoor_8
+    2300024: EC_rollerdoor_9
+    2300026: EC_side
+    3300000: EC_main
+    3300002: EC_rollerdoor_1
+    3300004: EC_rollerdoor_10
+    3300006: EC_rollerdoor_11
+    3300008: EC_rollerdoor_12
+    3300010: EC_rollerdoor_2
+    3300012: EC_rollerdoor_3
+    3300014: EC_rollerdoor_4
+    3300016: EC_rollerdoor_5
+    3300018: EC_rollerdoor_6
+    3300020: EC_rollerdoor_7
+    3300022: EC_rollerdoor_8
+    3300024: EC_rollerdoor_9
+    3300026: EC_side
+    4300000: EC_main
+    4300002: EC_side
+    4300004: EC_rollerdoor_1
+    4300006: EC_rollerdoor_2
+    4300008: EC_rollerdoor_3
+    4300010: EC_rollerdoor_4
+    4300012: EC_rollerdoor_5
+    4300014: EC_rollerdoor_6
+    4300016: EC_rollerdoor_7
+    4300018: EC_rollerdoor_8
+    4300020: EC_rollerdoor_9
+    4300022: EC_rollerdoor_10
+    4300024: EC_rollerdoor_11
+    4300026: EC_rollerdoor_12
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 4
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

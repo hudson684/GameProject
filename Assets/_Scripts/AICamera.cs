@@ -68,13 +68,13 @@ public class AICamera : MonoBehaviour {
 
 			//Debug.Log("should be rotating");
 			float nextPoint = swingPoints [swingPoint];
-			float rotationDirection = nextPoint - camHead.transform.rotation.eulerAngles.x;
+			float rotationDirection = nextPoint - camHead.transform.rotation.eulerAngles.z;
 
-			if (camHead.transform.rotation.eulerAngles.x >= nextPoint - 5f && camHead.transform.rotation.eulerAngles.x <= nextPoint + 5f) {
+			if (camHead.transform.rotation.eulerAngles.z >= nextPoint - 5f && camHead.transform.rotation.eulerAngles.z <= nextPoint + 5f) {
 				//Debug.Log("dont need to do anything");
 				swingPoint++;
 			} else {
-				camHead.Rotate(new Vector3(((rotationDirection) / 100f) * swingSpeed, 0f, 0f)); 
+				camHead.Rotate(new Vector3(0f, 0f,((rotationDirection) / 100f) * swingSpeed)); 
 
 			} 
 		} else {

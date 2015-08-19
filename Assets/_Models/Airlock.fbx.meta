@@ -1,0 +1,105 @@
+fileFormatVersion: 2
+guid: 40bc1f546b5b9864f9a1a1814c64d45b
+timeCreated: 1439907459
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Airlock_door
+    100004: Airlock_door_open
+    100006: Airlock_frame
+    100008: Airlock_handle
+    100010: Airlock_hinge1a
+    100012: Airlock_hinge_1b
+    100014: Airlock_hinge_2a
+    100016: Airlock_hinge_2b
+    400000: //RootNode
+    400002: Airlock_door
+    400004: Airlock_door_open
+    400006: Airlock_frame
+    400008: Airlock_handle
+    400010: Airlock_hinge1a
+    400012: Airlock_hinge_1b
+    400014: Airlock_hinge_2a
+    400016: Airlock_hinge_2b
+    2300000: Airlock_door
+    2300002: Airlock_frame
+    2300004: Airlock_handle
+    2300006: Airlock_hinge1a
+    2300008: Airlock_hinge_1b
+    2300010: Airlock_hinge_2a
+    2300012: Airlock_hinge_2b
+    3300000: Airlock_door
+    3300002: Airlock_frame
+    3300004: Airlock_handle
+    3300006: Airlock_hinge1a
+    3300008: Airlock_hinge_1b
+    3300010: Airlock_hinge_2a
+    3300012: Airlock_hinge_2b
+    4300000: Airlock_frame
+    4300002: Airlock_hinge_1b
+    4300004: Airlock_hinge_2b
+    4300006: Airlock_hinge1a
+    4300008: Airlock_door
+    4300010: Airlock_hinge_2a
+    4300012: Airlock_handle
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
