@@ -313,7 +313,7 @@ public class GrappleControl : MonoBehaviour {
 
 
 	public void reduce(){
-		if (ropeLength > 2) {
+		if (ropeLength > 2 && !shooting) {
 			GameObject grappleEnd = ropeArr [ropeLength - 1];
 			Destroy(grappleEnd);
 			ropeLength--;

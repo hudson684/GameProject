@@ -66,7 +66,8 @@ public class soundTriggered : MonoBehaviour {
 		
 		if (stay) {
 			if (other.tag == "Player" && !objectAudio.isPlaying) {
-				objectAudio.PlayOneShot (soundStay, soundScale);
+				objectAudio.PlayOneShot (soundStay);
+				objectAudio.volume = soundScale;
 			}
 		}
 	}

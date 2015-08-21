@@ -108,11 +108,14 @@
      <Compile Include="Assets\_Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\_Scripts\ProxyLaser.cs" />
      <Compile Include="Assets\_Scripts\RandomSound.cs" />
+     <Compile Include="Assets\_Scripts\Socket.cs" />
      <Compile Include="Assets\_Scripts\SoundCollider.cs" />
      <Compile Include="Assets\_Scripts\Sweep.cs" />
      <Compile Include="Assets\_Scripts\Swivel.cs" />
      <Compile Include="Assets\_Scripts\TeleportCamera.cs" />
      <Compile Include="Assets\_Scripts\TimerLaser.cs" />
+     <Compile Include="Assets\_Scripts\TriggerDisplayText.cs" />
+     <Compile Include="Assets\_Scripts\TriggerKey.cs" />
      <Compile Include="Assets\_Scripts\Vision.cs" />
      <Compile Include="Assets\_Scripts\Walker.cs" />
      <Compile Include="Assets\_Scripts\ZeroGravObjectMover.cs" />

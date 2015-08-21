@@ -247,10 +247,10 @@ public class Walker : MonoBehaviour {
 
 	private void lightControl(){
 		if (counterClockwise) {
-			lightHolder.transform.rotation = Quaternion.Euler(new Vector3 (0f, 0f, 0f));
+			lightHolder.transform.localRotation = Quaternion.Euler(new Vector3 (0f, 270f, 0f));
 
 		} else {
-			lightHolder.transform.rotation = Quaternion.Euler(new Vector3 (0f, 0f, 180f));
+			lightHolder.transform.localRotation = Quaternion.Euler(new Vector3 (0f, 270f, 180f));
 
 		}
 
