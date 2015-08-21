@@ -3,18 +3,16 @@ using System.Collections;
 
 public class playerStealth : MonoBehaviour {
 
-	public GameObject playerObject;
-	public bool isStealthed = false;
-
+	private GameObject playerObject;
+	private bool isStealthed = false;
+	public float waitTime = 0.5f;
 
 
 	void Update(){
 
-		if (Input.GetKeyDown(KeyCode.G)) {
+		if (Input.GetKeyDown(KeyCode.F)) {
 			if (isStealthed) {
-				Debug.Log("untealth");
-				isStealthed = false;
-				playerObject.SetActive(true);
+				StartCoroutine("wait");
 			}
 			
 		}
@@ -24,14 +22,26 @@ public class playerStealth : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 
-		if (Input.GetKeyDown(KeyCode.G)) {
+		if (Input.GetKeyDown(KeyCode.F)) {
 			if (!isStealthed) {
-				Debug.Log("Stealth");
-				isStealthed = true;
-				playerObject.SetActive(false);
+				if(other.tag == "Player"){
+					Debug.Log("stealth");
+					playerObject = other.gameObject;
+					StartCoroutine("wait");
+				}
 			} 
 			
 		}
+	}
+
+
+
+	IEnumerator wait(){
+
+		playerObject.SetActive(isStealthed);
+		yield return new WaitForSeconds (waitTime);
+		isStealthed = !isStealthed;
+
 	}
 
 
