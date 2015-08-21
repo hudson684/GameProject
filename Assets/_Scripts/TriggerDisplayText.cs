@@ -14,7 +14,7 @@ public class TriggerDisplayText : MonoBehaviour {
 
 	void Update(){
 		if(inRange){
-			if(Input.GetKey(KeyCode.F)){
+			if(Input.GetKeyDown(KeyCode.F)){
 				toggleCanvas();
 			}
 		}

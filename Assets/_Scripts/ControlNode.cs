@@ -4,6 +4,11 @@ using UnityEngine;
 public class ControlNode : MonoBehaviour
 {
 	bool paused = false;
+	Canvas pauseCanvas;
+
+	void Start(){
+		pauseCanvas = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<Canvas>();
+	}
 	
 	void Update()
 	{
@@ -11,7 +16,8 @@ public class ControlNode : MonoBehaviour
 			paused = togglePause ();
 		}
 	}
-	
+
+	/*
 	void OnGUI()
 	{
 		if(paused)
@@ -38,26 +44,43 @@ public class ControlNode : MonoBehaviour
 		}
 	}
 
-	void save(){
+	*/
+
+	public void save(){
 		PlayerPrefs.SetString("SaveLevelKey", Application.loadedLevelName);
 	}
 
-	void load(){
+	public void load(){
 		Application.LoadLevel(PlayerPrefs.GetString("SaveLevelKey"));
 		paused = togglePause();
 	}
-	
+
+	public void restart(){
+		Application.LoadLevel(Application.loadedLevel);
+		unpause ();
+	}
+
+	public void quit(){
+		Application.LoadLevel(0);
+	}
+
 	bool togglePause()
 	{
 		if(Time.timeScale == 0f)
 		{
+			pauseCanvas.enabled = false;
 			Time.timeScale = 1f;
 			return(false);
 		}
 		else
 		{
+			pauseCanvas.enabled = true;
 			Time.timeScale = 0f;
 			return(true);    
 		}
+	}
+
+	public void unpause(){
+		paused = togglePause();
 	}
 }
