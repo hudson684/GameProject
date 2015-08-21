@@ -102,6 +102,7 @@
      <Compile Include="Assets\_Scripts\ObjectGravity.cs" />
      <Compile Include="Assets\_Scripts\Occluder.cs" />
      <Compile Include="Assets\_Scripts\OcclusionManager.cs" />
+     <Compile Include="Assets\_Scripts\OxigenLight.cs" />
      <Compile Include="Assets\_Scripts\Partol.cs" />
      <Compile Include="Assets\_Scripts\PlayerControl.cs" />
      <Compile Include="Assets\_Scripts\PlayerDetection.cs" />
@@ -122,6 +123,7 @@
      <Compile Include="Assets\_Scripts\cursor.cs" />
      <Compile Include="Assets\_Scripts\displayText.cs" />
      <Compile Include="Assets\_Scripts\lightOnOff.cs" />
+     <Compile Include="Assets\_Scripts\noOxigen.cs" />
      <Compile Include="Assets\_Scripts\objSpawn.cs" />
      <Compile Include="Assets\_Scripts\objectOnOff.cs" />
      <Compile Include="Assets\_Scripts\playCutscene.cs" />

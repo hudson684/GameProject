@@ -28,7 +28,7 @@ public class KeyPuzzleNode : MonoBehaviour {
 		}
 
 		unlocked = temp;
-		Debug.Log ("Unlocked: " + unlocked);
+		//Debug.Log ("Unlocked: " + unlocked);
 	}
 	
 
