@@ -117,6 +117,7 @@
      <Compile Include="Assets\_Scripts\TimerLaser.cs" />
      <Compile Include="Assets\_Scripts\TriggerDisplayText.cs" />
      <Compile Include="Assets\_Scripts\TriggerKey.cs" />
+     <Compile Include="Assets\_Scripts\TriggerLockControls.cs" />
      <Compile Include="Assets\_Scripts\Vision.cs" />
      <Compile Include="Assets\_Scripts\Walker.cs" />
      <Compile Include="Assets\_Scripts\ZeroGravObjectMover.cs" />

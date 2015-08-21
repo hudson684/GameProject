@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class playerStealth : MonoBehaviour {
@@ -33,6 +33,11 @@ public class playerStealth : MonoBehaviour {
 			
 		}
 	}
+
+
+
+
+
 
 
 

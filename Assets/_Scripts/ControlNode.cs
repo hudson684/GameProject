@@ -6,6 +6,11 @@ public class ControlNode : MonoBehaviour
 	bool paused = false;
 	Canvas pauseCanvas;
 
+	private static bool canGrapple = true;
+	
+	private static bool canZeroGravMove = true;
+
+
 	void Start(){
 		pauseCanvas = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<Canvas>();
 	}
@@ -16,6 +21,27 @@ public class ControlNode : MonoBehaviour
 			paused = togglePause ();
 		}
 	}
+
+
+
+	public void setCanGrapple(bool value){
+		canGrapple = value;
+	} 
+
+	public bool getCanGrapple(){
+		return canGrapple;
+	}
+
+	
+	public void setZeroGrav(bool value){
+		canZeroGravMove = value;
+	} 
+	
+	public bool getZeroGrav(){
+		return canZeroGravMove;
+	}
+
+
 
 	/*
 	void OnGUI()

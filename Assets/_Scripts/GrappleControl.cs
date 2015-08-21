@@ -49,6 +49,10 @@ public class GrappleControl : MonoBehaviour {
 	private int ropeLength = 0;
 	private GameObject[] ropeArr;
 
+	private GameObject deathNodeObject;
+	private ControlNode contNode;
+
+
 	private bool madeLast = false;
 	private bool grappling = false;
 
@@ -72,6 +76,11 @@ public class GrappleControl : MonoBehaviour {
 	
 		//layers that the grapple cannot hit
 		playerLayer = 1 << LayerMask.NameToLayer("Player");
+
+		//initialize contact with the deathnode
+		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
+		contNode = (ControlNode) deathNodeObject.GetComponent(typeof(ControlNode));
+
 	
 	}
 
@@ -91,46 +100,50 @@ public class GrappleControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		firePointPosition = new Vector3 (transform.position.x, transform.position.y, 0);
-		mousePosition = cursor.transform.position;
+		if (contNode.getCanGrapple()) {
 
 
-		if (Input.GetMouseButtonDown(0) && Time.timeScale != 0f){
+			firePointPosition = new Vector3 (transform.position.x, transform.position.y, 0);
+			mousePosition = cursor.transform.position;
 
-			if(!grappling){
-				if (!madeLast && !shooting) {
 
-					shooting = true;
-					StartCoroutine("Shoot");
-					grappling = false;					
+			if (Input.GetMouseButtonDown (0) && Time.timeScale != 0f) {
+
+				if (!grappling) {
+					if (!madeLast && !shooting) {
+
+						shooting = true;
+						StartCoroutine ("Shoot");
+						grappling = false;					
 			
-				} else if ((madeLast && !retracting)){
+					} else if ((madeLast && !retracting)) {
 
 
+						retracting = true;
+						grappling = true;
+						StartCoroutine ("retract");
+					
+						grappling = false;
+						player.setGrappling (false);
+					}
+
+				}
+			}
+
+
+			if (playerKilled) {
+				if (madeLast && !retracting) {
 					retracting = true;
 					grappling = true;
-					StartCoroutine("retract");
-					
+					StartCoroutine ("retract");
+				
 					grappling = false;
-					player.setGrappling(false);
+					player.setGrappling (false);
+
 				}
 
-			}
-		}
-
-
-		if (playerKilled) {
-			if(madeLast && !retracting){
-				retracting = true;
-				grappling = true;
-				StartCoroutine("retract");
-				
-				grappling = false;
-				player.setGrappling(false);
 
 			}
-
-
 		}
 		
 	}

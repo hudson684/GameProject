@@ -21,6 +21,7 @@ public class PlayerControl : MonoBehaviour {
 	//the objects that the player will need to interact with
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
+	private ControlNode contNode;
 
 	private GameObject CheckPointMarker;
 	private Grounded groundedCode;
@@ -63,7 +64,7 @@ public class PlayerControl : MonoBehaviour {
 		//initialize contact with the deathnode
 		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
 		deathNode = (DeathNode) deathNodeObject.GetComponent(typeof(DeathNode));
-
+		contNode = (ControlNode) deathNodeObject.GetComponent(typeof(ControlNode));
 
 
 		//CROUCHING SETUP
@@ -84,10 +85,13 @@ public class PlayerControl : MonoBehaviour {
 
 		if (!deathNode.getDeath()) {
 			if (!isGrappling) {
-				if (currentGravity == FULL_GRAVITY)
+				if (currentGravity == FULL_GRAVITY){
 					normalMovement ();
-				else
-					ZeroGravMovement ();
+				}else{
+					if(contNode.getZeroGrav()){
+						ZeroGravMovement();
+					}
+				}
 			} else {
 				grapleMovement ();
 			}	
