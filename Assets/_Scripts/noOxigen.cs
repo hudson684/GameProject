@@ -13,8 +13,6 @@ public class noOxigen : MonoBehaviour {
 	private DeathNode deathNode;
 	public AudioClip soundBreath;
 	private AudioSource objectAudio;
-	
-	private OxigenLight oxLight;
 
 
 	// Use this for initialization
@@ -39,8 +37,7 @@ public class noOxigen : MonoBehaviour {
 		if (other.tag == "Player") {
 			Debug.Log("start death");
 			StartCoroutine("slowDeath");
-			Transform tempOx = other.gameObject.transform.FindChild("Light");
-			oxLight = (OxigenLight) tempOx.GetComponent(typeof(OxigenLight));
+
 		}
 
 
@@ -50,7 +47,6 @@ public class noOxigen : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player") {
 			StopCoroutine ("slowDeath");
-			oxLight.setThreatLevel (oxLight.NORMAL);
 		}
 	}
 
@@ -79,18 +75,6 @@ public class noOxigen : MonoBehaviour {
 			if(i == timeTillDeath){
 				deathNode.setDeath(true);
 			}
-
-
-			if(i < timeTillDeath / 2){
-				oxLight.setThreatLevel (oxLight.MEDIUM);
-
-			} else if (i >= timeTillDeath / 2 && i < timeTillDeath - (timeTillDeath / 3)){
-				oxLight.setThreatLevel (oxLight.HIGH);
-
-			} else {
-				oxLight.setThreatLevel (oxLight.INSANE);
-			}
-
 
 		}
 	}
