@@ -83,6 +83,8 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		CurrentSetting ();
 
+		contNode.setPlayerPosition (this.transform);
+
 		if (!deathNode.getDeath()) {
 			if (!isGrappling) {
 				if (currentGravity == FULL_GRAVITY){

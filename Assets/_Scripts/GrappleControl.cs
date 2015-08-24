@@ -81,7 +81,7 @@ public class GrappleControl : MonoBehaviour {
 		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
 		contNode = (ControlNode) deathNodeObject.GetComponent(typeof(ControlNode));
 
-	
+		contNode.setGrappleDistance (maxGrappleDisance);
 	}
 
 

@@ -10,9 +10,16 @@ public class ControlNode : MonoBehaviour
 	
 	private static bool canZeroGravMove = true;
 
+	private Transform playerPosition;
+	private float grappleDistance;
+
+
+
 
 	void Start(){
 		pauseCanvas = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<Canvas>();
+		
+	
 	}
 	
 	void Update()
@@ -41,36 +48,31 @@ public class ControlNode : MonoBehaviour
 		return canZeroGravMove;
 	}
 
-
-
-	/*
-	void OnGUI()
-	{
-		if(paused)
-		{
-			GUILayout.Label("Game is paused!");
-			if(GUILayout.Button("Unpause")){
-				paused = togglePause();
-			}
-
-
-			if(GUILayout.Button("Save")){
-				save();
-			}
-
-
-			if(GUILayout.Button("Load")){
-				load();
-			}
-
-			if(GUILayout.Button("Exit")){
-				Application.Quit();
-			}
-
-		}
+	public void setPlayerPosition(Transform value){
+		playerPosition = value;
+	} 
+	
+	public Transform getPlayerPosition(){
+		return playerPosition;
 	}
 
-	*/
+	
+	public void setGrappleDistance(float value){
+		grappleDistance = value;
+	} 
+	
+	public float getGrappleDistance(){
+		return grappleDistance;
+	}
+	
+
+	
+
+
+
+
+
+
 
 	public void save(){
 		PlayerPrefs.SetString("SaveLevelKey", Application.loadedLevelName);
