@@ -11,6 +11,7 @@ public class cursor : MonoBehaviour {
 	public Sprite normal;
 	public Sprite toFar; 
 
+	private bool isOn = true;
 
 	// Use this for initialization
 	void Awake () {
@@ -32,15 +33,20 @@ public class cursor : MonoBehaviour {
 		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3 (mousex ,mousey ,10));
 		transform.position = mousePosition;
 
+		isOn = contNode.getCanGrapple ();
+		this.GetComponent<SpriteRenderer>().enabled = isOn;
 
 
-		if (Vector3.Distance (this.transform.position, contNode.getPlayerPosition ().position) > contNode.getGrappleDistance ()) {
+		if (isOn) {
 
-			this.GetComponent<SpriteRenderer>().sprite = toFar;
-			Debug.Log ("too far");
-		} else {
-			this.GetComponent<SpriteRenderer>().sprite = normal;
-		}
+			if (Vector3.Distance (this.transform.position, contNode.getPlayerPosition ().position) > contNode.getGrappleDistance ()) {
+
+				this.GetComponent<SpriteRenderer> ().sprite = toFar;
+				Debug.Log ("too far");
+			} else {
+				this.GetComponent<SpriteRenderer> ().sprite = normal;
+			}
+		} 
 
 	}
 
