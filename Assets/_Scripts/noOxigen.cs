@@ -14,6 +14,9 @@ public class noOxigen : MonoBehaviour {
 	public AudioClip soundBreath;
 	private AudioSource objectAudio;
 
+	public int firstTime = 2;
+	public int secondTime = 4;
+	
 
 	// Use this for initialization
 	void Awake () {
@@ -57,13 +60,13 @@ public class noOxigen : MonoBehaviour {
 		for (int i = 0; i <= timeTillDeath; i++) {
 			yield return new WaitForSeconds(0.3f);
 
-			if(i > (timeTillDeath / 2)){
+			if(i > timeTillDeath - (timeTillDeath / firstTime)){
 
 				objectAudio.PlayOneShot(soundBreath);
 			}
 			yield return new WaitForSeconds(0.3f);
 			
-			if(i > timeTillDeath - (timeTillDeath / 3)){
+			if(i > timeTillDeath - (timeTillDeath / secondTime)){
 				
 				objectAudio.PlayOneShot(soundBreath);
 			}
