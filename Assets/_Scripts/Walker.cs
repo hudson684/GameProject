@@ -9,6 +9,8 @@ public class Walker : MonoBehaviour {
 	private Transform[] hitBarrier;
 	public LayerMask toHit;
 
+	public bool shouldPathfind = true;
+
 	public Material alert;
 	public Material normal;
 	
@@ -188,7 +190,7 @@ public class Walker : MonoBehaviour {
 			this.GetComponent<Rigidbody2D> ().velocity = velocity;
 		} else {
 
-			if (shouldNotJump ()) {
+			if (shouldNotJump () && shouldPathfind ) {
 				//rotate to the new axis
 				//Debug.Log("Shouldn't Jump");
 
@@ -198,7 +200,7 @@ public class Walker : MonoBehaviour {
 				}
 
 
-			} else if (collisionAhead ()) {
+			} else if (collisionAhead () && shouldPathfind) {
 				//Debug.Log("Should Jump");
 
 				//rotated = true; //TODO: replace this with a better bool
@@ -212,17 +214,14 @@ public class Walker : MonoBehaviour {
 				}
 			                                                    
 
-			} else if (!shouldNotTurnBackwards ()) {
+			} else if (!shouldNotTurnBackwards () && shouldPathfind) {
 
 				if (!rotated) {
 					rotated = true;
 					rotateWalkerOposite ();
 				}
 
-			}// else if (reverseFlip ()) {
-			//	this.transform.Rotate (180f, 0, 0);
-			//}
-
+			}
 		}
 
 		this.GetComponent<Rigidbody2D> ().velocity += downWardsForce;
