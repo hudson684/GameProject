@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: b18238ad8411aae43b515bafd158de41
+timeCreated: 1440437870
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Door
+    100002: Door_Left
+    100004: Door_Right
+    100006: //RootNode
+    100008: IrisDoor_dGrp1
+    100010: IrisDoor_dGrp2
+    100012: IrisDoor_dGrp3
+    100014: IrisDoor_dGrp4
+    100016: IrisDoor_dGrp5
+    100018: IrisDoor_dGrp6
+    100020: IrisDoor_dGrp7
+    100022: IrisDoor_dGrp8
+    100024: IrisDoor_Door
+    100026: IrisDoor_step
+    100028: IrisDoor_triangle1
+    100030: IrisDoor_triangle2
+    100032: IrisDoor_triangle3
+    100034: IrisDoor_triangle4
+    100036: IrisDoor_triangle5
+    100038: IrisDoor_triangle6
+    100040: IrisDoor_triangle7
+    100042: IrisDoor_triangle8
+    400000: Door
+    400002: Door_Left
+    400004: Door_Right
+    400006: //RootNode
+    400008: IrisDoor_dGrp1
+    400010: IrisDoor_dGrp2
+    400012: IrisDoor_dGrp3
+    400014: IrisDoor_dGrp4
+    400016: IrisDoor_dGrp5
+    400018: IrisDoor_dGrp6
+    400020: IrisDoor_dGrp7
+    400022: IrisDoor_dGrp8
+    400024: IrisDoor_Door
+    400026: IrisDoor_step
+    400028: IrisDoor_triangle1
+    400030: IrisDoor_triangle2
+    400032: IrisDoor_triangle3
+    400034: IrisDoor_triangle4
+    400036: IrisDoor_triangle5
+    400038: IrisDoor_triangle6
+    400040: IrisDoor_triangle7
+    400042: IrisDoor_triangle8
+    2300000: Door_Left
+    2300002: Door_Right
+    2300004: IrisDoor_Door
+    2300006: IrisDoor_step
+    2300008: IrisDoor_triangle1
+    2300010: IrisDoor_triangle2
+    2300012: IrisDoor_triangle3
+    2300014: IrisDoor_triangle4
+    2300016: IrisDoor_triangle5
+    2300018: IrisDoor_triangle6
+    2300020: IrisDoor_triangle7
+    2300022: IrisDoor_triangle8
+    3300000: Door_Left
+    3300002: Door_Right
+    3300004: IrisDoor_Door
+    3300006: IrisDoor_step
+    3300008: IrisDoor_triangle1
+    3300010: IrisDoor_triangle2
+    3300012: IrisDoor_triangle3
+    3300014: IrisDoor_triangle4
+    3300016: IrisDoor_triangle5
+    3300018: IrisDoor_triangle6
+    3300020: IrisDoor_triangle7
+    3300022: IrisDoor_triangle8
+    4300000: Door_Left
+    4300002: Door_Right
+    4300004: IrisDoor_Door
+    4300006: IrisDoor_step
+    4300008: IrisDoor_triangle8
+    4300010: IrisDoor_triangle7
+    4300012: IrisDoor_triangle6
+    4300014: IrisDoor_triangle5
+    4300016: IrisDoor_triangle4
+    4300018: IrisDoor_triangle3
+    4300020: IrisDoor_triangle2
+    4300022: IrisDoor_triangle1
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
