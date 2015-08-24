@@ -23,6 +23,7 @@ public class blinkSprites : MonoBehaviour {
 
 	IEnumerator blink(){
 		yield return new WaitForSeconds(blinkTime);
+		boolean = !boolean
 	}
 
 }
