@@ -223,7 +223,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 
-		if (Input.GetKeyDown(KeyCode.LeftControl)){
+		if (Input.GetButton("Crouch")){
 			isCrouched = !isCrouched;
 
 			if(isCrouched){
@@ -323,7 +323,7 @@ public class PlayerControl : MonoBehaviour {
 		if (Input.GetKey(KeyCode.Space)) {
 			grapple.reduce ();
 		}
-		if (Input.GetKey(KeyCode.LeftControl)) {
+		if (Input.GetButton("Crouch")) {
 			grapple.add ();
 		}
 		

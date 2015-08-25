@@ -32,7 +32,7 @@ public class Mantle : MonoBehaviour {
 				playerCont.setMantling(mantling);
 			}
 			
-			if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetMouseButtonDown(0)){
+			if(Input.GetButton("Crouch") || Input.GetMouseButtonDown(0)){
 				player.transform.position = mantleFall;
 				mantling = false;
 				playerCont.setMantling(mantling);
