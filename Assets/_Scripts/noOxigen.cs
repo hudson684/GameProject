@@ -16,7 +16,14 @@ public class noOxigen : MonoBehaviour {
 
 	public int firstTime = 2;
 	public int secondTime = 4;
-	
+
+	//For Drone Track
+	private AudioSource droneSource;
+	public AudioClip breathing;
+	public AudioClip drone;
+
+	//For Random Sounds
+	private GameObject randomAudioGenerator;
 
 	// Use this for initialization
 	void Awake () {
@@ -26,6 +33,9 @@ public class noOxigen : MonoBehaviour {
 		deathNode = (DeathNode) deathNodeObject.GetComponent(typeof(DeathNode));
 
 		objectAudio = GetComponent<AudioSource>();
+		droneSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+
+		randomAudioGenerator = GameObject.Find("SoundEffects");
 
 	}
 	
@@ -40,7 +50,8 @@ public class noOxigen : MonoBehaviour {
 		if (other.tag == "Player") {
 			Debug.Log("start death");
 			StartCoroutine("slowDeath");
-
+			droneSource.clip = breathing;
+			randomAudioGenerator.SetActive(false);
 		}
 
 
@@ -50,6 +61,9 @@ public class noOxigen : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player") {
 			StopCoroutine ("slowDeath");
+			droneSource.clip = drone;
+			droneSource.Play();
+			randomAudioGenerator.SetActive(true);
 		}
 	}
 
@@ -69,6 +83,9 @@ public class noOxigen : MonoBehaviour {
 			if(i > timeTillDeath - (timeTillDeath / secondTime)){
 				
 				objectAudio.PlayOneShot(soundBreath);
+				if(!droneSource.isPlaying){
+					droneSource.Play();
+				}
 			}
 
 			yield return new WaitForSeconds(0.3f);
@@ -76,6 +93,7 @@ public class noOxigen : MonoBehaviour {
 			objectAudio.PlayOneShot(soundBreath);
 
 			if(i == timeTillDeath){
+				droneSource.Pause();
 				deathNode.setDeath(true);
 			}
 
