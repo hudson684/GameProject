@@ -75,6 +75,8 @@ public class PlayerControl : MonoBehaviour {
 		fullOffset = box.offset;
 		crouchedOffset = new Vector2 (box.offset.x, 0.5f);
 
+		contNode.setPlayerPosition (this.transform);
+
 	}
 
 
