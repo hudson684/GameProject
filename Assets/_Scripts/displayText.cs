@@ -17,8 +17,8 @@ public class displayText : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D other && Display != null){
-		if(other.tag == "Player"){
+	void OnTriggerExit2D(Collider2D other){
+		if(other.tag == "Player" && Display != null){
 			Display.enabled = false;
 		}
 	}
