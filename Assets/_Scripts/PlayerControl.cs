@@ -50,7 +50,7 @@ public class PlayerControl : MonoBehaviour {
 	private Quaternion rotation = Quaternion.identity;
 
 	
-	void Start(){
+	void Awake(){
 		//find the checkpoint marker and send the player to it
 		CheckPointMarker = GameObject.FindGameObjectWithTag ("CheckPointMarker");
 		this.transform.position = CheckPointMarker.transform.position;
@@ -75,7 +75,7 @@ public class PlayerControl : MonoBehaviour {
 		fullOffset = box.offset;
 		crouchedOffset = new Vector2 (box.offset.x, 0.5f);
 
-		contNode.setPlayerPosition (this.transform);
+		contNode.setPlayerPosition (this.transform.position);
 
 	}
 
@@ -85,7 +85,7 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		CurrentSetting ();
 
-		contNode.setPlayerPosition (this.transform);
+		contNode.setPlayerPosition (this.transform.position);
 
 		if (!deathNode.getDeath()) {
 			if (!isGrappling) {
@@ -143,8 +143,6 @@ public class PlayerControl : MonoBehaviour {
 	//it also wont detect the grapple objects, thought it shouldnt in the first place (just in case)
 	void OnCollisionEnter2D(Collision2D other){
 		if (other.relativeVelocity.y < fallDamageAt && other.collider.tag != "Grapple"){
-			Debug.Log ("dead at: " + other.relativeVelocity.y.ToString ());
-			Debug.Log ("Killed by: " + other.collider.tag.ToString());
 			deathNode.setDeath(true);
 		}
 
@@ -174,7 +172,6 @@ public class PlayerControl : MonoBehaviour {
 		heldObject.layer = LayerMask.NameToLayer ("Player");
 		isHolding = true;
 
-		Debug.Log ("started holding");
 	}
 
 	private void keepHoldingOn(){
@@ -186,9 +183,6 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	private void stopHoldingOn(){
-		Debug.Log ("Stopped Holding");
-
-
 		heldObject.tag = tempHeldLayer;
 		heldObject.layer = LayerMask.NameToLayer ("Object");
 		heldObject.transform.SetParent (null);
@@ -273,8 +267,6 @@ public class PlayerControl : MonoBehaviour {
 		
 		if(Input.GetKey(KeyCode.W))
 		{
-
-			Debug.Log("should add up force");
 			GetComponent<Rigidbody2D>().AddForce (Vector2.up * jetpackSpeed);
 		}
 		if(Input.GetKey(KeyCode.S))
@@ -292,7 +284,6 @@ public class PlayerControl : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Q))
 		{
 			GetComponent<Rigidbody2D>().AddTorque(rotateSpeed);
-			Debug.Log("adding torque");
 		}
 		if(Input.GetKey(KeyCode.E))
 		{
@@ -335,7 +326,6 @@ public class PlayerControl : MonoBehaviour {
 		if (currentGravity == FULL_GRAVITY) {
 
 			if(isGrounded){
-				Debug.Log("Is grounded and grappling");
 				if (Input.GetKey(KeyCode.A)) {
 					GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
 					isLeft = true;
@@ -355,7 +345,6 @@ public class PlayerControl : MonoBehaviour {
 					transform.rotation = rotation;
 				}
 			} else {
-				Debug.Log("Is not grounded and grappling");
 				if (Input.GetKey (KeyCode.A)) {
 					GetComponent<Rigidbody2D> ().AddForce (Vector2.right * -grappleSpeed);
 				}

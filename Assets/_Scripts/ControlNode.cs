@@ -10,14 +10,14 @@ public class ControlNode : MonoBehaviour
 	
 	private static bool canZeroGravMove = true;
 
-	private Transform playerPosition;
+	private Vector3 playerPosition;
 	private float grappleDistance;
 
 
 
 
 	void Start(){
-		pauseCanvas = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<Canvas>();
+		pauseCanvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
 		
 	
 	}
@@ -48,11 +48,11 @@ public class ControlNode : MonoBehaviour
 		return canZeroGravMove;
 	}
 
-	public void setPlayerPosition(Transform value){
+	public void setPlayerPosition(Vector3 value){
 		playerPosition = value;
 	} 
 	
-	public Transform getPlayerPosition(){
+	public Vector3 getPlayerPosition(){
 		return playerPosition;
 	}
 

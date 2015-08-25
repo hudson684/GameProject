@@ -39,10 +39,9 @@ public class cursor : MonoBehaviour {
 
 		if (isOn) {
 
-			if (Vector3.Distance (this.transform.position, contNode.getPlayerPosition ().position) > contNode.getGrappleDistance ()) {
+			if (Vector3.Distance (this.transform.position, contNode.getPlayerPosition ()) > contNode.getGrappleDistance ()) {
 
 				this.GetComponent<SpriteRenderer> ().sprite = toFar;
-				Debug.Log ("too far");
 			} else {
 				this.GetComponent<SpriteRenderer> ().sprite = normal;
 			}

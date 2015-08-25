@@ -52,6 +52,8 @@ public class GrappleControl : MonoBehaviour {
 	private GameObject deathNodeObject;
 	private ControlNode contNode;
 
+	private bool deletedObject = false;
+
 
 	private bool madeLast = false;
 	private bool grappling = false;
@@ -266,16 +268,34 @@ public class GrappleControl : MonoBehaviour {
 				HingeJoint2D grappleHinge = ropeArr[0].GetComponent<HingeJoint2D> ();
 				grappleHinge.enabled = true;
 
-				if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Object")){
-					grappleHinge.connectedBody = hit.collider.attachedRigidbody;
-					objName = hit.collider.name;
+				if(hit.collider == null){
+					Debug.Log("box is null");
+					deletedObject = true;
+
 				} else {
-					grappleHinge.connectedAnchor = hit.point;
+					if(hit.collider.gameObject.tag == "Object"){
+
+
+						grappleHinge.connectedBody = hit.collider.attachedRigidbody;
+						objName = hit.collider.name;
+
+					} else {
+						grappleHinge.connectedAnchor = hit.point;
+					}
 				}
 				madeLast = true;
 			}
 
 			shooting = false;
+
+			if(deletedObject){
+				grappling = false;
+				player.setGrappling(false);
+				shooting = false;
+
+				StartCoroutine("retract");
+			}
+
 		} else {
 			playerAudio.PlayOneShot(audError);
 

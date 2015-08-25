@@ -89,7 +89,6 @@ public class AICamera : MonoBehaviour {
 	IEnumerator waitSeconds(){
 		triggered = true;
 		yield return new WaitForSeconds(waitTime);
-		Debug.Log ("shootingPlayer");
 		shootAtPlayer();
 	}
 	
@@ -97,7 +96,6 @@ public class AICamera : MonoBehaviour {
 	void shootAtPlayer(){
 		if (foundPlayer ()) {
 			triggered = true;
-			Debug.Log ("shooting at player");
 
 
 			target.SetActive(true);
@@ -107,7 +105,6 @@ public class AICamera : MonoBehaviour {
 
 
 		} else {
-			Debug.Log("missed");
 			triggered = false;
 
 		}
@@ -118,7 +115,6 @@ public class AICamera : MonoBehaviour {
 	
 	bool foundPlayer(){
 
-		Debug.Log ("trying to find the player");
 		for(int i = 0; i < (nodes.Length -1); i++){
 			float distance = Vector3.Distance(camHead.transform.position, nodes[i].transform.position);
 			
@@ -126,7 +122,6 @@ public class AICamera : MonoBehaviour {
 			
 			if(hit.collider != null){
 				if(hit.collider.tag == "Player"){
-					Debug.Log("found player");
 					player = hit.collider.gameObject;
 					return true;
 				} 
