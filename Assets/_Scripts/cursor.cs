@@ -30,6 +30,11 @@ public class cursor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
+		contNode = (ControlNode) deathNodeObject.GetComponent(typeof(ControlNode));
+
+
 		float mousex = Input.mousePosition.x;
 		float mousey = Input.mousePosition.y;
 		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3 (mousex ,mousey ,10));
@@ -37,6 +42,8 @@ public class cursor : MonoBehaviour {
 
 		isOn = contNode.getCanGrapple ();
 		this.GetComponent<SpriteRenderer>().enabled = isOn;
+
+		Debug.Log("cursor recieved players location to be : " + contNode.getPlayerPosition().ToString());
 
 		disFromPlayer = Vector3.Distance (this.transform.position, contNode.getPlayerPosition ());
 
