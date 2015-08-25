@@ -75,6 +75,8 @@ public class PlayerControl : MonoBehaviour {
 		fullOffset = box.offset;
 		crouchedOffset = new Vector2 (box.offset.x, 0.5f);
 
+
+		Debug.Log ("sent player position off");
 		contNode.setPlayerPosition (this.transform.position);
 
 	}
@@ -85,6 +87,8 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		CurrentSetting ();
 
+
+		Debug.Log ("sent player position off at position: " + this.transform.position.ToString());
 		contNode.setPlayerPosition (this.transform.position);
 
 		if (!deathNode.getDeath()) {

@@ -58,6 +58,12 @@ public class AICamera : MonoBehaviour {
 				light2D.setMainMaterial(alert);
 				StartCoroutine ("waitSeconds");
 			}
+
+			if(triggered){
+
+				target.transform.position = player.transform.position;
+			}
+
 		} 
 	}
 

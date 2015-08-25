@@ -49,6 +49,7 @@ public class ControlNode : MonoBehaviour
 	}
 
 	public void setPlayerPosition(Vector3 value){
+		Debug.Log ("set player position: " + value.ToString());
 		playerPosition = value;
 	} 
 	

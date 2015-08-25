@@ -44,26 +44,18 @@ public class Mantle : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "MantleCorner") {
 
-			Debug.Log("should mantle");
-			mantlePosition = other.transform.position;
-			Transform child = other.transform.GetChild(0);
-			Transform child2 = other.transform.GetChild(1);
-			endPosition = child.transform.position;
-			mantleFall = child2.transform.position;
-			
-			
-			if(playerCont.getIsGrappling()){
-				if(Input.GetKeyDown(KeyCode.F)){
-					mantling = true;
-					playerCont.setMantling(mantling);
-				}
-				
-			} else {
+			if(Input.GetKeyDown(KeyCode.F)){
+				Debug.Log("should mantle");
+				mantlePosition = other.transform.position;
+				Transform child = other.transform.GetChild(0);
+				Transform child2 = other.transform.GetChild(1);
+				endPosition = child.transform.position;
+				mantleFall = child2.transform.position;
+
 				mantling = true;
 				playerCont.setMantling(mantling);			
 			}
-		}
-		
+		}	
 	}
 	
 }

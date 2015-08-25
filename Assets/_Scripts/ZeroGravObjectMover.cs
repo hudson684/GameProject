@@ -11,10 +11,8 @@ public class ZeroGravObjectMover : MonoBehaviour {
 	public Vector2 directionOfForce;
 
 	void OnTriggerStay2D(Collider2D other){
-		Debug.Log ("something has entered");
 
-		if (other.gameObject.layer == LayerMask.NameToLayer ("Object")) {
-			Debug.Log("should be adding force");
+		if (other.gameObject.GetComponent<Rigidbody2D>() != null) {
 			other.gameObject.GetComponent<Rigidbody2D>().AddForce(directionOfForce);
 		}
 	}

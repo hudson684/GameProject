@@ -76,6 +76,7 @@
      <Compile Include="Assets\_Scripts\AICamera.cs" />
      <Compile Include="Assets\_Scripts\Aimoving.cs" />
      <Compile Include="Assets\_Scripts\BoxControlelr.cs" />
+     <Compile Include="Assets\_Scripts\CamFollowPlayer.cs" />
      <Compile Include="Assets\_Scripts\CheckPoint.cs" />
      <Compile Include="Assets\_Scripts\CheckPointMaker.cs" />
      <Compile Include="Assets\_Scripts\ControlNode.cs" />
@@ -121,6 +122,7 @@
      <Compile Include="Assets\_Scripts\Vision.cs" />
      <Compile Include="Assets\_Scripts\Walker.cs" />
      <Compile Include="Assets\_Scripts\ZeroGravObjectMover.cs" />
+     <Compile Include="Assets\_Scripts\blinkSprites.cs" />
      <Compile Include="Assets\_Scripts\cursor.cs" />
      <Compile Include="Assets\_Scripts\displayText.cs" />
      <Compile Include="Assets\_Scripts\lightOnOff.cs" />

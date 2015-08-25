@@ -13,6 +13,8 @@ public class cursor : MonoBehaviour {
 
 	private bool isOn = true;
 
+	private float disFromPlayer;
+
 	// Use this for initialization
 	void Awake () {
 		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
@@ -36,10 +38,11 @@ public class cursor : MonoBehaviour {
 		isOn = contNode.getCanGrapple ();
 		this.GetComponent<SpriteRenderer>().enabled = isOn;
 
+		disFromPlayer = Vector3.Distance (this.transform.position, contNode.getPlayerPosition ());
 
 		if (isOn) {
 
-			if (Vector3.Distance (this.transform.position, contNode.getPlayerPosition ()) > contNode.getGrappleDistance ()) {
+			if (disFromPlayer > contNode.getGrappleDistance ()) {
 
 				this.GetComponent<SpriteRenderer> ().sprite = toFar;
 			} else {
@@ -47,6 +50,11 @@ public class cursor : MonoBehaviour {
 			}
 		} 
 
+	}
+
+	public float getDistance(){
+
+		return disFromPlayer;
 	}
 
 
