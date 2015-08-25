@@ -14,8 +14,11 @@ public class disableLaser : MonoBehaviour {
 			//Player can access key
 			if(Input.GetKey(KeyCode.F)){
 				for(int i = 0; i< effectedSweepers.Length; i++){
-					effectedSweepers[i].toggleOff();
+					if(effectedSweepers[i] != null){
+						effectedSweepers[i].toggleOff();
+					}
 				}
+
 			}
 		}
 	}

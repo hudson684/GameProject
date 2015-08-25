@@ -12,12 +12,12 @@ public class displayText : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag == "Player"){
+		if(other.tag == "Player" && Display != null){
 			Display.enabled = true;
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D other){
+	void OnTriggerExit2D(Collider2D other && Display != null){
 		if(other.tag == "Player"){
 			Display.enabled = false;
 		}
