@@ -14,7 +14,7 @@ public class CheckPoint : MonoBehaviour {
 		deathNode = (DeathNode) deathNodeObject.GetComponent(typeof(DeathNode));
 	}
 
-	void OnTriggerExit2D (Collider2D other) {
+	void OnTriggerEnter2D (Collider2D other) {
 
 		if (other.tag == "Player") {
 			Debug.Log("hit by player");

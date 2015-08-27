@@ -40,8 +40,6 @@ public class CamFollowPlayer : MonoBehaviour {
 		{
 			Vector3 point = this.GetComponent<Camera>().WorldToViewportPoint(target.position);
 
-			Debug.Log(cursorCode.getDistance().ToString());
-
 			if(cursorCode.getDistance() < distanceFromPlayer){
 
 				Vector3 delta = target.position - this.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));

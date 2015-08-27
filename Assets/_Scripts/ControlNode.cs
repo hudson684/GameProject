@@ -17,7 +17,7 @@ public class ControlNode : MonoBehaviour
 
 
 	void Start(){
-		pauseCanvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
+		pauseCanvas = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<Canvas>();
 		
 	
 	}
@@ -49,7 +49,6 @@ public class ControlNode : MonoBehaviour
 	}
 
 	public void setPlayerPosition(Vector3 value){
-		Debug.Log ("set player position: " + value.ToString());
 		playerPosition = value;
 	} 
 	

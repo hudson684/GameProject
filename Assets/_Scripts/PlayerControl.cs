@@ -76,7 +76,6 @@ public class PlayerControl : MonoBehaviour {
 		crouchedOffset = new Vector2 (box.offset.x, 0.5f);
 
 
-		Debug.Log ("sent player position off");
 		contNode.setPlayerPosition (this.transform.position);
 
 	}
@@ -87,8 +86,6 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		CurrentSetting ();
 
-
-		Debug.Log ("sent player position off at position: " + this.transform.position.ToString());
 		contNode.setPlayerPosition (this.transform.position);
 
 		if (!deathNode.getDeath()) {
@@ -215,12 +212,24 @@ public class PlayerControl : MonoBehaviour {
 		if (Input.GetKey(KeyCode.A)) {
 			GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
 			isLeft = true;
-		} 
-		
-		if (Input.GetKey(KeyCode.D)) {
+		} else if (Input.GetKey(KeyCode.D)) {
 			GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
 			isLeft = false;
 		}
+
+		
+		//CODE BY LIAM, rotates player left/right (note has to be seperate to normal a/d control because this only needs
+		//to happen once per pressing
+		if(Input.GetKeyDown("a") && !Input.GetKeyDown(KeyCode.D)){
+			rotation.eulerAngles = new Vector2(0,180);
+			transform.rotation = rotation;
+		} 
+
+		if(Input.GetKeyDown("d") && !Input.GetKeyDown(KeyCode.A)){
+			rotation.eulerAngles = new Vector2(0,0);
+			transform.rotation = rotation;
+		}
+
 
 
 		if (Input.GetButton("Crouch")){
@@ -236,19 +245,6 @@ public class PlayerControl : MonoBehaviour {
 				box.size = fullSize;
 				box.offset = fullOffset;
 			}
-		}
-
-
-
-		//CODE BY LIAM, rotates player left/right (note has to be seperate to normal a/d control because this only needs
-		//to happen once per pressing
-		if(Input.GetKeyDown("a")){
-			rotation.eulerAngles = new Vector2(0,180);
-			transform.rotation = rotation;
-		}
-		if(Input.GetKeyDown("d")){
-			rotation.eulerAngles = new Vector2(0,0);
-			transform.rotation = rotation;
 		}
 
 	}

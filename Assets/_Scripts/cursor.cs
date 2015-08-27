@@ -43,8 +43,6 @@ public class cursor : MonoBehaviour {
 		isOn = contNode.getCanGrapple ();
 		this.GetComponent<SpriteRenderer>().enabled = isOn;
 
-		Debug.Log("cursor recieved players location to be : " + contNode.getPlayerPosition().ToString());
-
 		disFromPlayer = Vector3.Distance (this.transform.position, contNode.getPlayerPosition ());
 
 		if (isOn) {
