@@ -109,6 +109,9 @@ public class PlayerControl : MonoBehaviour {
 
 	//WHILE THE PLAYER IS NOT DEAD, MOVE THE PLAYER UNDER THREE CATAGORIES; GRAPPLING, NORMAL GRAV AND ZERO GRAV
 	void Update () {
+
+		Debug.Log ("Is holding on: " + isHolding.ToString());
+
 		CurrentSetting ();
 
 		contNode.setPlayerPosition (this.transform.position);
@@ -198,16 +201,34 @@ public class PlayerControl : MonoBehaviour {
 			deathNode.setDeath(true);
 		}
 
-		GrappleControl grapple = (GrappleControl)this.GetComponentInChildren (typeof(GrappleControl));
 
-		if(isGrappling){
-			if(other.collider.gameObject.layer == LayerMask.NameToLayer("Object") && other.collider.name == grapple.getObjName() && currentGravity == ZERO_GRAVITY){
-				grapple.retractGrapple();
 
-				startHoldingOn(other.gameObject);
+	}
+
+	void OnCollisionStay2D(Collision2D other){
+		if (!isHolding) {
+			if(other.collider.tag == "Object"){
+				if(Input.GetButton("Interact")){
+
+					GrappleControl grapple = (GrappleControl)this.GetComponentInChildren (typeof(GrappleControl));
+					
+					if(isGrappling){
+						if(other.collider.name == grapple.getObjName()){
+							grapple.retractGrapple();
+							
+							startHoldingOn(other.gameObject);
+						}
+						
+					} else {
+
+						startHoldingOn(other.gameObject);
+					}
+
+					
+				}
 			}
-
 		}
+
 
 	}
 	
@@ -219,26 +240,47 @@ public class PlayerControl : MonoBehaviour {
 
 		obj.transform.SetParent (this.transform);
 		heldObject = obj;
-		tempHeldLayer = heldObject.tag;
-		heldObject.tag = "Player";
-		heldObject.layer = LayerMask.NameToLayer ("Player");
-		isHolding = true;
+		heldObject.GetComponent<Rigidbody2D> ().Sleep ();
+		//tempHeldLayer = heldObject.tag;
+		//heldObject.tag = "Player";
+		//heldObject.layer = LayerMask.NameToLayer ("Player");
+		StartCoroutine ("holdWait");
 
 	}
 
-	private void keepHoldingOn(){
-		float disX = 1f + ((heldObject.transform.lossyScale.x -1f)/ 2f);
-		float disY = 1f + ((heldObject.transform.lossyScale.y -1f)/ 2f);
 
-		heldObject.transform.localPosition = new Vector3 (disX, disY, 0f);
+	IEnumerator holdWait(){
+
+		yield return new WaitForSeconds (0.2f);
+		isHolding = true;
+	}
+
+	private void keepHoldingOn(){
+
+		float disX = 1f + ((heldObject.transform.lossyScale.x -1f)/ 3f);
+		float disY = 1f + ((heldObject.transform.lossyScale.y -1f)/ 3f);
+
+		if (heldObject != null) {
+			heldObject.transform.localPosition = new Vector3 (disX, disY, 0f);
+		}
+
+		if (isHolding) {
+			if(Input.GetButtonDown("Interact"))
+			{
+				stopHoldingOn();
+			}
+		}
+
 
 	}
 
 	private void stopHoldingOn(){
-		heldObject.tag = tempHeldLayer;
-		heldObject.layer = LayerMask.NameToLayer ("Object");
+		//heldObject.tag = tempHeldLayer;
+		//heldObject.layer = LayerMask.NameToLayer ("Object");
 		heldObject.transform.SetParent (null);
+		heldObject.GetComponent<Rigidbody2D> ().WakeUp ();
 		heldObject = null;
+		//StartCoroutine ("holdWait");
 		isHolding = false;
 	}
 
@@ -250,10 +292,10 @@ public class PlayerControl : MonoBehaviour {
 	// LEFT CTRL: Crouch
 	void normalMovement(){
 
-		if (isHolding) {
+		//if (isHolding) {
 
-			stopHoldingOn();
-		}
+		//	stopHoldingOn();
+		//}
 
 
 		if(Input.GetKeyDown(KeyCode.Space) && isGrounded && !isMantling){
@@ -287,7 +329,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 
-		if (Input.GetButtonDown("Crouch")){
+		if (Input.GetButtonDown("Crouch") || Input.GetKey(KeyCode.C)){
 			isCrouched = !isCrouched;
 			if(isCrouched){
 				moveSpeed = moveSpeed/2;
@@ -350,14 +392,8 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 
-		if (isHolding) {
-			if(Input.GetKeyDown(KeyCode.F))
-			{
-				stopHoldingOn();
-			}
-		}
-	}
 
+	}
 
 
 	//GRAPPLE MOVEMENT,
@@ -374,7 +410,7 @@ public class PlayerControl : MonoBehaviour {
 		if (Input.GetKey(KeyCode.Space)) {
 			grapple.reduce ();
 		}
-		if (Input.GetButton("Crouch")) {
+		if (Input.GetButton("Crouch") || Input.GetKey(KeyCode.C)) {
 			grapple.add ();
 		}
 		

@@ -342,6 +342,7 @@ public class GrappleControl : MonoBehaviour {
 
 		madeLast = false;
 		retracting = false;
+		player.setGrappling(false);
 	}
 
 
