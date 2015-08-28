@@ -72,7 +72,7 @@ public class Lock : MonoBehaviour {
 	/// </summary>
 	/// <returns><c>true</c> one or more keys are still locked
 	/// <c>false</c> all keys are ulocked</returns>
-	bool checkKeys(){
+	public bool checkKeys(){
 		for(int i = 0; i< Keys.Length; i++){
 			//'And'gate, only assesses as false if all keys are false
 			if(Keys[i].getLocked()){

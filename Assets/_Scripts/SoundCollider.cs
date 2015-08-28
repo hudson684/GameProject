@@ -5,20 +5,28 @@ public class SoundCollider : MonoBehaviour {
 
 	public AudioClip audEnter;
 	public AudioClip audExit;
+	public AudioClip audLocked;
 	AudioSource objectAudio;
 
-
+	private Lock lockComponent;
 
 
 	// Use this for initialization
 	void Start () {
 		objectAudio = GetComponent<AudioSource>();
+		if(GetComponentInParent<Lock>()){
+			lockComponent = GetComponentInParent<Lock>();
+		}
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player" && !objectAudio.isPlaying) {
 
-			objectAudio.PlayOneShot(audEnter);
+			if(lockComponent.checkKeys()){
+				objectAudio.PlayOneShot(audLocked);
+			}else{
+				objectAudio.PlayOneShot(audEnter);
+			}
 		}
 	}
 
