@@ -10,7 +10,7 @@ public class Mantle : MonoBehaviour {
 	
 	private Vector3 mantlePosition;
 	private Vector3 endPosition;
-	private Vector3 mantleFall;
+	//private Vector3 mantleFall;
 	
 	// Use this for initialization
 	void Start () {
@@ -33,7 +33,7 @@ public class Mantle : MonoBehaviour {
 			}
 			
 			if(Input.GetButton("Crouch") || Input.GetMouseButtonDown(0)){
-				player.transform.position = mantleFall;
+				//player.transform.position = mantleFall;
 				mantling = false;
 				playerCont.setMantling(mantling);
 			}
@@ -50,7 +50,7 @@ public class Mantle : MonoBehaviour {
 				Transform child = other.transform.GetChild(0);
 				Transform child2 = other.transform.GetChild(1);
 				endPosition = child.transform.position;
-				mantleFall = child2.transform.position;
+				//mantleFall = child2.transform.position;
 
 				mantling = true;
 				playerCont.setMantling(mantling);			

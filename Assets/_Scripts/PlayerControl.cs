@@ -46,6 +46,22 @@ public class PlayerControl : MonoBehaviour {
 	Vector2 fullOffset;
 	Vector2 crouchedOffset;
 
+	//animation variables
+	private Animator anim;
+	private AudioSource audioController;
+	public AudioClip[] clips;
+	private AudioClip currentClip;
+	private int jumpHash = Animator.StringToHash("Jump");
+	private int groundHash = Animator.StringToHash("Grounded");
+	private int speedHash = Animator.StringToHash("Speed");
+	private int crouchHash = Animator.StringToHash("Crouching");
+	private int Grappling = Animator.StringToHash("Grappling");
+	private int DeathHash = Animator.StringToHash("Dead");
+	private int interactHash = Animator.StringToHash("Interact");
+	private int Mantleing = Animator.StringToHash ("Mantleing");
+	private bool crouched = false;
+
+
 	//rotation variables
 	private Quaternion rotation = Quaternion.identity;
 
@@ -65,6 +81,9 @@ public class PlayerControl : MonoBehaviour {
 		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
 		deathNode = (DeathNode) deathNodeObject.GetComponent(typeof(DeathNode));
 		contNode = (ControlNode) deathNodeObject.GetComponent(typeof(ControlNode));
+
+		anim = GetComponent<Animator>();
+		audioController = GetComponent<AudioSource>();
 
 
 		//CROUCHING SETUP
@@ -107,6 +126,32 @@ public class PlayerControl : MonoBehaviour {
 			keepHoldingOn();
 		}
 
+		float move = Mathf.Abs(Input.GetAxis("Horizontal"));
+		
+		if(Input.GetKeyDown(KeyCode.Space)){
+			anim.SetTrigger (jumpHash);
+		}
+		
+		if(Input.GetKeyDown(KeyCode.Z)){
+			anim.SetTrigger(interactHash);
+		}
+		
+		
+		anim.SetFloat(speedHash,move);
+		anim.SetBool(groundHash, isGrounded);
+		anim.SetBool(Grappling, isGrappling);
+		anim.SetBool(Mantleing, isMantling);
+		anim.SetBool(crouchHash, isCrouched);
+		anim.SetBool(DeathHash, deathNode.getDeath());
+
+
+	}
+
+	void footFall(){
+		
+		currentClip = clips[Random.Range(0,2)];
+		audioController.clip = currentClip;
+		audioController.Play();
 	}
 
 

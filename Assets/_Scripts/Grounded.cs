@@ -7,7 +7,7 @@ public class Grounded : MonoBehaviour {
 	public bool isGrounded = false;
 
 	private void OnTriggerStay2D(Collider2D other){
-		if (other.tag == "Ground" || other.tag == "Platform" || other.tag == "Object") {
+		if (other.tag == "Ground" || other.tag == "Platform" || other.tag == "Object" || other.tag == "ShadowLayer") {
 			isGrounded = true;
 		}
 	}
