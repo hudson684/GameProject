@@ -247,7 +247,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .229472876
+        functionName: footFall
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 38f077fe4df5eaf458809f1f21137106,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: .748492122
+        functionName: footFall
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 38f077fe4df5eaf458809f1f21137106,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1675,7 +1691,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .50025177
+        functionName: footFall
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 38f077fe4df5eaf458809f1f21137106,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: footFall
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 38f077fe4df5eaf458809f1f21137106,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -3715,7 +3747,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .902451456
+        functionName: triggerMantleUp
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 38f077fe4df5eaf458809f1f21137106,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

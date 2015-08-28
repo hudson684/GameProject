@@ -54,12 +54,15 @@ public class PlayerControl : MonoBehaviour {
 	private int jumpHash = Animator.StringToHash("Jump");
 	private int groundHash = Animator.StringToHash("Grounded");
 	private int speedHash = Animator.StringToHash("Speed");
-	private int crouchHash = Animator.StringToHash("Crouching");
+	private int crouchHash = Animator.StringToHash("Crouched");
 	private int Grappling = Animator.StringToHash("Grappling");
-	private int DeathHash = Animator.StringToHash("Dead");
+	private int DeathHash = Animator.StringToHash("Death");
 	private int interactHash = Animator.StringToHash("Interact");
 	private int Mantleing = Animator.StringToHash ("Mantleing");
 	private bool crouched = false;
+
+	//mantle Variables
+	private Mantle mantleComponent;
 
 
 	//rotation variables
@@ -97,6 +100,9 @@ public class PlayerControl : MonoBehaviour {
 
 		contNode.setPlayerPosition (this.transform.position);
 
+		//Mantle Setup
+		mantleComponent = GetComponentInChildren<Mantle>();
+
 	}
 
 
@@ -126,22 +132,22 @@ public class PlayerControl : MonoBehaviour {
 			keepHoldingOn();
 		}
 
-		float move = Mathf.Abs(Input.GetAxis("Horizontal"));
+		//float move = Mathf.Abs(Input.GetAxis("Horizontal"));
 		
-		if(Input.GetKeyDown(KeyCode.Space)){
-			anim.SetTrigger (jumpHash);
-		}
+		/*	if(Input.GetKeyDown(KeyCode.Space)){
+				anim.SetTrigger (jumpHash);
+			} */
 		
 		if(Input.GetKeyDown(KeyCode.Z)){
 			anim.SetTrigger(interactHash);
 		}
 		
 		
-		anim.SetFloat(speedHash,move);
+		//anim.SetFloat(speedHash,move);
 		anim.SetBool(groundHash, isGrounded);
 		anim.SetBool(Grappling, isGrappling);
-		anim.SetBool(Mantleing, isMantling);
-		anim.SetBool(crouchHash, isCrouched);
+		//anim.SetBool(Mantleing, isMantling);
+		//anim.SetBool(crouchHash, isCrouched);
 		anim.SetBool(DeathHash, deathNode.getDeath());
 
 
@@ -250,16 +256,21 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 
-		if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
+		if(Input.GetKeyDown(KeyCode.Space) && isGrounded && !isMantling){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
+			anim.SetTrigger(jumpHash);
 		}
 
 		if (Input.GetKey(KeyCode.A)) {
 			GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
+			anim.SetFloat(speedHash,1f);
 			isLeft = true;
 		} else if (Input.GetKey(KeyCode.D)) {
 			GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
+			anim.SetFloat(speedHash,-1f);
 			isLeft = false;
+		}else{
+			anim.SetFloat(speedHash,0f);
 		}
 
 		
@@ -276,19 +287,18 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 
-
-		if (Input.GetButton("Crouch")){
+		if (Input.GetButtonDown("Crouch")){
 			isCrouched = !isCrouched;
-
 			if(isCrouched){
 				moveSpeed = moveSpeed/2;
 				box.size = crouchedSize;
 				box.offset = crouchedOffset;
-
+				anim.SetBool(crouchHash,isCrouched);
 			} else {
 				moveSpeed = moveSpeed*2;
 				box.size = fullSize;
 				box.offset = fullOffset;
+				anim.SetBool(crouchHash, isCrouched);
 			}
 		}
 
@@ -476,6 +486,10 @@ public class PlayerControl : MonoBehaviour {
 	//CODE BY LIAM, CHECKS TO SEE ORIENTATION OF PLAYER
 	public bool getLeft(){
 		return isLeft;
+	}
+
+	public void triggerMantleUp(){
+		mantleComponent.mantleUp();
 	}
 
 }

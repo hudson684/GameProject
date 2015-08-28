@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Mantle : MonoBehaviour {
-	
-	
+
+
 	private bool mantling;
 	private PlayerControl playerCont;
 	private GameObject player;
@@ -11,7 +11,16 @@ public class Mantle : MonoBehaviour {
 	private Vector3 mantlePosition;
 	private Vector3 endPosition;
 	//private Vector3 mantleFall;
-	
+
+	//Animation Controller
+	private Animator anim;
+	private int isMantleingHash = Animator.StringToHash("Mantling");
+	private int mantleUpHash = Animator.StringToHash("MantlePull");
+
+	void Awake(){
+		anim = GetComponentInParent<Animator>();
+	}
+
 	// Use this for initialization
 	void Start () {
 		player = this.transform.parent.gameObject;
@@ -21,15 +30,14 @@ public class Mantle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		anim.SetBool(isMantleingHash, mantling);
 		if (mantling){
 			
 			player.transform.position = mantlePosition;
 			player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 			
 			if(Input.GetKeyDown(KeyCode.Space)){
-				player.transform.position = endPosition;
-				mantling = false;
-				playerCont.setMantling(mantling);
+				anim.SetTrigger(mantleUpHash);
 			}
 			
 			if(Input.GetButton("Crouch") || Input.GetMouseButtonDown(0)){
@@ -40,6 +48,7 @@ public class Mantle : MonoBehaviour {
 		}
 	}
 	
+
 	//while in the mantle area set the position and end position of the mantle
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "MantleCorner") {
@@ -56,6 +65,14 @@ public class Mantle : MonoBehaviour {
 				playerCont.setMantling(mantling);			
 			}
 		}	
+	}
+
+	//for animation control
+	public void mantleUp(){
+		player.transform.position = endPosition;
+		mantling = false;
+		anim.SetBool(isMantleingHash, mantling);
+		playerCont.setMantling(mantling);
 	}
 	
 }
