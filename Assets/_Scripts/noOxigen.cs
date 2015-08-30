@@ -52,6 +52,7 @@ public class noOxigen : MonoBehaviour {
 			StartCoroutine("slowDeath");
 			droneSource.clip = breathing;
 			randomAudioGenerator.SetActive(false);
+			other.GetComponent<AudioSource>().mute = true;
 		}
 
 
@@ -64,6 +65,7 @@ public class noOxigen : MonoBehaviour {
 			droneSource.clip = drone;
 			droneSource.Play();
 			randomAudioGenerator.SetActive(true);
+			other.GetComponent<AudioSource>().mute = false;
 		}
 	}
 
