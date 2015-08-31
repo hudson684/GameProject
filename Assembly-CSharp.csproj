@@ -112,6 +112,7 @@
      <Compile Include="Assets\_Scripts\RandomSound.cs" />
      <Compile Include="Assets\_Scripts\Socket.cs" />
      <Compile Include="Assets\_Scripts\SoundCollider.cs" />
+     <Compile Include="Assets\_Scripts\SpriteToggle.cs" />
      <Compile Include="Assets\_Scripts\Sweep.cs" />
      <Compile Include="Assets\_Scripts\Swivel.cs" />
      <Compile Include="Assets\_Scripts\TeleportCamera.cs" />

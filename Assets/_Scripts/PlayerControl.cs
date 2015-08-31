@@ -45,6 +45,9 @@ public class PlayerControl : MonoBehaviour {
 	Vector2 crouchedSize;
 	Vector2 fullOffset;
 	Vector2 crouchedOffset;
+	bool shouldCrouch = false;
+	public float crouchDis = 0.2f;
+	public LayerMask crouchMask;
 
 	//animation variables
 	private Animator anim;
@@ -329,24 +332,58 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 
-		if (Input.GetButtonDown("Crouch") || Input.GetKey(KeyCode.C)){
+		if (Input.GetButtonDown("Crouch") || Input.GetKeyDown(KeyCode.C)){
 			isCrouched = !isCrouched;
 			if(isCrouched){
-				moveSpeed = moveSpeed/2;
-				box.size = crouchedSize;
-				box.offset = crouchedOffset;
-				anim.SetBool(crouchHash,isCrouched);
+				crouch();
 			} else {
-				moveSpeed = moveSpeed*2;
-				box.size = fullSize;
-				box.offset = fullOffset;
-				anim.SetBool(crouchHash, isCrouched);
+				if(!shouldCrouch){
+					uncrouch();
+				}
 			}
+		}
+
+		RaycastHit2D hit = Physics2D.Raycast (new Vector3(this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z), new Vector3 (0f, 1f, 0f), crouchDis, crouchMask);
+
+
+		if (hit.collider != null) {
+			Debug.Log ("should crouch");
+			Debug.Log(hit.collider.name.ToString());
+
+
+			if(!isCrouched){
+				shouldCrouch = true;
+				isCrouched = true;
+				crouch ();
+			}
+
+		} else {
+
+			shouldCrouch = false;
 		}
 
 	}
 
+	void OnDrawGizmos(){
+		Gizmos.DrawRay (new Vector3 (this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z), new Vector3 (0f, 1f, 0f));
+	}
 
+	void crouch(){
+		moveSpeed = moveSpeed/2;
+		box.size = crouchedSize;
+		box.offset = crouchedOffset;
+		anim.SetBool(crouchHash,isCrouched);
+		
+	} 
+	
+	void uncrouch(){
+		moveSpeed = moveSpeed*2;
+		box.size = fullSize;
+		box.offset = fullOffset;
+		anim.SetBool(crouchHash, isCrouched);
+	}
+	
+	
 	int doubleTapCounter = 0;
 	float doubleTapTimer = 0.5f;
 	

@@ -27,8 +27,9 @@ public class LevelLoad : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
 			control.enabled = false;
-			start = true;
 			Destroy(checkpoint);
+			start = true;
+
 		}
 	}
 

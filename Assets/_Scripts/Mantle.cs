@@ -35,12 +35,12 @@ public class Mantle : MonoBehaviour {
 			
 			player.transform.position = mantlePosition;
 			player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-			
-			if(Input.GetKeyDown(KeyCode.Space)){
+
+			if(Input.GetKeyDown(KeyCode.W)){
 				anim.SetTrigger(mantleUpHash);
 			}
 			
-			if(Input.GetButton("Crouch") || Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.C)){
+			if(Input.GetKeyDown(KeyCode.S)){
 				//player.transform.position = mantleFall;
 				mantling = false;
 				playerCont.setMantling(mantling);
@@ -53,7 +53,7 @@ public class Mantle : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "MantleCorner") {
 
-			if(Input.GetKeyDown(KeyCode.F)){
+			if(Input.GetKeyDown(KeyCode.W)){
 				Debug.Log("should mantle");
 				mantlePosition = other.transform.position;
 				Transform child = other.transform.GetChild(0);
