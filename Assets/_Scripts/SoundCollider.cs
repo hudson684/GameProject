@@ -32,7 +32,9 @@ public class SoundCollider : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player" && !objectAudio.isPlaying) {
-			objectAudio.PlayOneShot(audExit);
+			if(!lockComponent.checkKeys()){
+				objectAudio.PlayOneShot(audExit);
+			}
 		}
 	}
 }

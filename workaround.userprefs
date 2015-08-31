@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\noOxigen.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Lock.cs">
     <Files>
-      <File FileName="Assets\_Scripts\noOxigen.cs" Line="44" Column="2" />
+      <File FileName="Assets\_Scripts\Lock.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\noOxigen.cs" Line="70" Column="40" />
+      <File FileName="Assets\_Scripts\SoundCollider.cs" Line="36" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

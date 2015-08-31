@@ -23,7 +23,8 @@ public class noOxigen : MonoBehaviour {
 	public AudioClip drone;
 
 	//For Random Sounds
-	private GameObject randomAudioGenerator;
+	private AudioSource randomAudioGenerator;
+	private AudioSource randomAudioGeneratorNoOX;
 
 	// Use this for initialization
 	void Awake () {
@@ -35,8 +36,8 @@ public class noOxigen : MonoBehaviour {
 		objectAudio = GetComponent<AudioSource>();
 		droneSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
 
-		randomAudioGenerator = GameObject.Find("SoundEffects");
-
+		randomAudioGenerator = GameObject.Find("SoundEffects").GetComponent<AudioSource>();
+		randomAudioGeneratorNoOX = GameObject.Find("noOXsoundEffects").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -51,7 +52,8 @@ public class noOxigen : MonoBehaviour {
 			Debug.Log("start death");
 			StartCoroutine("slowDeath");
 			droneSource.clip = breathing;
-			randomAudioGenerator.SetActive(false);
+			randomAudioGenerator.mute = true;
+			randomAudioGeneratorNoOX.mute = false;
 			other.GetComponent<AudioSource>().mute = true;
 		}
 
@@ -64,7 +66,8 @@ public class noOxigen : MonoBehaviour {
 			StopCoroutine ("slowDeath");
 			droneSource.clip = drone;
 			droneSource.Play();
-			randomAudioGenerator.SetActive(true);
+			randomAudioGenerator.mute = false;
+			randomAudioGeneratorNoOX.mute = true;
 			other.GetComponent<AudioSource>().mute = false;
 		}
 	}
@@ -98,7 +101,6 @@ public class noOxigen : MonoBehaviour {
 				droneSource.Pause();
 				deathNode.setDeath(true);
 			}
-
 		}
 	}
 
