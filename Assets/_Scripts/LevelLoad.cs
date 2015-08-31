@@ -9,10 +9,12 @@ public class LevelLoad : MonoBehaviour {
 	private bool start = false;
 	private PlayerControl control;
 	private int levelIndex;
+	private GameObject checkpoint;
 
 	void Start(){
 		control = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 		levelIndex = Application.loadedLevel;
+		checkpoint = GameObject.FindGameObjectWithTag ("CheckPointMarker");
 	}
 	
 
@@ -26,6 +28,7 @@ public class LevelLoad : MonoBehaviour {
 		if(other.tag == "Player"){
 			control.enabled = false;
 			start = true;
+			Destroy(checkpoint);
 		}
 	}
 

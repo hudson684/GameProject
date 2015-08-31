@@ -97,7 +97,7 @@ public class CamFollowPlayer : MonoBehaviour {
 			}
 
 
-			if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){
+			if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)){
 				camType++;	
 			}
 
