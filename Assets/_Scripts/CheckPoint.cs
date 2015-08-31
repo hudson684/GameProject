@@ -7,11 +7,13 @@ public class CheckPoint : MonoBehaviour {
 
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
+	private ControlNode contNode;
 
 
 	void Start(){
 		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
 		deathNode = (DeathNode) deathNodeObject.GetComponent(typeof(DeathNode));
+		contNode = (ControlNode)deathNodeObject.GetComponent (typeof(ControlNode));
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
@@ -22,6 +24,7 @@ public class CheckPoint : MonoBehaviour {
 			if(!deathNode.getDeath()){
 				Debug.Log("should move checkpoint marker");
 				CheckPointMarker.transform.position = transform.position;
+				contNode.save();
 				Destroy(gameObject);
 
 			}

@@ -110,7 +110,7 @@ public class PlayerControl : MonoBehaviour {
 	//WHILE THE PLAYER IS NOT DEAD, MOVE THE PLAYER UNDER THREE CATAGORIES; GRAPPLING, NORMAL GRAV AND ZERO GRAV
 	void Update () {
 
-		Debug.Log ("Is holding on: " + isHolding.ToString());
+		//Debug.Log ("Is holding on: " + isHolding.ToString());
 
 		CurrentSetting ();
 

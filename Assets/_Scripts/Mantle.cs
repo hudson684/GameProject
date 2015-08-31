@@ -40,7 +40,7 @@ public class Mantle : MonoBehaviour {
 				anim.SetTrigger(mantleUpHash);
 			}
 			
-			if(Input.GetButton("Crouch") || Input.GetKey(KeyCode.C)){
+			if(Input.GetButton("Crouch") || Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.C)){
 				//player.transform.position = mantleFall;
 				mantling = false;
 				playerCont.setMantling(mantling);

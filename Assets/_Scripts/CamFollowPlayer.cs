@@ -12,8 +12,9 @@ public class CamFollowPlayer : MonoBehaviour {
 	public float edgeBuffer = 3f;
 	private GameObject cursor;
 
+	private bool follow;
 
-	public bool needToHoldShift = true;
+	private int camType = 0;
 
 
 
@@ -33,7 +34,6 @@ public class CamFollowPlayer : MonoBehaviour {
 	void Awake(){
 		cursor = GameObject.FindGameObjectWithTag ("Cursor");
 		cursorCode = (cursor) cursor.GetComponent(typeof(cursor));
-
 	}
 	
 	// Update is called once per frame
@@ -44,48 +44,22 @@ public class CamFollowPlayer : MonoBehaviour {
 			Vector3 point = this.GetComponent<Camera>().WorldToViewportPoint(target.position);
 
 
-
-
-			if(cursorCode.getDistance() < distanceFromPlayer){
+			if(camType == 0){
 
 				Vector3 delta = target.position - this.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
 				//Vector3 delta = target.position - this.transform.position;
-
+				
 				Vector3 destination = transform.position + delta;
 				transform.position = Vector3.SmoothDamp(transform.position, new Vector3(destination.x, destination.y, -10f), ref velocity, dampTime);
-			} else {
 
-				if(needToHoldShift){
-
-					if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){
-						Vector3 targetPos = Vector3.Lerp(target.position, cursor.transform.position , 0.5f);
-						
-						if(cursorCode.getDistance() > 40f){
-							targetPos = Vector3.Lerp(target.position, target.position , 0.5f);
-						}
-						
-						Vector3 delta = targetPos - this.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
-						
-						//Vector3 delta = targetPos - this.transform.position;
-						
-						Vector3 destination = transform.position + delta;
-						transform.position = Vector3.SmoothDamp(transform.position, new Vector3(destination.x, destination.y, -10f), ref velocity, dampTime);
-						
-						//7 distance = min = 3.4 cam zone
-						//32 = max = 8 cam zone
-						float factor = ((cursorCode.getDistance() - distanceFromPlayer) / (maxDistanceFromPlayer - distanceFromPlayer));
-						
-						if(factor > 1f){
-							
-							factor = 1f;
-						}
-						
-						
-						float zoomValue = Mathf.Lerp(minZoom, maxZoom, factor);
-						
-						this.GetComponent<Camera>().orthographicSize = zoomValue;
-					}
-
+			} else if (camType == 1){
+				if(cursorCode.getDistance() < distanceFromPlayer){
+					
+					Vector3 delta = target.position - this.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
+					//Vector3 delta = target.position - this.transform.position;
+					
+					Vector3 destination = transform.position + delta;
+					transform.position = Vector3.SmoothDamp(transform.position, new Vector3(destination.x, destination.y, -10f), ref velocity, dampTime);
 				} else {
 					Vector3 targetPos = Vector3.Lerp(target.position, cursor.transform.position , 0.5f);
 					
@@ -108,13 +82,23 @@ public class CamFollowPlayer : MonoBehaviour {
 						
 						factor = 1f;
 					}
-					
-					
+
 					float zoomValue = Mathf.Lerp(minZoom, maxZoom, factor);
 					
 					this.GetComponent<Camera>().orthographicSize = zoomValue;
 				}
 
+
+			} else if (camType == 2){
+
+
+			} else {
+				camType = 0;
+			}
+
+
+			if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){
+				camType++;	
 			}
 
 

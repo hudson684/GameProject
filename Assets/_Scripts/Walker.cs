@@ -170,7 +170,7 @@ public class Walker : MonoBehaviour {
 
 				shouldFlip(moveDirection);
 
-				Debug.Log("current point: " + currentPoint.ToString());
+				//Debug.Log("current point: " + currentPoint.ToString());
 
 				if (moveDirection.magnitude < GoalMargine) {
 					currentPoint++;
@@ -259,11 +259,11 @@ public class Walker : MonoBehaviour {
 
 
 	private void shouldFlip(Vector3 direction){
-		Debug.Log("direction: " + direction.ToString());
+		//Debug.Log("direction: " + direction.ToString());
 
 		if (curRotInt == RIGHT) {
 			if(direction.x < 0f){
-				Debug.Log("flipped left");
+				//Debug.Log("flipped left");
 				bodyControl.Rotate(new Vector3(0f, 180f, 0f));
 				UpdateRotation(LEFT);
 				curRotInt = LEFT;
@@ -272,7 +272,7 @@ public class Walker : MonoBehaviour {
 			}
 		} else if (curRotInt == LEFT) {
 			if(direction.x > 0f){
-				Debug.Log("flipped right");
+				//Debug.Log("flipped right");
 				bodyControl.Rotate(new Vector3(0f, 180f, 0f));
 				UpdateRotation(RIGHT);
 				curRotInt = RIGHT;
@@ -281,7 +281,7 @@ public class Walker : MonoBehaviour {
 
 		} else if (curRotInt == UP) {
 			if(direction.y < 0f){
-				Debug.Log("flipped down");
+				//Debug.Log("flipped down");
 				bodyControl.Rotate(new Vector3(180f, 0f, 0f));
 				UpdateRotation(DOWN);
 				curRotInt = DOWN;
@@ -290,7 +290,7 @@ public class Walker : MonoBehaviour {
 
 		} else if (curRotInt == DOWN) {
 			if(direction.y > 0f){
-				Debug.Log("flipped up");
+				//Debug.Log("flipped up");
 				bodyControl.Rotate(new Vector3(180f, 0f, 0f));
 				UpdateRotation(UP);
 				curRotInt = UP;

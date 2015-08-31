@@ -13,12 +13,13 @@ public class ControlNode : MonoBehaviour
 	private Vector3 playerPosition;
 	private float grappleDistance;
 
+	private GameObject CheckPointMarker;
 
 
 
 	void Start(){
 		pauseCanvas = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<Canvas>();
-		
+		CheckPointMarker = GameObject.FindGameObjectWithTag ("CheckPointMarker");
 	
 	}
 	
@@ -75,11 +76,33 @@ public class ControlNode : MonoBehaviour
 
 
 	public void save(){
+
+		Debug.Log ("saved game");
+
 		PlayerPrefs.SetString("SaveLevelKey", Application.loadedLevelName);
+
+		float x = CheckPointMarker.transform.position.x;
+		float y = CheckPointMarker.transform.position.y;
+		float z = CheckPointMarker.transform.position.z;
+
+		PlayerPrefs.SetFloat ("checkX", x);
+		PlayerPrefs.SetFloat ("checkY", y);
+		PlayerPrefs.SetFloat ("checkZ", z);
+
+		Debug.Log ("moved the checkpoint save to: " + new Vector3 (x, y, z).ToString ());
 	}
 
 	public void load(){
 		Application.LoadLevel(PlayerPrefs.GetString("SaveLevelKey"));
+
+		float x = PlayerPrefs.GetFloat ("checkX");
+		float y = PlayerPrefs.GetFloat ("checkY");
+		float z = PlayerPrefs.GetFloat ("checkZ");
+
+		CheckPointMarker.transform.position = new Vector3 (x, y, z);
+
+
+
 		paused = togglePause();
 	}
 

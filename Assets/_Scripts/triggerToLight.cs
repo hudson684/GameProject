@@ -16,13 +16,9 @@ public class triggerToLight : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if(Input.GetKeyDown(KeyCode.F) && other.tag == "Player" && cam != null){
-			if (!triggered) {
-				triggered = true;
+
 				cam.isActive(false);
-			} else {
-				triggered = false;
-				cam.isActive(true);
-			}
+
 		}
 	}
 }
