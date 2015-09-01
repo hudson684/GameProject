@@ -16,7 +16,7 @@ public class SpriteToggle : MonoBehaviour {
 		rend.sprite = start;
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerStay2D(Collider2D other){
 		if(other.tag == "Player"){
 			if(Input.GetButtonDown("Interact")){
 				rend.sprite = triggered;
