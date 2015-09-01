@@ -23,8 +23,10 @@ public class SoundCollider : MonoBehaviour {
 		if (other.tag == "Player" && !objectAudio.isPlaying) {
 
 			if(lockComponent.checkKeys()){
+				objectAudio.Stop ();
 				objectAudio.PlayOneShot(audLocked);
 			}else{
+				objectAudio.Stop ();
 				objectAudio.PlayOneShot(audEnter);
 			}
 		}
@@ -33,6 +35,7 @@ public class SoundCollider : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player" && !objectAudio.isPlaying) {
 			if(!lockComponent.checkKeys()){
+				objectAudio.Stop ();
 				objectAudio.PlayOneShot(audExit);
 			}
 		}
