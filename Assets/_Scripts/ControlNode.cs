@@ -6,7 +6,7 @@ public class ControlNode : MonoBehaviour
 	bool paused = false;
 	Canvas pauseCanvas;
 
-	private static bool canGrapple = true;
+	private static bool canGrapple = false;
 	
 	private static bool canZeroGravMove = true;
 

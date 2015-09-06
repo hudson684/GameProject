@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CheckPoint : MonoBehaviour {
 	
-	public GameObject CheckPointMarker;
+	private GameObject CheckPointMarker;
 
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
@@ -14,6 +14,12 @@ public class CheckPoint : MonoBehaviour {
 		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
 		deathNode = (DeathNode) deathNodeObject.GetComponent(typeof(DeathNode));
 		contNode = (ControlNode)deathNodeObject.GetComponent (typeof(ControlNode));
+
+		CheckPointMarker = GameObject.FindGameObjectWithTag ("CheckPointMarker");
+	}
+
+	void Awake() {
+		DontDestroyOnLoad(this);
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {

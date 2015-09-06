@@ -369,7 +369,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	void crouch(){
-		moveSpeed = moveSpeed/2;
+		moveSpeed = 3f;
 		box.size = crouchedSize;
 		box.offset = crouchedOffset;
 		anim.SetBool(crouchHash,isCrouched);
@@ -377,7 +377,7 @@ public class PlayerControl : MonoBehaviour {
 	} 
 	
 	void uncrouch(){
-		moveSpeed = moveSpeed*2;
+		moveSpeed = 6f;
 		box.size = fullSize;
 		box.offset = fullOffset;
 		anim.SetBool(crouchHash, isCrouched);

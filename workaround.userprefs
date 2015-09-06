@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\blastParticles.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\PlayerControl.cs">
     <Files>
-      <File FileName="Assets\_Scripts\SoundCollider.cs" Line="18" Column="49" />
+      <File FileName="Assets\_Scripts\PlayerControl.cs" Line="380" Column="17" />
+      <File FileName="Assets\_Scripts\SoundCollider.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Lock.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\noOxigen.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\PlayerControl.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Walker.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\CheckPoint.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\CheckPointMaker.cs" Line="1" Column="1" />
