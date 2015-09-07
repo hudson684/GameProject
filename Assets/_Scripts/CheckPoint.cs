@@ -18,9 +18,6 @@ public class CheckPoint : MonoBehaviour {
 		CheckPointMarker = GameObject.FindGameObjectWithTag ("CheckPointMarker");
 	}
 
-	void Awake() {
-		DontDestroyOnLoad(this);
-	}
 
 	void OnTriggerEnter2D (Collider2D other) {
 

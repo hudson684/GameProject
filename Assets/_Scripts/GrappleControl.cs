@@ -228,7 +228,7 @@ public class GrappleControl : MonoBehaviour {
 					ropeThree.GetComponent<HingeJoint2D> ().connectedBody =  previous.GetComponent<Rigidbody2D> ();
 					ropeThree.GetComponent<Rigidbody2D>().gravityScale = 1;
 					ropeArr[i] = ropeThree;
-					
+
 					
 					GameObject grappleEnd = ropeArr [i];
 					this.GetComponent<HingeJoint2D> ().enabled = true;
@@ -323,7 +323,7 @@ public class GrappleControl : MonoBehaviour {
 
 		while (i <= totalLength) {
 
-			for(int j = 0; j < 5; j++){
+			for(int j = 0; j < 10; j++){
 				if(i < totalLength) {
 					GameObject toDelete = ropeArr[i];
 					ropeArr[0].transform.position = ropeArr[i].transform.position;

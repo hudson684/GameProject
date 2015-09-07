@@ -5,6 +5,7 @@ public class MainMenuController : MonoBehaviour {
 
 	public void loadNextScene(){
 		Application.LoadLevel(Application.loadedLevel + 1);
+		PlayerPrefs.DeleteAll ();
 	}
 
 	public void exitGame(){

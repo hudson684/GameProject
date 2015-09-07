@@ -30,10 +30,13 @@ public class CamFollowPlayer : MonoBehaviour {
 
 	private cursor cursorCode;
 
+	private float zoomValue;
+
 
 	void Awake(){
 		cursor = GameObject.FindGameObjectWithTag ("Cursor");
 		cursorCode = (cursor) cursor.GetComponent(typeof(cursor));
+		zoomValue = minZoom;
 	}
 	
 	// Update is called once per frame
@@ -44,15 +47,8 @@ public class CamFollowPlayer : MonoBehaviour {
 			Vector3 point = this.GetComponent<Camera>().WorldToViewportPoint(target.position);
 
 
-			if(camType == 0){
-
-				Vector3 delta = target.position - this.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
-				//Vector3 delta = target.position - this.transform.position;
+			if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){
 				
-				Vector3 destination = transform.position + delta;
-				transform.position = Vector3.SmoothDamp(transform.position, new Vector3(destination.x, destination.y, -10f), ref velocity, dampTime);
-
-			} else if (camType == 1){
 				if(cursorCode.getDistance() < distanceFromPlayer){
 					
 					Vector3 delta = target.position - this.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
@@ -82,25 +78,22 @@ public class CamFollowPlayer : MonoBehaviour {
 						
 						factor = 1f;
 					}
-
-					float zoomValue = Mathf.Lerp(minZoom, maxZoom, factor);
 					
-					this.GetComponent<Camera>().orthographicSize = zoomValue;
+					zoomValue = Mathf.Lerp(minZoom, maxZoom, factor);
+					
+				
 				}
+			
+			} else{
 
-
-			//} else if (camType == 2){
-
-
-			} else {
-				camType = 0;
+				Vector3 delta = target.position - this.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
+				//Vector3 delta = target.position - this.transform.position;
+				
+				Vector3 destination = transform.position + delta;
+				transform.position = Vector3.SmoothDamp(transform.position, new Vector3(destination.x, destination.y, -10f), ref velocity, dampTime);
 			}
 
-
-			if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)){
-				camType++;	
-			}
-
+			this.GetComponent<Camera>().orthographicSize = zoomValue;
 
 		}
 		
