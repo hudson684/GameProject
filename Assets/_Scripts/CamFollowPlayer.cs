@@ -89,7 +89,7 @@ public class CamFollowPlayer : MonoBehaviour {
 				}
 
 
-			} else if (camType == 2){
+			//} else if (camType == 2){
 
 
 			} else {

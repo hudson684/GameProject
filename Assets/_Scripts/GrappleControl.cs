@@ -323,7 +323,7 @@ public class GrappleControl : MonoBehaviour {
 
 		while (i <= totalLength) {
 
-			for(int j = 0; j < 10; j++){
+			for(int j = 0; j < 5; j++){
 				if(i < totalLength) {
 					GameObject toDelete = ropeArr[i];
 					ropeArr[0].transform.position = ropeArr[i].transform.position;

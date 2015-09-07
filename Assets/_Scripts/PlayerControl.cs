@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour {
 	public float rotateSpeed = 2f;
 	public float grappleSpeed = 10f;
 	public float fallDamageAt = -25.0f;
-	public float normalGravValue = 5.0f;
+	public float normalGravValue = 2.0f;
 
 	//crouched variables
 	private BoxCollider2D box;
