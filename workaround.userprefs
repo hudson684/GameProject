@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\PlayerControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Lock.cs">
     <Files>
-      <File FileName="Assets\_Scripts\PlayerControl.cs" Line="380" Column="17" />
+      <File FileName="Assets\_Scripts\blastParticles.cs" Line="18" Column="4" />
       <File FileName="Assets\_Scripts\SoundCollider.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Lock.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\noOxigen.cs" Line="1" Column="1" />
@@ -16,7 +16,6 @@
       <File FileName="Assets\_Scripts\LevelLoad.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Mantle.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\SpriteToggle.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\blastParticles.cs" Line="12" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
