@@ -81,8 +81,16 @@ public class Walker : MonoBehaviour {
 
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
+
+	//Animation Component
+	private Animator anim;
+	private int walkingHash = Animator.StringToHash("IS WALKING");
+	private int attackHash = Animator.StringToHash("ATTACK");
 	
 	void Awake(){
+
+		//For Animator
+		anim = gameObject.GetComponent<Animator>();
 
 		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
 		deathNode = (DeathNode) deathNodeObject.GetComponentInParent(typeof(DeathNode));
@@ -183,6 +191,7 @@ public class Walker : MonoBehaviour {
 				if (loop) {
 					currentPoint = 0;
 				} else {
+					anim.SetBool(walkingHash,false);
 					velocity = Vector3.zero;
 				}
 			}
@@ -566,6 +575,7 @@ public class Walker : MonoBehaviour {
 		
 		
 		if (detection.collider != null && detection.collider.tag == "Player") {
+			anim.SetTrigger(attackHash);
 			deathNode.setDeath(true);
 			return true;
 		} else {

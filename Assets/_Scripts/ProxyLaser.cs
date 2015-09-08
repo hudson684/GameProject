@@ -17,6 +17,7 @@ public class ProxyLaser : Laser {
 	void Update () {
 		traceLaser();
 		proxyToggle();
+		adjust = adjust > 0? adjust - Time.smoothDeltaTime: 0;
 	}
 
 	/// <summary>
@@ -37,7 +38,7 @@ public class ProxyLaser : Laser {
 					if(adjust < 0){
 						toggleOn();
 					}else{
-						adjust-= Time.deltaTime;
+						//adjust -= Time.smoothDeltaTime;
 					}
 					
 				}else{

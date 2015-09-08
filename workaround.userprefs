@@ -1,27 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\CamFollowPlayer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Walker.cs">
     <Files>
+      <File FileName="Assets\_Scripts\Walker.cs" Line="145" Column="16" />
+      <File FileName="Assets\_Scripts\ProxyLaser.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\GrappleControl.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\blastParticles.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\SoundCollider.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Lock.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\noOxigen.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Walker.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\CheckPoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\CheckPointMaker.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ControlNode.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\CamFollowPlayer.cs" Line="96" Column="61" />
-      <File FileName="Assets\_Scripts\triggerToLight.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\AICamera.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\LevelLoad.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Mantle.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\SpriteToggle.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\objSpawn.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\MainMenuController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\PlayerControl.cs" Line="450" Column="48" />
-      <File FileName="Assets\_Scripts\SECRET.cs" Line="19" Column="65" />
-      <File FileName="Assets\_Scripts\Swivel.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerControl.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
