@@ -16,14 +16,28 @@ public class ObjectGravity : MonoBehaviour {
 			
 			GetComponent<Rigidbody2D>().gravityScale = ZERO_GRAVITY_SCALE;
 			GetComponent<Rigidbody2D>().fixedAngle = false;
+
+			if(this.tag == "Grapple"){
+
+				GetComponent<Rigidbody2D>().mass = 0.5f;
+			}
 			
 		} else if (other.tag == "halfGravZone"){
 			
 			GetComponent<Rigidbody2D>().gravityScale = HALF_GRAVITY_SCALE;
 			//GetComponent<Rigidbody2D>().rotation = 0f;
 			GetComponent<Rigidbody2D>().fixedAngle = false;
+			if(this.tag == "Grapple"){
+				
+				GetComponent<Rigidbody2D>().mass = 1f;
+			}
 			
 		} else if (other.tag == "fullGravZone"){
+
+			if(this.tag == "Grapple"){
+				
+				GetComponent<Rigidbody2D>().mass = 1f;
+			}
 			
 			GetComponent<Rigidbody2D>().gravityScale= FULL_GRAVITY_SCALE;
 			//GetComponent<Rigidbody2D>().rotation = 0f;

@@ -183,8 +183,8 @@ public class GrappleControl : MonoBehaviour {
 
 				while (t != 1f) {
 
-					playerGameObj.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-					playerGameObj.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+					//playerGameObj.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+					//playerGameObj.GetComponent<Rigidbody2D>().angularVelocity = 0f;
 
 					GameObject previous = ropeArr[i - 1];
 					GameObject rope = Instantiate (cable, this.transform.position, zeroRotation) as GameObject;
@@ -241,6 +241,7 @@ public class GrappleControl : MonoBehaviour {
 					if(t > 1f){
 						t = 1f;
 					}
+
 					head.transform.position = Vector3.Lerp (firePointPosition, hitPosition, t);
 
 
