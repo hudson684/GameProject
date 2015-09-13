@@ -11,6 +11,7 @@ public class AICamera : MonoBehaviour {
 	public GameObject target;
 
 	public Material alert;
+	private Material normal;
 
 	public DynamicLight light2D;
 
@@ -41,6 +42,7 @@ public class AICamera : MonoBehaviour {
 		swingPoints = new float[2] {maxSwing, minSwing};
 
 		light2D = (DynamicLight) this.GetComponentInChildren(typeof(DynamicLight));
+		normal = light2D.lightMaterial;
 	}
 	
 	
@@ -62,6 +64,9 @@ public class AICamera : MonoBehaviour {
 			if(triggered){
 
 				target.transform.position = player.transform.position;
+			} else {
+
+				light2D.setMainMaterial(normal);
 			}
 
 		} 
