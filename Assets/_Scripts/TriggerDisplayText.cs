@@ -3,12 +3,11 @@ using System.Collections;
 
 public class TriggerDisplayText : MonoBehaviour {
 
-	private Canvas Display;
+	public Canvas Display;
 	private bool inRange = false;
 	
 	// Use this for initialization
 	void Start () {
-		Display = GetComponentInChildren<Canvas>();
 		Display.enabled =false;
 	}
 

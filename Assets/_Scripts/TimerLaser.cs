@@ -7,6 +7,7 @@ public class TimerLaser : Laser {
 	public float startTime;
 	public float onDuration;
 	public float offDuration;
+	public float telegraphTime = 1f;
 	private float onTimer;
 	private float offTimer;
 	private bool laserOn = true;
@@ -41,6 +42,9 @@ public class TimerLaser : Laser {
 			if(offTimer > 0){
 				//countdown timer
 				offTimer -= Time.deltaTime;
+				if(offTimer < telegraphTime){
+					traceFlicker();
+				}
 			}else{
 				//toggle laserOff
 				toggleOn();

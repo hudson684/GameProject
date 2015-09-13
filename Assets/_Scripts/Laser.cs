@@ -19,6 +19,8 @@ public class Laser : MonoBehaviour {
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
 	private AudioSource audioSource;
+
+	private int delay;
 	
 
 	// Update is called once per frame
@@ -41,6 +43,7 @@ public class Laser : MonoBehaviour {
 	/// Traces the laser to the left of the Laser origin object
 	/// </summary>
 	public void traceLaser(){
+		laserLine.SetWidth(thickness,thickness);
 		if(laserLine.enabled == true){
 			//laser start Pos
 			laserLine.SetPosition(0,transform.position);
@@ -72,13 +75,27 @@ public class Laser : MonoBehaviour {
 	}//end laserEffect
 
 
-	public void toggleOn(){
-		laserLine.enabled = true;
+	public void toggleOn(){		
 		audioSource.Play ();
+		laserLine.enabled = true;
 	}
 
 	public void toggleOff(){
 		laserLine.enabled = false;
 		audioSource.Stop();
-	}	
+	}
+
+	public void traceFlicker(){
+		if(delay == 0){
+			laserLine.enabled = !laserLine.enabled;
+			laserLine.SetPosition(0,transform.position);
+			laserLine.SetWidth(thickness/2,thickness/2);
+			hit = Physics2D.Raycast (transform.position,direction, length, hitLayers);
+			if(hit.collider){
+				laserLine.SetPosition(1,hit.point);
+			}
+		}else{
+			delay --;
+		}
+	}
 }

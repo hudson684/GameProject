@@ -6,6 +6,7 @@ public class ProxyLaser : Laser {
 	public string target = "Object";
 	public float toggleDistance;
 	public float delay;
+	public float telegraphTime = 0.5f;
 	private float adjust;
 
 	// Use this for initialization

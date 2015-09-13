@@ -26,6 +26,9 @@ public class noOxigen : MonoBehaviour {
 	private AudioSource randomAudioGenerator;
 	private AudioSource randomAudioGeneratorNoOX;
 
+	//For Fake Arm + grapple sounds
+	private AudioSource grappleAudio;
+
 	// Use this for initialization
 	void Awake () {
 
@@ -38,6 +41,8 @@ public class noOxigen : MonoBehaviour {
 
 		randomAudioGenerator = GameObject.Find("SoundEffects").GetComponent<AudioSource>();
 		randomAudioGeneratorNoOX = GameObject.Find("noOXsoundEffects").GetComponent<AudioSource>();
+
+		grappleAudio = GameObject.Find("fakeArm").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -55,6 +60,7 @@ public class noOxigen : MonoBehaviour {
 			randomAudioGenerator.mute = true;
 			randomAudioGeneratorNoOX.mute = false;
 			other.GetComponent<AudioSource>().mute = true;
+			grappleAudio.mute = true;
 		}
 
 
@@ -69,6 +75,7 @@ public class noOxigen : MonoBehaviour {
 			randomAudioGenerator.mute = false;
 			randomAudioGeneratorNoOX.mute = true;
 			other.GetComponent<AudioSource>().mute = false;
+			grappleAudio.mute = false;
 		}
 	}
 
