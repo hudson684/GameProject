@@ -1,9 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ObjectGravity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\triggerToLight.cs">
     <Files>
-      <File FileName="Assets\_Scripts\GrappleControl.cs" Line="195" Column="6" />
-      <File FileName="Assets\_Scripts\ObjectGravity.cs" Line="29" Column="26" />
+      <File FileName="Assets\_Scripts\triggerToLight.cs" Line="13" Column="1" />
+      <File FileName="Assets\_Scripts\Laser.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\TriggerDisplayText.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\GrappleControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\ObjectGravity.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\TimerLaser.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\ProxyLaser.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

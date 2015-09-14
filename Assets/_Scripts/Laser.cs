@@ -19,8 +19,9 @@ public class Laser : MonoBehaviour {
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
 	private AudioSource audioSource;
+	[HideInInspector]public bool kill = true;
 
-	private int delay;
+	private int flickerDelay;
 	
 
 	// Update is called once per frame
@@ -44,7 +45,7 @@ public class Laser : MonoBehaviour {
 	/// </summary>
 	public void traceLaser(){
 		laserLine.SetWidth(thickness,thickness);
-		if(laserLine.enabled == true){
+		if(laserLine.enabled == true ){
 			//laser start Pos
 			laserLine.SetPosition(0,transform.position);
 			
@@ -52,7 +53,7 @@ public class Laser : MonoBehaviour {
 			hit = Physics2D.Raycast(transform.position,direction,length,hitLayers);
 			
 			//if ray hits object
-			if(hit.collider){
+			if(hit.collider && kill){
 				laserLine.SetPosition(1, hit.point);
 				laserEffect();
 			}//end if
@@ -86,7 +87,8 @@ public class Laser : MonoBehaviour {
 	}
 
 	public void traceFlicker(){
-		if(delay == 0){
+		kill = false;
+		if(flickerDelay == 0){
 			laserLine.enabled = !laserLine.enabled;
 			laserLine.SetPosition(0,transform.position);
 			laserLine.SetWidth(thickness/2,thickness/2);
@@ -94,8 +96,9 @@ public class Laser : MonoBehaviour {
 			if(hit.collider){
 				laserLine.SetPosition(1,hit.point);
 			}
+			flickerDelay = 2;
 		}else{
-			delay --;
+			flickerDelay --;
 		}
 	}
 }

@@ -47,6 +47,7 @@ public class TimerLaser : Laser {
 				}
 			}else{
 				//toggle laserOff
+				kill = true;
 				toggleOn();
 				//Reset on Timer
 				offTimer = offDuration;
