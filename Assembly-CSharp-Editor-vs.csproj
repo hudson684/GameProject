@@ -67,7 +67,7 @@
      <None Include="Assets\_Scenes\DestroyedElevatorShaft\temp.txt" />
      <None Include="Assets\_Animations\Temp.txt" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/Liam/Desktop/SolSBuild/branches/workaround/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/Liam James/Desktop/SolS Build/branches/workaround/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
