@@ -104,6 +104,7 @@
      <Compile Include="Assets\_Scripts\ObjectGravity.cs" />
      <Compile Include="Assets\_Scripts\Occluder.cs" />
      <Compile Include="Assets\_Scripts\OcclusionManager.cs" />
+     <Compile Include="Assets\_Scripts\OptionsMenu.cs" />
      <Compile Include="Assets\_Scripts\OxigenLight.cs" />
      <Compile Include="Assets\_Scripts\Partol.cs" />
      <Compile Include="Assets\_Scripts\PlayerControl.cs" />
