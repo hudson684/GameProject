@@ -211,7 +211,7 @@ public class PlayerControl : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D other){
 		if (!isHolding) {
 			if(other.collider.tag == "Object"){
-				if(Input.GetButton("Interact")){
+				if(Input.GetButtonDown("Interact")){
 
 					GrappleControl grapple = (GrappleControl)this.GetComponentInChildren (typeof(GrappleControl));
 					
@@ -260,8 +260,11 @@ public class PlayerControl : MonoBehaviour {
 
 	private void keepHoldingOn(){
 
-		float disX = 1f + ((heldObject.transform.lossyScale.x -1f)/ 3f);
-		float disY = 1f + ((heldObject.transform.lossyScale.y -1f)/ 3f);
+		//float disX = 1f + ((heldObject.transform.lossyScale.x -1f)/ 3f);
+
+		float disX = 1f + heldObject.GetComponent<BoxCollider2D> ().size.x;
+		//float disY = 1f + ((heldObject.transform.lossyScale.y -1f)/ 3f);
+		float disY = 1f + heldObject.GetComponent<BoxCollider2D> ().size.y;
 
 		if (heldObject != null) {
 			heldObject.transform.localPosition = new Vector3 (disX, disY, 0f);
