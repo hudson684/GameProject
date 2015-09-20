@@ -84,8 +84,10 @@ public class Walker : MonoBehaviour {
 
 	//Animation Component
 	private Animator anim;
-	private int walkingHash = Animator.StringToHash("IS WALKING");
-	private int attackHash = Animator.StringToHash("ATTACK");
+	private int walkingHash = Animator.StringToHash("Walking");
+	private int groundedHash = Animator.StringToHash("Grounded");
+	private int attackHash = Animator.StringToHash("Attacking");
+	private int cJumpHash = Animator.StringToHash("Corner Jump");
 	
 	void Awake(){
 
@@ -104,7 +106,7 @@ public class Walker : MonoBehaviour {
 		//finds all the childern of the patroler (for use in player detection);
 		hitBarrier = transform.GetComponentsInChildren<Transform>();
 
-		bodyControl = transform.FindChild ("root");
+		bodyControl = transform.FindChild ("GeometryHolder");
 
 		this.transform.position = patrolPoints [0];
 
@@ -255,10 +257,10 @@ public class Walker : MonoBehaviour {
 
 	private void lightControl(){
 		if (counterClockwise) {
-			lightHolder.transform.localRotation = Quaternion.Euler(new Vector3 (0f, 270f, 0f));
+			lightHolder.transform.localRotation = Quaternion.Euler(new Vector3 (0f, 0f, 270f));
 
 		} else {
-			lightHolder.transform.localRotation = Quaternion.Euler(new Vector3 (0f, 270f, 180f));
+			lightHolder.transform.localRotation = Quaternion.Euler(new Vector3 (0f, 0f, 90f));
 
 		}
 
@@ -272,8 +274,8 @@ public class Walker : MonoBehaviour {
 
 		if (curRotInt == RIGHT) {
 			if(direction.x < 0f){
-				//Debug.Log("flipped left");
-				bodyControl.Rotate(new Vector3(0f, 180f, 0f));
+				Debug.Log("flipped left");
+				bodyControl.Rotate(new Vector3(0,180,0));
 				UpdateRotation(LEFT);
 				curRotInt = LEFT;
 				counterClockwise = !counterClockwise;
@@ -281,8 +283,8 @@ public class Walker : MonoBehaviour {
 			}
 		} else if (curRotInt == LEFT) {
 			if(direction.x > 0f){
-				//Debug.Log("flipped right");
-				bodyControl.Rotate(new Vector3(0f, 180f, 0f));
+				Debug.Log("flipped right");
+				bodyControl.Rotate(new Vector3(0f, 180, 0f));
 				UpdateRotation(RIGHT);
 				curRotInt = RIGHT;
 				counterClockwise = !counterClockwise;
@@ -570,8 +572,8 @@ public class Walker : MonoBehaviour {
 
 	private bool playerKillZone(){
 		
-		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + 1f)
-		                                            , currentRotation, 3f, toHit);
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + .5f)
+		                                            , currentRotation, 3.1f, toHit);
 		
 		
 		if (detection.collider != null && detection.collider.tag == "Player") {
@@ -585,10 +587,10 @@ public class Walker : MonoBehaviour {
 
 	//Development code
 	void OnDrawGizmos(){
-
-		Ray rayT = new Ray(new Vector3 (this.transform.position.x, this.transform.position.y + 1f,0f),  currentRotation);
-
+		Ray rayT = new Ray(new Vector3 (this.transform.position.x, this.transform.position.y + 0.5f,2f),  currentRotation);
+		Gizmos.color = Color.green;
 		Gizmos.DrawRay (rayT);
+		Gizmos.color = Color.white;
 		Gizmos.DrawRay(this.transform.position, jumpChecker);
 		Gizmos.DrawRay (this.transform.position, downDirection);
 		Gizmos.DrawRay (this.transform.position, -downDirection);

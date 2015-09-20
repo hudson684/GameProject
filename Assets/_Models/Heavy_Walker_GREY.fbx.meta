@@ -1,0 +1,1215 @@
+fileFormatVersion: 2
+guid: 3f257443f2ec5e84891ad1c825938993
+timeCreated: 1442537511
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: L_B__end
+    100006: L_B_ik_handle
+    100008: L_B_lower_leg
+    100010: L_B_middle_leg
+    100012: L_B_middle_leg01
+    100014: L_B_upper_leg
+    100016: L_B_upper_leg01
+    100018: L_back_leg01
+    100020: L_F_end
+    100022: L_F_ik_handle
+    100024: L_F_lower_leg
+    100026: L_F_middle_leg
+    100028: L_F_middle_leg01
+    100030: L_F_upper_leg
+    100032: L_F_upper_leg01
+    100034: L_front_leg01
+    100036: L_M_end
+    100038: L_M_ik_handle
+    100040: L_M_lower_leg
+    100042: L_M_middle_leg
+    100044: L_M_middle_leg01
+    100046: L_M_upper_leg
+    100048: L_M_upper_leg01
+    100050: L_middle_leg01
+    100052: R_B_end
+    100054: R_B_ik_handle
+    100056: R_B_lower_leg
+    100058: R_B_middle_leg
+    100060: R_B_middle_leg01
+    100062: R_B_upper_leg
+    100064: R_B_upper_leg01
+    100066: R_back_leg1
+    100068: R_F_end
+    100070: R_F_ik_handle
+    100072: R_F_lower_leg
+    100074: R_F_Middle_leg
+    100076: R_F_middle_leg
+    100078: R_F_upper_leg
+    100080: R_F_Upper_leg1
+    100082: R_front_leg
+    100084: R_M_end
+    100086: R_M_ik_handle
+    100088: R_M_lower_leg
+    100090: R_M_lower_leg 1
+    100092: R_M_lower_leg1
+    100094: R_M_lower_leg2
+    100096: R_M_lower_leg3
+    100098: R_M_lower_leg4
+    100100: R_M_lower_leg5
+    100102: R_M_middle_leg
+    100104: R_M_middle_leg01
+    100106: R_M_upper_leg
+    100108: R_M_upper_leg01
+    100110: R_middle_leg01
+    100112: root
+    100114: Scanner_Arm_1
+    100116: Scanner_arm_1
+    100118: Scanner_Arm_2
+    100120: Scanner_arm_2
+    100122: Scanner_Dish
+    100124: Scanner_dish
+    100126: Walker_Body
+    400000: Camera
+    400002: //RootNode
+    400004: L_B__end
+    400006: L_B_ik_handle
+    400008: L_B_lower_leg
+    400010: L_B_middle_leg
+    400012: L_B_middle_leg01
+    400014: L_B_upper_leg
+    400016: L_B_upper_leg01
+    400018: L_back_leg01
+    400020: L_F_end
+    400022: L_F_ik_handle
+    400024: L_F_lower_leg
+    400026: L_F_middle_leg
+    400028: L_F_middle_leg01
+    400030: L_F_upper_leg
+    400032: L_F_upper_leg01
+    400034: L_front_leg01
+    400036: L_M_end
+    400038: L_M_ik_handle
+    400040: L_M_lower_leg
+    400042: L_M_middle_leg
+    400044: L_M_middle_leg01
+    400046: L_M_upper_leg
+    400048: L_M_upper_leg01
+    400050: L_middle_leg01
+    400052: R_B_end
+    400054: R_B_ik_handle
+    400056: R_B_lower_leg
+    400058: R_B_middle_leg
+    400060: R_B_middle_leg01
+    400062: R_B_upper_leg
+    400064: R_B_upper_leg01
+    400066: R_back_leg1
+    400068: R_F_end
+    400070: R_F_ik_handle
+    400072: R_F_lower_leg
+    400074: R_F_Middle_leg
+    400076: R_F_middle_leg
+    400078: R_F_upper_leg
+    400080: R_F_Upper_leg1
+    400082: R_front_leg
+    400084: R_M_end
+    400086: R_M_ik_handle
+    400088: R_M_lower_leg
+    400090: R_M_lower_leg 1
+    400092: R_M_lower_leg1
+    400094: R_M_lower_leg2
+    400096: R_M_lower_leg3
+    400098: R_M_lower_leg4
+    400100: R_M_lower_leg5
+    400102: R_M_middle_leg
+    400104: R_M_middle_leg01
+    400106: R_M_upper_leg
+    400108: R_M_upper_leg01
+    400110: R_middle_leg01
+    400112: root
+    400114: Scanner_Arm_1
+    400116: Scanner_arm_1
+    400118: Scanner_Arm_2
+    400120: Scanner_arm_2
+    400122: Scanner_Dish
+    400124: Scanner_dish
+    400126: Walker_Body
+    2300000: Camera
+    2300002: L_B_middle_leg01
+    2300004: L_B_upper_leg01
+    2300006: L_back_leg01
+    2300008: L_F_middle_leg01
+    2300010: L_F_upper_leg01
+    2300012: L_front_leg01
+    2300014: L_M_middle_leg01
+    2300016: L_M_upper_leg01
+    2300018: L_middle_leg01
+    2300020: R_B_middle_leg01
+    2300022: R_B_upper_leg01
+    2300024: R_back_leg1
+    2300026: R_F_Middle_leg
+    2300028: R_F_Upper_leg1
+    2300030: R_front_leg
+    2300032: R_M_lower_leg 1
+    2300034: R_M_lower_leg1
+    2300036: R_M_lower_leg2
+    2300038: R_M_lower_leg3
+    2300040: R_M_lower_leg4
+    2300042: R_M_lower_leg5
+    2300044: R_M_middle_leg01
+    2300046: R_M_upper_leg01
+    2300048: R_middle_leg01
+    2300050: Scanner_Arm_1
+    2300052: Scanner_Arm_2
+    2300054: Scanner_Dish
+    2300056: Walker_Body
+    3300000: Camera
+    3300002: L_B_middle_leg01
+    3300004: L_B_upper_leg01
+    3300006: L_back_leg01
+    3300008: L_F_middle_leg01
+    3300010: L_F_upper_leg01
+    3300012: L_front_leg01
+    3300014: L_M_middle_leg01
+    3300016: L_M_upper_leg01
+    3300018: L_middle_leg01
+    3300020: R_B_middle_leg01
+    3300022: R_B_upper_leg01
+    3300024: R_back_leg1
+    3300026: R_F_Middle_leg
+    3300028: R_F_Upper_leg1
+    3300030: R_front_leg
+    3300032: R_M_lower_leg 1
+    3300034: R_M_lower_leg1
+    3300036: R_M_lower_leg2
+    3300038: R_M_lower_leg3
+    3300040: R_M_lower_leg4
+    3300042: R_M_lower_leg5
+    3300044: R_M_middle_leg01
+    3300046: R_M_upper_leg01
+    3300048: R_middle_leg01
+    3300050: Scanner_Arm_1
+    3300052: Scanner_Arm_2
+    3300054: Scanner_Dish
+    3300056: Walker_Body
+    4300000: R_M_lower_leg5
+    4300002: L_M_middle_leg01
+    4300004: L_M_upper_leg01
+    4300006: R_M_lower_leg4
+    4300008: L_F_middle_leg01
+    4300010: L_F_upper_leg01
+    4300012: R_M_lower_leg3
+    4300014: L_B_middle_leg01
+    4300016: L_B_upper_leg01
+    4300018: R_M_lower_leg2
+    4300020: R_B_middle_leg01
+    4300022: R_B_upper_leg01
+    4300024: R_M_lower_leg
+    4300026: R_M_middle_leg01
+    4300028: R_M_upper_leg01
+    4300030: R_M_lower_leg1
+    4300032: R_F_Middle_leg
+    4300034: R_F_Upper_leg1
+    4300036: Camera
+    4300038: Walker_Body
+    4300040: L_middle_leg01
+    4300042: R_middle_leg01
+    4300044: R_back_leg1
+    4300046: L_back_leg01
+    4300048: L_front_leg01
+    4300050: R_front_leg
+    4300052: Scanner_Dish
+    4300054: Scanner_Arm_2
+    4300056: Scanner_Arm_1
+    7400000: Walk
+    7400002: Attack
+    7400004: Idle
+    7400006: Fall
+    7400008: Land
+    7400010: Courner Jump
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_B_ik_handle
+        weight: 1
+      - path: L_F_ik_handle
+        weight: 1
+      - path: L_M_ik_handle
+        weight: 1
+      - path: R_B_ik_handle
+        weight: 1
+      - path: R_F_ik_handle
+        weight: 1
+      - path: R_M_ik_handle
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Camera
+        weight: 1
+      - path: root/L_B_upper_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/L_B__end
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/R_M_lower_leg3
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_middle_leg01
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_upper_leg01
+        weight: 1
+      - path: root/L_back_leg01
+        weight: 1
+      - path: root/L_F_upper_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/L_F_end
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/R_M_lower_leg4
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_middle_leg01
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_upper_leg01
+        weight: 1
+      - path: root/L_front_leg01
+        weight: 1
+      - path: root/L_M_upper_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/L_M_end
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/R_M_lower_leg5
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_middle_leg01
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_upper_leg01
+        weight: 1
+      - path: root/L_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_B_end
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_M_lower_leg2
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_upper_leg01
+        weight: 1
+      - path: root/R_back_leg1
+        weight: 1
+      - path: root/R_F_upper_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_F_end
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_M_lower_leg1
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_Middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_Upper_leg1
+        weight: 1
+      - path: root/R_front_leg
+        weight: 1
+      - path: root/R_M_upper_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_end
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_lower_leg 1
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_middle_leg01
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_upper_leg01
+        weight: 1
+      - path: root/R_middle_leg01
+        weight: 1
+      - path: root/Scanner_arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_Arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_Arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish/Scanner_Dish
+        weight: 1
+      - path: root/Walker_Body
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 114
+      lastFrame: 147
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_B_ik_handle
+        weight: 1
+      - path: L_F_ik_handle
+        weight: 1
+      - path: L_M_ik_handle
+        weight: 1
+      - path: R_B_ik_handle
+        weight: 1
+      - path: R_F_ik_handle
+        weight: 1
+      - path: R_M_ik_handle
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Camera
+        weight: 1
+      - path: root/L_B_upper_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/L_B__end
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/R_M_lower_leg3
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_middle_leg01
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_upper_leg01
+        weight: 1
+      - path: root/L_back_leg01
+        weight: 1
+      - path: root/L_F_upper_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/L_F_end
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/R_M_lower_leg4
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_middle_leg01
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_upper_leg01
+        weight: 1
+      - path: root/L_front_leg01
+        weight: 1
+      - path: root/L_M_upper_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/L_M_end
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/R_M_lower_leg5
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_middle_leg01
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_upper_leg01
+        weight: 1
+      - path: root/L_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_B_end
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_M_lower_leg2
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_upper_leg01
+        weight: 1
+      - path: root/R_back_leg1
+        weight: 1
+      - path: root/R_F_upper_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_F_end
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_M_lower_leg1
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_Middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_Upper_leg1
+        weight: 1
+      - path: root/R_front_leg
+        weight: 1
+      - path: root/R_M_upper_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_end
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_lower_leg 1
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_middle_leg01
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_upper_leg01
+        weight: 1
+      - path: root/R_middle_leg01
+        weight: 1
+      - path: root/Scanner_arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_Arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_Arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish/Scanner_Dish
+        weight: 1
+      - path: root/Walker_Body
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 33
+      lastFrame: 114
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_B_ik_handle
+        weight: 1
+      - path: L_F_ik_handle
+        weight: 1
+      - path: L_M_ik_handle
+        weight: 1
+      - path: R_B_ik_handle
+        weight: 1
+      - path: R_F_ik_handle
+        weight: 1
+      - path: R_M_ik_handle
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Camera
+        weight: 1
+      - path: root/L_B_upper_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/L_B__end
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/R_M_lower_leg3
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_middle_leg01
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_upper_leg01
+        weight: 1
+      - path: root/L_back_leg01
+        weight: 1
+      - path: root/L_F_upper_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/L_F_end
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/R_M_lower_leg4
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_middle_leg01
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_upper_leg01
+        weight: 1
+      - path: root/L_front_leg01
+        weight: 1
+      - path: root/L_M_upper_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/L_M_end
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/R_M_lower_leg5
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_middle_leg01
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_upper_leg01
+        weight: 1
+      - path: root/L_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_B_end
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_M_lower_leg2
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_upper_leg01
+        weight: 1
+      - path: root/R_back_leg1
+        weight: 1
+      - path: root/R_F_upper_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_F_end
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_M_lower_leg1
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_Middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_Upper_leg1
+        weight: 1
+      - path: root/R_front_leg
+        weight: 1
+      - path: root/R_M_upper_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_end
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_lower_leg 1
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_middle_leg01
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_upper_leg01
+        weight: 1
+      - path: root/R_middle_leg01
+        weight: 1
+      - path: root/Scanner_arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_Arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_Arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish/Scanner_Dish
+        weight: 1
+      - path: root/Walker_Body
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Fall
+      takeName: Take 001
+      firstFrame: 176
+      lastFrame: 214
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_B_ik_handle
+        weight: 1
+      - path: L_F_ik_handle
+        weight: 1
+      - path: L_M_ik_handle
+        weight: 1
+      - path: R_B_ik_handle
+        weight: 1
+      - path: R_F_ik_handle
+        weight: 1
+      - path: R_M_ik_handle
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Camera
+        weight: 1
+      - path: root/L_B_upper_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/L_B__end
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/R_M_lower_leg3
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_middle_leg01
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_upper_leg01
+        weight: 1
+      - path: root/L_back_leg01
+        weight: 1
+      - path: root/L_F_upper_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/L_F_end
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/R_M_lower_leg4
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_middle_leg01
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_upper_leg01
+        weight: 1
+      - path: root/L_front_leg01
+        weight: 1
+      - path: root/L_M_upper_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/L_M_end
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/R_M_lower_leg5
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_middle_leg01
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_upper_leg01
+        weight: 1
+      - path: root/L_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_B_end
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_M_lower_leg2
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_upper_leg01
+        weight: 1
+      - path: root/R_back_leg1
+        weight: 1
+      - path: root/R_F_upper_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_F_end
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_M_lower_leg1
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_Middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_Upper_leg1
+        weight: 1
+      - path: root/R_front_leg
+        weight: 1
+      - path: root/R_M_upper_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_end
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_lower_leg 1
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_middle_leg01
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_upper_leg01
+        weight: 1
+      - path: root/R_middle_leg01
+        weight: 1
+      - path: root/Scanner_arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_Arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_Arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish/Scanner_Dish
+        weight: 1
+      - path: root/Walker_Body
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Land
+      takeName: Take 001
+      firstFrame: 214
+      lastFrame: 223
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_B_ik_handle
+        weight: 1
+      - path: L_F_ik_handle
+        weight: 1
+      - path: L_M_ik_handle
+        weight: 1
+      - path: R_B_ik_handle
+        weight: 1
+      - path: R_F_ik_handle
+        weight: 1
+      - path: R_M_ik_handle
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Camera
+        weight: 1
+      - path: root/L_B_upper_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/L_B__end
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/R_M_lower_leg3
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_middle_leg01
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_upper_leg01
+        weight: 1
+      - path: root/L_back_leg01
+        weight: 1
+      - path: root/L_F_upper_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/L_F_end
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/R_M_lower_leg4
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_middle_leg01
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_upper_leg01
+        weight: 1
+      - path: root/L_front_leg01
+        weight: 1
+      - path: root/L_M_upper_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/L_M_end
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/R_M_lower_leg5
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_middle_leg01
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_upper_leg01
+        weight: 1
+      - path: root/L_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_B_end
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_M_lower_leg2
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_upper_leg01
+        weight: 1
+      - path: root/R_back_leg1
+        weight: 1
+      - path: root/R_F_upper_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_F_end
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_M_lower_leg1
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_Middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_Upper_leg1
+        weight: 1
+      - path: root/R_front_leg
+        weight: 1
+      - path: root/R_M_upper_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_end
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_lower_leg 1
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_middle_leg01
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_upper_leg01
+        weight: 1
+      - path: root/R_middle_leg01
+        weight: 1
+      - path: root/Scanner_arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_Arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_Arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish/Scanner_Dish
+        weight: 1
+      - path: root/Walker_Body
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Courner Jump
+      takeName: Take 001
+      firstFrame: 150
+      lastFrame: 174
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_B_ik_handle
+        weight: 1
+      - path: L_F_ik_handle
+        weight: 1
+      - path: L_M_ik_handle
+        weight: 1
+      - path: R_B_ik_handle
+        weight: 1
+      - path: R_F_ik_handle
+        weight: 1
+      - path: R_M_ik_handle
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Camera
+        weight: 1
+      - path: root/L_B_upper_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/L_B__end
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_lower_leg/R_M_lower_leg3
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_middle_leg/L_B_middle_leg01
+        weight: 1
+      - path: root/L_B_upper_leg/L_B_upper_leg01
+        weight: 1
+      - path: root/L_back_leg01
+        weight: 1
+      - path: root/L_F_upper_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/L_F_end
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_lower_leg/R_M_lower_leg4
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_middle_leg/L_F_middle_leg01
+        weight: 1
+      - path: root/L_F_upper_leg/L_F_upper_leg01
+        weight: 1
+      - path: root/L_front_leg01
+        weight: 1
+      - path: root/L_M_upper_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/L_M_end
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_lower_leg/R_M_lower_leg5
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_middle_leg/L_M_middle_leg01
+        weight: 1
+      - path: root/L_M_upper_leg/L_M_upper_leg01
+        weight: 1
+      - path: root/L_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_B_end
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_lower_leg/R_M_lower_leg2
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_middle_leg/R_B_middle_leg01
+        weight: 1
+      - path: root/R_B_upper_leg/R_B_upper_leg01
+        weight: 1
+      - path: root/R_back_leg1
+        weight: 1
+      - path: root/R_F_upper_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_F_end
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_lower_leg/R_M_lower_leg1
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_middle_leg/R_F_Middle_leg
+        weight: 1
+      - path: root/R_F_upper_leg/R_F_Upper_leg1
+        weight: 1
+      - path: root/R_front_leg
+        weight: 1
+      - path: root/R_M_upper_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_end
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_lower_leg/R_M_lower_leg 1
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_middle_leg/R_M_middle_leg01
+        weight: 1
+      - path: root/R_M_upper_leg/R_M_upper_leg01
+        weight: 1
+      - path: root/R_middle_leg01
+        weight: 1
+      - path: root/Scanner_arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_Arm_1
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_Arm_2
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish
+        weight: 1
+      - path: root/Scanner_arm_1/Scanner_arm_2/Scanner_dish/Scanner_Dish
+        weight: 1
+      - path: root/Walker_Body
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
