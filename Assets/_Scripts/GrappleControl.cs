@@ -115,7 +115,7 @@ public class GrappleControl : MonoBehaviour {
 					if (!madeLast && !shooting) {
 
 						shooting = true;
-						StartCoroutine ("Shoot");
+						Shoot();
 						grappling = false;					
 			
 					} else if ((madeLast && !retracting)) {
@@ -123,7 +123,7 @@ public class GrappleControl : MonoBehaviour {
 
 						retracting = true;
 						grappling = true;
-						StartCoroutine ("retract");
+						retract();
 					
 						grappling = false;
 						player.setGrappling (false);
@@ -137,7 +137,7 @@ public class GrappleControl : MonoBehaviour {
 				if (madeLast && !retracting) {
 					retracting = true;
 					grappling = true;
-					StartCoroutine ("retract");
+					retract();
 				
 					grappling = false;
 					player.setGrappling (false);
@@ -150,7 +150,7 @@ public class GrappleControl : MonoBehaviour {
 		
 	}
 	//shoot the grapple in the direction of the mouse
-	IEnumerator Shoot(){	
+	void Shoot(){	
 
 
 		Vector3 currentCursor = mousePosition;
@@ -257,8 +257,6 @@ public class GrappleControl : MonoBehaviour {
 						//Debug.Log("rope " +j+ " is at: " + ropeArr[j].transform.position.ToString());
 					}
 
-
-					yield return null;
 				}
 				playerAudio.PlayOneShot(audHit);
 				
@@ -294,7 +292,7 @@ public class GrappleControl : MonoBehaviour {
 				player.setGrappling(false);
 				shooting = false;
 
-				StartCoroutine("retract");
+				retract();
 			}
 
 		} else {
@@ -310,7 +308,7 @@ public class GrappleControl : MonoBehaviour {
 
 
 
-	IEnumerator retract(){
+	void retract(){
 
 		//while the grapple is not at the target position, incriment the movement;
 		float t = 0.0f;
@@ -338,7 +336,6 @@ public class GrappleControl : MonoBehaviour {
 				Destroy(ropeArr[0]);
 				i++;
 			}
-			yield return null;
 		}
 
 		madeLast = false;
@@ -380,7 +377,7 @@ public class GrappleControl : MonoBehaviour {
 
 	public void retractGrapple()
 	{
-		StartCoroutine ("retract");
+		retract();
 	}
 
 

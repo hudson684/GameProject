@@ -8,6 +8,10 @@ public class OptionMenuNewGUI : MonoBehaviour {
 	private bool normal = true;
 	private bool high = false;
 
+	private float totalVol = 0.5f;
+
+	private int AA = 4;
+
 	private bool titleMenu = false;
 	private Canvas canvas;
 
@@ -41,8 +45,20 @@ public class OptionMenuNewGUI : MonoBehaviour {
 
 
 	public void volChange(float volume){
+		totalVol = volume;
+	}
 
-		AudioListener.volume = volume;
+	public void zeroAA(){
+		AA = 0;
+	}
+	public void twoAA(){
+		AA = 2;
+	}
+	public void fourAA(){
+		AA = 4;
+	}
+	public void eightAA(){
+		AA = 8;
 	}
 
 	public void setBoolLow(){
@@ -82,18 +98,29 @@ public class OptionMenuNewGUI : MonoBehaviour {
 
 		//Debug.Log("Min: " + min.ToString() + "Low: " + low.ToString() + "Normal: " + normal.ToString() + "High: " + high.ToString());
 
+		//QualitySettings.antiAliasing = AA;
+
+		AudioListener.volume = totalVol;
+		Debug.Log (AudioListener.volume.ToString ());
+
+
 		if (min) {
-			QualitySettings.SetQualityLevel(0, true);
+			QualitySettings.SetQualityLevel(0, false);
 
 		} else if (low) {
-			QualitySettings.SetQualityLevel(1, true);
+			QualitySettings.SetQualityLevel(1, false);
 
 		} else if (normal) {
-			QualitySettings.SetQualityLevel(3, true);
+			QualitySettings.SetQualityLevel(3, false);
 
 		} else if (high){
-			QualitySettings.SetQualityLevel(5, true);
+			QualitySettings.SetQualityLevel(5, false);
 		}
+
+
+
+
+		Debug.Log("Quality setting: " + QualitySettings.GetQualityLevel().ToString());
 
 	}
 
