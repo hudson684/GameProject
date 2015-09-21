@@ -284,7 +284,7 @@ public class Walker : MonoBehaviour {
 		} else if (curRotInt == LEFT) {
 			if(direction.x > 0f){
 				Debug.Log("flipped right");
-				bodyControl.Rotate(new Vector3(0f, 180, 0f));
+				bodyControl.Rotate(new Vector3(0, 180, 0));
 				UpdateRotation(RIGHT);
 				curRotInt = RIGHT;
 				counterClockwise = !counterClockwise;
@@ -293,7 +293,7 @@ public class Walker : MonoBehaviour {
 		} else if (curRotInt == UP) {
 			if(direction.y < 0f){
 				//Debug.Log("flipped down");
-				bodyControl.Rotate(new Vector3(180f, 0f, 0f));
+				bodyControl.Rotate(new Vector3(180, 0, 0));
 				UpdateRotation(DOWN);
 				curRotInt = DOWN;
 				counterClockwise = !counterClockwise;
@@ -302,7 +302,7 @@ public class Walker : MonoBehaviour {
 		} else if (curRotInt == DOWN) {
 			if(direction.y > 0f){
 				//Debug.Log("flipped up");
-				bodyControl.Rotate(new Vector3(180f, 0f, 0f));
+				bodyControl.Rotate(new Vector3(180, 0, 0));
 				UpdateRotation(UP);
 				curRotInt = UP;
 				counterClockwise = !counterClockwise;

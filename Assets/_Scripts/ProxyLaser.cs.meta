@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 1aa4bd175c9ba0140a48a58b8c552cac
-timeCreated: 1439171768
+timeCreated: 1442802857
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - laserClip: {fileID: 8300000, guid: 972431c01bd2f0846bde715e7d672a8a, type: 3}
+  - sparks: {fileID: 103270, guid: fcd7071965c82bb42b86b895f9d945ed, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

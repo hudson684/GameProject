@@ -12,6 +12,7 @@ public class Laser : MonoBehaviour {
 	public LayerMask hitLayers;
 	public Vector2 direction;
 	public AudioClip laserClip;
+	public GameObject sparks;
 
 	//Privvate Variables
 	private RaycastHit2D hit;
@@ -19,6 +20,7 @@ public class Laser : MonoBehaviour {
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
 	private AudioSource audioSource;
+	private GameObject _particles;
 	[HideInInspector]public bool kill = true;
 
 	private int flickerDelay;
@@ -55,6 +57,11 @@ public class Laser : MonoBehaviour {
 			//if ray hits object
 			if(hit.collider && kill){
 				laserLine.SetPosition(1, hit.point);
+				if(_particles == null){
+					_particles = Instantiate(sparks,hit.point,Quaternion.LookRotation(direction + Vector2.up, -direction)) as GameObject;
+				}
+				_particles.transform.position = hit.point;
+				_particles.transform.rotation = Quaternion.LookRotation(direction + Vector2.up,-direction);
 				laserEffect();
 			}//end if
 			
@@ -84,6 +91,9 @@ public class Laser : MonoBehaviour {
 	public void toggleOff(){
 		laserLine.enabled = false;
 		audioSource.Stop();
+		if(_particles != null){
+			Destroy(_particles);
+		}
 	}
 
 	public void traceFlicker(){

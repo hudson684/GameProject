@@ -17,6 +17,9 @@ public class Socket : Key {
 			refCore.GetComponent<BoxCollider2D>().enabled = false;
 			refCore.transform.position = refTransform.position;
 			refCore.transform.rotation = refTransform.rotation;
+			if(refCore.transform.parent.tag == "Player"){
+				refCore.transform.SetParent(null);
+			}
 			refCore.transform.SetParent(transform);
 		}
 	}
