@@ -12,6 +12,7 @@ public class ControlNode : MonoBehaviour
 
 	private Vector3 playerPosition;
 	private float grappleDistance;
+	private bool isPlayerLeft = false;
 
 	private GameObject CheckPointMarker;
 
@@ -64,6 +65,14 @@ public class ControlNode : MonoBehaviour
 	
 	public float getGrappleDistance(){
 		return grappleDistance;
+	}
+
+	public bool getPlayerFacingLeft(){
+		return isPlayerLeft;
+	}
+
+	public void setPlayerFacingLeft(bool isLeft){
+		isPlayerLeft = isLeft;	
 	}
 	
 

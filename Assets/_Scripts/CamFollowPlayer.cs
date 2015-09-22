@@ -96,6 +96,8 @@ public class CamFollowPlayer : MonoBehaviour {
 			this.GetComponent<Camera>().orthographicSize = zoomValue;
 
 		}
+
+		this.GetComponent<Camera>().orthographicSize = zoomValue;
 		
 	}
 }

@@ -103,6 +103,7 @@ public class PlayerControl : MonoBehaviour {
 
 		contNode.setPlayerPosition (this.transform.position);
 
+
 		//Mantle Setup
 		mantleComponent = GetComponentInChildren<Mantle>();
 
@@ -118,6 +119,8 @@ public class PlayerControl : MonoBehaviour {
 		CurrentSetting ();
 
 		contNode.setPlayerPosition (this.transform.position);
+		contNode.setPlayerFacingLeft (isLeft);
+
 
 		if (!deathNode.getDeath()) {
 			if (!isGrappling) {
@@ -325,11 +328,13 @@ public class PlayerControl : MonoBehaviour {
 		//CODE BY LIAM, rotates player left/right (note has to be seperate to normal a/d control because this only needs
 		//to happen once per pressing
 		if(Input.GetKeyDown("a") && !Input.GetKeyDown(KeyCode.D)){
+			isLeft = true;
 			rotation.eulerAngles = new Vector2(0,180);
 			transform.rotation = rotation;
 		} 
 
 		if(Input.GetKeyDown("d") && !Input.GetKeyDown(KeyCode.A)){
+			isLeft = false;
 			rotation.eulerAngles = new Vector2(0,0);
 			transform.rotation = rotation;
 		}
