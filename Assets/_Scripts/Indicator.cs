@@ -4,12 +4,12 @@ using System.Collections;
 public class Indicator : MonoBehaviour {
 
 	public Key refkey;
-	public Material red,green;
-	private Renderer indComponent;
+	public Sprite red,green;
+	private SpriteRenderer indComponent;
 
 	// Use this for initialization
 	void Start () {
-		indComponent = gameObject.GetComponent<Renderer>();
+		indComponent = gameObject.GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -17,13 +17,13 @@ public class Indicator : MonoBehaviour {
 		//assess if instance has a reference key
 		if(refkey != null){//if reference key is set check if locked
 			if(!refkey.getLocked()){
-				indComponent.material = green;
+				indComponent.sprite = green;
 			}else{
-				indComponent.material = red;
+				indComponent.sprite = red;
 			}
 		}else{
 			//if reference key not set, default to green
-			indComponent.material = green;
+			indComponent.sprite = green;
 		}
 	}
 
