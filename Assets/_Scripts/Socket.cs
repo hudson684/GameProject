@@ -5,6 +5,7 @@ public class Socket : Key {
 
 	//target
 	public Collider2D refCore;
+	private Rigidbody2D refRigid;
 
 	//Public Positioning
 	public float transitionTime = 1.5f;
@@ -20,9 +21,13 @@ public class Socket : Key {
 	private Animator anim;
 	private int closedHash = Animator.StringToHash("Close");
 
+	//laser
+	public Laser targetLaser;
+
 
 	void Start(){
 		refTransform = transform.FindChild("DummyCore");
+		refRigid = refCore.GetComponent<Rigidbody2D>();
 		transitionTemp = transitionTime;
 		anim = transform.FindChild("Reactor Socket").GetComponent<Animator>();
 	}
@@ -35,13 +40,16 @@ public class Socket : Key {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other == refCore){
+			refCore.transform.SetParent(transform);
 			Unlock();
-			refCore.GetComponent<Rigidbody2D>().Sleep();
-			refCore.GetComponent<BoxCollider2D>().enabled = false;
+			refRigid.Sleep();
+			refCore.enabled = false;
 			rotate = true;
+			if(targetLaser){
+				targetLaser.toggleOff();
+			}
 			//refCore.transform.rotation = refTransform.rotation;
 			//refCore.transform.position = refTransform.position;
-			refCore.transform.SetParent(transform);
 		}
 	}
 
@@ -69,6 +77,7 @@ public class Socket : Key {
 				move = false;
 				transitionTemp = transitionTime;
 				anim.SetBool(closedHash,true);
+				refRigid.freezeRotation = true;
 			}
 		}
 	}

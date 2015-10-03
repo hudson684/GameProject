@@ -147,7 +147,7 @@ public class PlayerControl : MonoBehaviour {
 				anim.SetTrigger (jumpHash);
 			} */
 		
-		if(Input.GetKeyDown(KeyCode.Z)){
+		if(Input.GetKeyDown(KeyCode.F)){
 			anim.SetTrigger(interactHash);
 		}
 		
