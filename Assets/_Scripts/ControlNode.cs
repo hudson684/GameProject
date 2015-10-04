@@ -16,19 +16,46 @@ public class ControlNode : MonoBehaviour
 
 	private GameObject CheckPointMarker;
 
+	private int levelIndex;
+
 
 
 	void Start(){
 		pauseCanvas = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<Canvas>();
 		CheckPointMarker = GameObject.FindGameObjectWithTag ("CheckPointMarker");
-	
+		levelIndex = Application.loadedLevel;
 	}
 	
 	void Update()
 	{
+		gameControl ();
+
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			paused = togglePause ();
 		}
+	}
+
+
+	private void gameControl(){
+
+		if (Input.GetKeyDown (KeyCode.F1)) {
+			Application.LoadLevel (levelIndex - 1);
+		}
+
+		if(Input.GetKeyDown(KeyCode.F2)){
+			Application.LoadLevel(levelIndex + 1);
+		}
+
+		if (Input.GetKeyDown(KeyCode.F3)){
+			Debug.Log("god mode activated");
+			this.GetComponent<DeathNode>().setGodMode(true);
+		}
+
+		if (Input.GetKeyDown(KeyCode.F4)){
+			Debug.Log("god mode deactivated");
+			this.GetComponent<DeathNode>().setGodMode(false);
+		}
+
 	}
 
 

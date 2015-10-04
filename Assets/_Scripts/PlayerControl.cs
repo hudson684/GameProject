@@ -96,10 +96,9 @@ public class PlayerControl : MonoBehaviour {
 		//the setup for the size and ofsets for the crouching
 		box = this.GetComponent<BoxCollider2D>();
 		fullSize = box.size;
-		crouchedSize = new Vector2(box.size.x, box.size.y - 0.5f);
+		crouchedSize = new Vector2(0.7546405f, 1.071778f);
 		fullOffset = box.offset;
-		crouchedOffset = new Vector2 (box.offset.x, 0.5f);
-
+		crouchedOffset = new Vector2(0.1905554f, 0.5293568f);
 
 		contNode.setPlayerPosition (this.transform.position);
 

@@ -168,6 +168,9 @@ public class Walker : MonoBehaviour {
 					nextPoint = patrolPoints [currentPoint];
 				} else {
 					nextPoint = player.transform.position;
+
+					Debug.Log("player position: " + player.transform.position.ToString());
+
 					playerKillZone(); 
 				}
 
@@ -620,6 +623,7 @@ public class Walker : MonoBehaviour {
 				if(hit.collider != null){
 					if(hit.collider.tag == "Player"){
 						player = hit.collider.gameObject;
+						Debug.Log("hit player");
 						return true;
 					} 
 				} 

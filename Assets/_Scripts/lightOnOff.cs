@@ -13,6 +13,8 @@ public class lightOnOff : MonoBehaviour {
 	public bool isRandom = false;
 
 	public float lightTime = 3f;
+	public float minRan = 3f;
+	public float maxRan = 10f;
 
 	// Update is called once per frame
 	void Update () {
@@ -23,7 +25,7 @@ public class lightOnOff : MonoBehaviour {
 		if (finishedLoop) {
 			finishedLoop = false;
 			if(isRandom){
-				float randTime = Random.value/4.0f;
+				float randTime = Random.Range(minRan, maxRan);
 				Debug.Log(randTime.ToString());
 				StartCoroutine(onOff(randTime));
 			} else {

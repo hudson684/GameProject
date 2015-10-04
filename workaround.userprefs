@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Socket.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\PlayerControl.cs">
     <Files>
-      <File FileName="..\..\..\..\Unity Tests\2D Movement Tests\Assets\_Scripts\MovementTest.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Socket.cs" Line="25" Column="16" />
+      <File FileName="Assets\_Scripts\PlayerControl.cs" Line="101" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

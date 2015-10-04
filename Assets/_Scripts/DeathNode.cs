@@ -6,6 +6,7 @@ public class DeathNode : MonoBehaviour {
 	private bool Death = false;
 
 	private GameObject canvas;
+	private bool godMode = false;
 
 	public float waitTime = 0.5f;
 
@@ -17,7 +18,7 @@ public class DeathNode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Death) {
+		if (Death && !godMode) {
 			StartCoroutine("waitDeath");
 
 			if(Input.GetKeyDown(KeyCode.R) && canvas.GetComponent<Canvas>().enabled == true){
@@ -32,11 +33,18 @@ public class DeathNode : MonoBehaviour {
 	}
 	
 	public void setDeath(bool value){
-		Death = value;
+		if (!godMode) {
+			Death = value;
+		}
 	}
 
 	public bool getDeath(){
 		return Death;
+	}
+
+	public void setGodMode(bool god){
+		godMode = god;
+
 	}
 
 	private IEnumerator waitDeath(){
