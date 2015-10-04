@@ -62,6 +62,7 @@ public class PlayerControl : MonoBehaviour {
 	private int DeathHash = Animator.StringToHash("Death");
 	private int interactHash = Animator.StringToHash("Interact");
 	private int Mantleing = Animator.StringToHash ("Mantleing");
+	private int gravHash = Animator.StringToHash("Gravity");
 	private bool crouched = false;
 
 	//mantle Variables
@@ -182,13 +183,13 @@ public class PlayerControl : MonoBehaviour {
 		//area that uses the specific gravity in question.
 		
 		if(other.tag == "zeroGravZone"){
-			
+			anim.SetBool(gravHash,false);
 			GetComponent<Rigidbody2D>().gravityScale = 0;
 			currentGravity = ZERO_GRAVITY;
 			GetComponent<Rigidbody2D>().fixedAngle = false;
 			
 		} else if (other.tag == "fullGravZone"){
-			
+			anim.SetBool(gravHash,true);
 			GetComponent<Rigidbody2D>().gravityScale= normalGravValue;
 			currentGravity = FULL_GRAVITY;
 			GetComponent<Rigidbody2D>().rotation = 0f;
@@ -299,6 +300,7 @@ public class PlayerControl : MonoBehaviour {
 	// D: Right
 	// LEFT CTRL: Crouch
 	void normalMovement(){
+
 
 		//if (isHolding) {
 
