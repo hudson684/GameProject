@@ -576,7 +576,7 @@ public class Walker : MonoBehaviour {
 	private bool playerKillZone(){
 		
 		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + .5f)
-		                                            , currentRotation, 3.1f, toHit);
+		                                            , currentRotation, 3.3f, toHit);
 		
 		
 		if (detection.collider != null && detection.collider.tag == "Player") {
@@ -590,9 +590,10 @@ public class Walker : MonoBehaviour {
 
 	//Development code
 	void OnDrawGizmos(){
-		Ray rayT = new Ray(new Vector3 (this.transform.position.x, this.transform.position.y + 0.5f,2f),  currentRotation);
 		Gizmos.color = Color.green;
-		Gizmos.DrawRay (rayT);
+		RaycastHit2D detection = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y + .5f)
+		                                            , currentRotation, 3.3f, toHit);
+		Gizmos.DrawLine(new Vector2(this.transform.position.x, this.transform.position.y + .5f), detection.point);
 		Gizmos.color = Color.white;
 		Gizmos.DrawRay(this.transform.position, jumpChecker);
 		Gizmos.DrawRay (this.transform.position, downDirection);

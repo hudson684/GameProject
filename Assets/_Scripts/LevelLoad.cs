@@ -29,7 +29,6 @@ public class LevelLoad : MonoBehaviour {
 			control.enabled = false;
 			Destroy(checkpoint);
 			start = true;
-
 		}
 	}
 
