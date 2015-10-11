@@ -52,7 +52,6 @@ public class Mantle : MonoBehaviour {
 	//while in the mantle area set the position and end position of the mantle
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "MantleCorner") {
-
 			if(Input.GetKeyDown(KeyCode.W)){
 				Debug.Log("should mantle");
 				mantlePosition = other.transform.position;
@@ -61,8 +60,11 @@ public class Mantle : MonoBehaviour {
 				endPosition = child.transform.position;
 				//mantleFall = child2.transform.position;
 
+							
+			}
+			if (Input.GetKeyUp(KeyCode.W)){
 				mantling = true;
-				playerCont.setMantling(mantling);			
+				playerCont.setMantling(mantling);
 			}
 		}	
 	}

@@ -2,34 +2,34 @@
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
-
-
-
+	
+	
+	
 	//set the gravity 
 	private const int FULL_GRAVITY = 2;
 	private const int ZERO_GRAVITY = 0;
-
+	
 	private int currentGravity = FULL_GRAVITY; //start on normal gravity
-
+	
 	//initialize the private variables used in the code
 	private bool isGrounded = true;
 	private bool isGrappling = false;
 	private bool isCrouched = false;
 	private bool isMantling = false;
 	private bool isLeft = false;
-
+	
 	//the objects that the player will need to interact with
 	private GameObject deathNodeObject;
 	private DeathNode deathNode;
 	private ControlNode contNode;
-
+	
 	private GameObject CheckPointMarker;
 	private Grounded groundedCode;
-
+	
 	private GameObject heldObject;
 	private bool isHolding = false;
 	private string tempHeldLayer = " ";
-
+	
 	//public variables
 	public float jumpHeight = 7f;
 	public float moveSpeed = 5f;
@@ -38,7 +38,7 @@ public class PlayerControl : MonoBehaviour {
 	public float grappleSpeed = 10f;
 	public float fallDamageAt = -25.0f;
 	public float normalGravValue = 2.0f;
-
+	
 	//crouched variables
 	private BoxCollider2D box;
 	Vector2 fullSize;
@@ -48,7 +48,8 @@ public class PlayerControl : MonoBehaviour {
 	bool shouldCrouch = false;
 	public float crouchDis = 0.2f;
 	public LayerMask crouchMask;
-
+	
+	
 	//animation variables
 	private Animator anim;
 	private AudioSource audioController;
@@ -64,35 +65,35 @@ public class PlayerControl : MonoBehaviour {
 	private int Mantleing = Animator.StringToHash ("Mantleing");
 	private int gravHash = Animator.StringToHash("Gravity");
 	private bool crouched = false;
-
+	
 	//mantle Variables
 	private Mantle mantleComponent;
-
-
+	
+	
 	//rotation variables
 	private Quaternion rotation = Quaternion.identity;
-
+	
 	
 	void Awake(){
 		//find the checkpoint marker and send the player to it
 		CheckPointMarker = GameObject.FindGameObjectWithTag ("CheckPointMarker");
 		this.transform.position = CheckPointMarker.transform.position;
-
+		
 		//initialize the trigger that checks to see if the player is grounded
 		groundedCode = (Grounded)this.GetComponentInChildren(typeof(Grounded));
-	
+		
 		//make sure the player doesnt rotate
 		GetComponent<Rigidbody2D>().fixedAngle = true;
-	
+		
 		//initialize contact with the deathnode
 		deathNodeObject = GameObject.FindGameObjectWithTag ("DeathNode");
 		deathNode = (DeathNode) deathNodeObject.GetComponent(typeof(DeathNode));
 		contNode = (ControlNode) deathNodeObject.GetComponent(typeof(ControlNode));
-
+		
 		anim = GetComponent<Animator>();
 		audioController = GetComponent<AudioSource>();
-
-
+		
+		
 		//CROUCHING SETUP
 		//the setup for the size and ofsets for the crouching
 		box = this.GetComponent<BoxCollider2D>();
@@ -100,28 +101,30 @@ public class PlayerControl : MonoBehaviour {
 		crouchedSize = new Vector2(0.7546405f, 1.071778f);
 		fullOffset = box.offset;
 		crouchedOffset = new Vector2(0.1905554f, 0.5293568f);
-
+		
 		contNode.setPlayerPosition (this.transform.position);
-
-
+		contNode.setPlayerGrav (currentGravity);
+		
+		
 		//Mantle Setup
 		mantleComponent = GetComponentInChildren<Mantle>();
-
+		
 	}
-
-
-
+	
+	
+	
 	//WHILE THE PLAYER IS NOT DEAD, MOVE THE PLAYER UNDER THREE CATAGORIES; GRAPPLING, NORMAL GRAV AND ZERO GRAV
 	void Update () {
-
+		
 		//Debug.Log ("Is holding on: " + isHolding.ToString());
-
+		
 		CurrentSetting ();
-
+		
 		contNode.setPlayerPosition (this.transform.position);
 		contNode.setPlayerFacingLeft (isLeft);
-
-
+		contNode.setPlayerGrav (currentGravity);
+		
+		
 		if (!deathNode.getDeath()) {
 			if (!isGrappling) {
 				if (currentGravity == FULL_GRAVITY){
@@ -135,12 +138,12 @@ public class PlayerControl : MonoBehaviour {
 				grapleMovement ();
 			}	
 		}
-
-
+		
+		
 		if (isHolding) {
 			keepHoldingOn();
 		}
-
+		
 		//float move = Mathf.Abs(Input.GetAxis("Horizontal"));
 		
 		/*	if(Input.GetKeyDown(KeyCode.Space)){
@@ -158,18 +161,18 @@ public class PlayerControl : MonoBehaviour {
 		//anim.SetBool(Mantleing, isMantling);
 		//anim.SetBool(crouchHash, isCrouched);
 		anim.SetBool(DeathHash, deathNode.getDeath());
-
-
+		
+		
 	}
-
+	
 	void footFall(){
 		
 		currentClip = clips[Random.Range(0,2)];
 		audioController.clip = currentClip;
 		audioController.Play();
 	}
-
-
+	
+	
 	//temporary holders 
 	void CurrentSetting(){
 		isGrounded = groundedCode.getGrounded ();
@@ -206,44 +209,44 @@ public class PlayerControl : MonoBehaviour {
 		if (other.relativeVelocity.y < fallDamageAt && other.collider.tag != "Grapple"){
 			deathNode.setDeath(true);
 		}
-
-
-
+		
+		
+		
 	}
-
+	
 	void OnCollisionStay2D(Collision2D other){
 		if (!isHolding) {
 			if(other.collider.tag == "Object"){
 				if(Input.GetButtonDown("Interact")){
-
+					
 					GrappleControl grapple = (GrappleControl)this.GetComponentInChildren (typeof(GrappleControl));
 					
 					if(isGrappling){
 						if(other.collider.name == grapple.getObjName()){
-							grapple.retractGrapple();
+							//grapple.retractGrapple();
 							
-							startHoldingOn(other.gameObject);
+							//startHoldingOn(other.gameObject);
 						}
 						
 					} else {
-
-						startHoldingOn(other.gameObject);
+						
+						//startHoldingOn(other.gameObject);
 					}
-
+					
 					
 				}
 			}
 		}
-
-
+		
+		
 	}
 	
-
+	
 	private void startHoldingOn(GameObject obj){
 		if (isHolding) {
 			stopHoldingOn();
 		}
-
+		
 		obj.transform.SetParent (this.transform);
 		heldObject = obj;
 		heldObject.GetComponent<Rigidbody2D> ().Sleep ();
@@ -251,38 +254,38 @@ public class PlayerControl : MonoBehaviour {
 		//heldObject.tag = "Player";
 		//heldObject.layer = LayerMask.NameToLayer ("Player");
 		StartCoroutine ("holdWait");
-
+		
 	}
-
-
+	
+	
 	IEnumerator holdWait(){
-
+		
 		yield return new WaitForSeconds (0.2f);
 		isHolding = true;
 	}
-
+	
 	private void keepHoldingOn(){
-
+		
 		//float disX = 1f + ((heldObject.transform.lossyScale.x -1f)/ 3f);
-
+		
 		float disX = 1f + heldObject.GetComponent<BoxCollider2D> ().size.x;
 		//float disY = 1f + ((heldObject.transform.lossyScale.y -1f)/ 3f);
 		float disY = 1f + heldObject.GetComponent<BoxCollider2D> ().size.y;
-
+		
 		if (heldObject != null) {
 			heldObject.transform.localPosition = new Vector3 (disX, disY, 0f);
 		}
-
+		
 		if (isHolding) {
 			if(Input.GetButtonDown("Interact"))
 			{
 				stopHoldingOn();
 			}
 		}
-
-
+		
+		
 	}
-
+	
 	private void stopHoldingOn(){
 		//heldObject.tag = tempHeldLayer;
 		//heldObject.layer = LayerMask.NameToLayer ("Object");
@@ -292,7 +295,7 @@ public class PlayerControl : MonoBehaviour {
 		//StartCoroutine ("holdWait");
 		isHolding = false;
 	}
-
+	
 	//NORMAL MOVEMENT CODE
 	//
 	// SPACE: up
@@ -300,19 +303,19 @@ public class PlayerControl : MonoBehaviour {
 	// D: Right
 	// LEFT CTRL: Crouch
 	void normalMovement(){
-
-
+		
+		
 		//if (isHolding) {
-
+		
 		//	stopHoldingOn();
 		//}
-
-
+		
+		
 		if(Input.GetKeyDown(KeyCode.Space) && isGrounded && !isMantling){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
 			anim.SetTrigger(jumpHash);
 		}
-
+		
 		if (Input.GetKey(KeyCode.A)) {
 			GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
 			anim.SetFloat(speedHash,1f);
@@ -324,7 +327,7 @@ public class PlayerControl : MonoBehaviour {
 		}else{
 			anim.SetFloat(speedHash,0f);
 		}
-
+		
 		
 		//CODE BY LIAM, rotates player left/right (note has to be seperate to normal a/d control because this only needs
 		//to happen once per pressing
@@ -333,14 +336,14 @@ public class PlayerControl : MonoBehaviour {
 			rotation.eulerAngles = new Vector2(0,180);
 			transform.rotation = rotation;
 		} 
-
+		
 		if(Input.GetKeyDown("d") && !Input.GetKeyDown(KeyCode.A)){
 			isLeft = false;
 			rotation.eulerAngles = new Vector2(0,0);
 			transform.rotation = rotation;
 		}
-
-
+		
+		
 		if (Input.GetButtonDown("Crouch") || Input.GetKeyDown(KeyCode.C)){
 			isCrouched = !isCrouched;
 			if(isCrouched){
@@ -351,32 +354,32 @@ public class PlayerControl : MonoBehaviour {
 				}
 			}
 		}
-
+		
 		RaycastHit2D hit = Physics2D.Raycast (new Vector3(this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z), new Vector3 (0f, 1f, 0f), crouchDis, crouchMask);
-
-
+		
+		
 		if (hit.collider != null) {
 			Debug.Log ("should crouch");
 			Debug.Log(hit.collider.name.ToString());
-
-
+			
+			
 			if(!isCrouched){
 				shouldCrouch = true;
 				isCrouched = true;
 				crouch ();
 			}
-
+			
 		} else {
-
+			
 			shouldCrouch = false;
 		}
-
+		
 	}
-
+	
 	void OnDrawGizmos(){
 		Gizmos.DrawRay (new Vector3 (this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z), new Vector3 (0f, 1f, 0f));
 	}
-
+	
 	void crouch(){
 		moveSpeed = 3f;
 		box.size = crouchedSize;
@@ -436,12 +439,12 @@ public class PlayerControl : MonoBehaviour {
 		{
 			GetComponent<Rigidbody2D>().angularVelocity = 0;
 		}
-
-
-
+		
+		
+		
 	}
-
-
+	
+	
 	//GRAPPLE MOVEMENT,
 	//
 	// SPACE: reduce number of links
@@ -461,7 +464,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 		
 		if (currentGravity == FULL_GRAVITY) {
-
+			
 			if(isGrounded){
 				if (Input.GetKey(KeyCode.A)) {
 					GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
@@ -472,7 +475,7 @@ public class PlayerControl : MonoBehaviour {
 					GetComponent<Transform>().Translate(moveSpeed * Time.deltaTime,0,0);
 					isLeft = false;
 				}
-
+				
 				if(Input.GetKeyDown("a")){
 					rotation.eulerAngles = new Vector2(0,180);
 					transform.rotation = rotation;
@@ -507,13 +510,13 @@ public class PlayerControl : MonoBehaviour {
 			{
 				GetComponent<Rigidbody2D>().AddForce (Vector2.right * jetpackSpeed);
 			}
-			if(Input.GetKeyDown(KeyCode.Q))
+			if(Input.GetKey(KeyCode.Q))
 			{
-				GetComponent<Rigidbody2D>().AddTorque(rotateSpeed);
+				GetComponent<Rigidbody2D>().AddTorque(rotateSpeed / 2f);
 			}
-			if(Input.GetKeyDown(KeyCode.E))
+			if(Input.GetKey(KeyCode.E))
 			{
-				GetComponent<Rigidbody2D>().AddTorque(-rotateSpeed);
+				GetComponent<Rigidbody2D>().AddTorque(-rotateSpeed / 2f);
 			}
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
@@ -522,23 +525,23 @@ public class PlayerControl : MonoBehaviour {
 		}
 		
 	}
-
+	
 	//GETTERS AND SETTERS
 	//GROUNDED
-
+	
 	public bool getGrounded(){
 		return groundedCode.getGrounded();
 	}
-
+	
 	public void setGrounded(bool grounded){
 		isGrounded = grounded;
 	}
-
+	
 	//GRAPPLING
 	public bool getIsGrappling(){
 		return isGrappling;
 	}
-
+	
 	public void setGrappling(bool grappling){
 		isGrappling = grappling;
 	}
@@ -547,31 +550,35 @@ public class PlayerControl : MonoBehaviour {
 		
 		return isMantling;
 	}
-
+	
 	public void setMantling(bool mantling){
 		isMantling = mantling;
 	}
-
+	
 	//CROUCHED
 	public void setIsCrouched(bool crouched){
-
+		
 		isCrouched = crouched;
 	}
-
-
+	
+	
 	public bool getIsCrouched(){
-
+		
 		return isCrouched;
 	}
-
-
+	
+	public int getGravity(){
+		return currentGravity;
+	}
+	
+	
 	//CODE BY LIAM, CHECKS TO SEE ORIENTATION OF PLAYER
 	public bool getLeft(){
 		return isLeft;
 	}
-
+	
 	public void triggerMantleUp(){
 		mantleComponent.mantleUp();
 	}
-
+	
 }

@@ -36,7 +36,7 @@ public class ObjectGravity : MonoBehaviour {
 
 			if(this.tag == "Grapple"){
 				
-				GetComponent<Rigidbody2D>().mass = 1f;
+				GetComponent<Rigidbody2D>().mass = 2f;
 			}
 			
 			GetComponent<Rigidbody2D>().gravityScale= FULL_GRAVITY_SCALE;
