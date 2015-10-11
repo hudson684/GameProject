@@ -16,6 +16,7 @@ public class Mantle : MonoBehaviour {
 	private Animator anim;
 	private int isMantleingHash = Animator.StringToHash("Mantling");
 	private int mantleUpHash = Animator.StringToHash("MantlePull");
+	private int mantleDropHash = Animator.StringToHash("MantleDrop");
 
 	void Awake(){
 		anim = GetComponentInParent<Animator>();
@@ -42,8 +43,10 @@ public class Mantle : MonoBehaviour {
 			
 			if(Input.GetKeyDown(KeyCode.S)){
 				//player.transform.position = mantleFall;
+				anim.SetTrigger(mantleDropHash);
 				mantling = false;
 				playerCont.setMantling(mantling);
+				anim.SetBool(isMantleingHash,mantling);
 			}
 		}
 	}
