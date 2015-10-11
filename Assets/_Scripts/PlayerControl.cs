@@ -38,6 +38,7 @@ public class PlayerControl : MonoBehaviour {
 	public float grappleSpeed = 10f;
 	public float fallDamageAt = -25.0f;
 	public float normalGravValue = 2.0f;
+	public float maxZeroGravSpeed = 30f;
 	
 	//crouched variables
 	private BoxCollider2D box;
@@ -132,6 +133,7 @@ public class PlayerControl : MonoBehaviour {
 				}else{
 					if(contNode.getZeroGrav()){
 						ZeroGravMovement();
+						//zeroGravMaxSpeed();
 					}
 				}
 			} else {
@@ -410,20 +412,23 @@ public class PlayerControl : MonoBehaviour {
 	// SPACE: stop rotation
 	//
 	void ZeroGravMovement(){
+
+		Vector2 vel = this.GetComponent<Rigidbody2D> ().velocity;
 		
-		if(Input.GetKey(KeyCode.W))
+
+		if(Input.GetKey(KeyCode.W) && !(vel.y > maxZeroGravSpeed))
 		{
 			GetComponent<Rigidbody2D>().AddForce (Vector2.up * jetpackSpeed);
 		}
-		if(Input.GetKey(KeyCode.S))
+		if(Input.GetKey(KeyCode.S) && !(vel.y < -maxZeroGravSpeed))
 		{
 			GetComponent<Rigidbody2D>().AddForce (Vector2.up * -jetpackSpeed);
 		}
-		if(Input.GetKey(KeyCode.A))
+		if(Input.GetKey(KeyCode.A) &&!(vel.x < -maxZeroGravSpeed))
 		{
 			GetComponent<Rigidbody2D>().AddForce (Vector2.right * -jetpackSpeed);
 		}
-		if(Input.GetKey(KeyCode.D))
+		if(Input.GetKey(KeyCode.D) && !(vel.x > maxZeroGravSpeed))
 		{
 			GetComponent<Rigidbody2D>().AddForce (Vector2.right * jetpackSpeed);
 		}
@@ -494,19 +499,22 @@ public class PlayerControl : MonoBehaviour {
 			}
 		} else {
 			
-			if(Input.GetKey(KeyCode.W))
+			Vector2 vel = this.GetComponent<Rigidbody2D> ().velocity;
+
+			
+			if(Input.GetKey(KeyCode.W) && !(vel.y > maxZeroGravSpeed))
 			{
 				GetComponent<Rigidbody2D>().AddForce (Vector2.up * jetpackSpeed);
 			}
-			if(Input.GetKey(KeyCode.S))
+			if(Input.GetKey(KeyCode.S) && !(vel.y < -maxZeroGravSpeed))
 			{
 				GetComponent<Rigidbody2D>().AddForce (Vector2.up * -jetpackSpeed);
 			}
-			if(Input.GetKey(KeyCode.A))
+			if(Input.GetKey(KeyCode.A) &&!(vel.x < -maxZeroGravSpeed))
 			{
 				GetComponent<Rigidbody2D>().AddForce (Vector2.right * -jetpackSpeed);
 			}
-			if(Input.GetKey(KeyCode.D))
+			if(Input.GetKey(KeyCode.D) && !(vel.x > maxZeroGravSpeed))
 			{
 				GetComponent<Rigidbody2D>().AddForce (Vector2.right * jetpackSpeed);
 			}
