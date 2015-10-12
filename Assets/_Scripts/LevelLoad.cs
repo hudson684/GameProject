@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿cusing UnityEngine;
 using System.Collections;
 
 public class LevelLoad : MonoBehaviour {
@@ -26,7 +26,7 @@ public class LevelLoad : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
-			control.enabled = false;
+			//control.enabled = false;
 			Destroy(checkpoint);
 			start = true;
 		}

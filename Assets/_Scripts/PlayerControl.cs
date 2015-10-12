@@ -129,7 +129,9 @@ public class PlayerControl : MonoBehaviour {
 		if (!deathNode.getDeath()) {
 			if (!isGrappling) {
 				if (currentGravity == FULL_GRAVITY){
-					normalMovement ();
+					if(!isMantling){
+						normalMovement ();
+					}
 				}else{
 					if(contNode.getZeroGrav()){
 						ZeroGravMovement();
