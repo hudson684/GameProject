@@ -226,7 +226,10 @@ ModelImporter:
     4300012: Shoes_R
     4300014: Shinguards_R
     4300016: jetpack
-    7400000: Take 001
+    7400000: run Jump
+    7400002: awaken
+    7400004: zeroGSuffocation
+    7400006: Down
     9500000: //RootNode
     13700000: Character
     13700002: chestplate1
@@ -256,7 +259,967 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run Jump
+      takeName: Take 001
+      firstFrame: 288
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry
+        weight: 1
+      - path: Geometry/Character
+        weight: 1
+      - path: Geometry/chestplate1
+        weight: 1
+      - path: Geometry/helmet
+        weight: 1
+      - path: Geometry/helmet_visor
+        weight: 1
+      - path: Geometry/jetpack
+        weight: 1
+      - path: Geometry/Shinguards_L
+        weight: 1
+      - path: Geometry/Shinguards_R
+        weight: 1
+      - path: Geometry/Shoes_L
+        weight: 1
+      - path: Geometry/Shoes_R
+        weight: 1
+      - path: Global
+        weight: 1
+      - path: Global/Controls
+        weight: 1
+      - path: Global/Controls/ik_left_hand
+        weight: 1
+      - path: Global/Controls/ik_right_hand
+        weight: 1
+      - path: Global/Controls/ikHandle1
+        weight: 1
+      - path: Global/Controls/ikHandle2
+        weight: 1
+      - path: Global/Controls/L_foot_control
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End/jDrv_LeftToeBase
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End/jDrv_LeftToeBase/jDrv_LeftFoot
+        weight: 1
+      - path: Global/Controls/R_foot_control
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End/jDrv_RightToeBase
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End/jDrv_RightToeBase/jDrv_RightFoot
+        weight: 1
+      - path: Global/Skeleton
+        weight: 1
+      - path: Global/Skeleton/Hips1
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot/LeftToeBase
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot/LeftToeBase/LeftToes_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot/RightToeBase
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot/RightToeBase/RightToes_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3/LeftHandIndex4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3/LeftHandMiddle4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3/LeftHandPinky4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3/LeftHandRing4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3/LeftHandThumb4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck/Head/Head_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3/RightHandIndex4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3/RightHandPinky4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2/RightHandRing3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2/RightHandRing3/RightHandRing4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3/RightHandThumb4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: awaken
+      takeName: Take 001
+      firstFrame: 550
+      lastFrame: 697
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .987341762
+        functionName: openCanvas
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7426d81a3bd3db4469220dc0ad8d8d2e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry
+        weight: 1
+      - path: Geometry/Character
+        weight: 1
+      - path: Geometry/chestplate1
+        weight: 1
+      - path: Geometry/helmet
+        weight: 1
+      - path: Geometry/helmet_visor
+        weight: 1
+      - path: Geometry/jetpack
+        weight: 1
+      - path: Geometry/Shinguards_L
+        weight: 1
+      - path: Geometry/Shinguards_R
+        weight: 1
+      - path: Geometry/Shoes_L
+        weight: 1
+      - path: Geometry/Shoes_R
+        weight: 1
+      - path: Global
+        weight: 1
+      - path: Global/Controls
+        weight: 1
+      - path: Global/Controls/ik_left_hand
+        weight: 1
+      - path: Global/Controls/ik_right_hand
+        weight: 1
+      - path: Global/Controls/ikHandle1
+        weight: 1
+      - path: Global/Controls/ikHandle2
+        weight: 1
+      - path: Global/Controls/L_foot_control
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End/jDrv_LeftToeBase
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End/jDrv_LeftToeBase/jDrv_LeftFoot
+        weight: 1
+      - path: Global/Controls/R_foot_control
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End/jDrv_RightToeBase
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End/jDrv_RightToeBase/jDrv_RightFoot
+        weight: 1
+      - path: Global/Skeleton
+        weight: 1
+      - path: Global/Skeleton/Hips1
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot/LeftToeBase
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot/LeftToeBase/LeftToes_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot/RightToeBase
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot/RightToeBase/RightToes_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3/LeftHandIndex4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3/LeftHandMiddle4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3/LeftHandPinky4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3/LeftHandRing4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3/LeftHandThumb4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck/Head/Head_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3/RightHandIndex4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3/RightHandPinky4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2/RightHandRing3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2/RightHandRing3/RightHandRing4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3/RightHandThumb4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: zeroGSuffocation
+      takeName: Take 001
+      firstFrame: 1790
+      lastFrame: 1950
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry
+        weight: 1
+      - path: Geometry/Character
+        weight: 1
+      - path: Geometry/chestplate1
+        weight: 1
+      - path: Geometry/helmet
+        weight: 1
+      - path: Geometry/helmet_visor
+        weight: 1
+      - path: Geometry/jetpack
+        weight: 1
+      - path: Geometry/Shinguards_L
+        weight: 1
+      - path: Geometry/Shinguards_R
+        weight: 1
+      - path: Geometry/Shoes_L
+        weight: 1
+      - path: Geometry/Shoes_R
+        weight: 1
+      - path: Global
+        weight: 1
+      - path: Global/Controls
+        weight: 1
+      - path: Global/Controls/ik_left_hand
+        weight: 1
+      - path: Global/Controls/ik_right_hand
+        weight: 1
+      - path: Global/Controls/ikHandle1
+        weight: 1
+      - path: Global/Controls/ikHandle2
+        weight: 1
+      - path: Global/Controls/L_foot_control
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End/jDrv_LeftToeBase
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End/jDrv_LeftToeBase/jDrv_LeftFoot
+        weight: 1
+      - path: Global/Controls/R_foot_control
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End/jDrv_RightToeBase
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End/jDrv_RightToeBase/jDrv_RightFoot
+        weight: 1
+      - path: Global/Skeleton
+        weight: 1
+      - path: Global/Skeleton/Hips1
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot/LeftToeBase
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot/LeftToeBase/LeftToes_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot/RightToeBase
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot/RightToeBase/RightToes_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3/LeftHandIndex4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3/LeftHandMiddle4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3/LeftHandPinky4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3/LeftHandRing4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3/LeftHandThumb4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck/Head/Head_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3/RightHandIndex4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3/RightHandPinky4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2/RightHandRing3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2/RightHandRing3/RightHandRing4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3/RightHandThumb4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Down
+      takeName: Take 001
+      firstFrame: 550
+      lastFrame: 551
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry
+        weight: 1
+      - path: Geometry/Character
+        weight: 1
+      - path: Geometry/chestplate1
+        weight: 1
+      - path: Geometry/helmet
+        weight: 1
+      - path: Geometry/helmet_visor
+        weight: 1
+      - path: Geometry/jetpack
+        weight: 1
+      - path: Geometry/Shinguards_L
+        weight: 1
+      - path: Geometry/Shinguards_R
+        weight: 1
+      - path: Geometry/Shoes_L
+        weight: 1
+      - path: Geometry/Shoes_R
+        weight: 1
+      - path: Global
+        weight: 1
+      - path: Global/Controls
+        weight: 1
+      - path: Global/Controls/ik_left_hand
+        weight: 1
+      - path: Global/Controls/ik_right_hand
+        weight: 1
+      - path: Global/Controls/ikHandle1
+        weight: 1
+      - path: Global/Controls/ikHandle2
+        weight: 1
+      - path: Global/Controls/L_foot_control
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End/jDrv_LeftToeBase
+        weight: 1
+      - path: Global/Controls/L_foot_control/jDrv_LeftToes_End/jDrv_LeftToeBase/jDrv_LeftFoot
+        weight: 1
+      - path: Global/Controls/R_foot_control
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End/jDrv_RightToeBase
+        weight: 1
+      - path: Global/Controls/R_foot_control/jDrv_RightToes_End/jDrv_RightToeBase/jDrv_RightFoot
+        weight: 1
+      - path: Global/Skeleton
+        weight: 1
+      - path: Global/Skeleton/Hips1
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot/LeftToeBase
+        weight: 1
+      - path: Global/Skeleton/Hips1/LeftHips_Dummy/LeftUpLeg/LeftUpLegRoll/LeftLeg/LeftLegRoll/LeftFoot/LeftToeBase/LeftToes_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot/RightToeBase
+        weight: 1
+      - path: Global/Skeleton/Hips1/RightHips_Dummy/RightUpLeg/RightUpLegRoll/RightLeg/RightLegRoll/RightFoot/RightToeBase/RightToes_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3/LeftHandIndex4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3/LeftHandMiddle4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3/LeftHandPinky4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3/LeftHandRing4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/LeftShoulder_Dummy/LeftShoulder/LeftArm_Dummy/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3/LeftHandThumb4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/Neck/Head/Head_End
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3/RightHandIndex4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3/RightHandPinky4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2/RightHandRing3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandRing1/RightHandRing2/RightHandRing3/RightHandRing4
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3
+        weight: 1
+      - path: Global/Skeleton/Hips1/Spine_Dummy/Spine/Spine1/Spine2/RightShoulder_Dummy/RightShoulder/RightArm_Dummy/RightArm/RightArmRoll/RightForeArm/RightForeArmRoll/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3/RightHandThumb4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -293,10 +1256,8 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
-    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
-  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

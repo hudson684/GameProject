@@ -86,6 +86,7 @@
      <Compile Include="Assets\_Scripts\DeathNode.cs" />
      <Compile Include="Assets\_Scripts\DestroyBox.cs" />
      <Compile Include="Assets\_Scripts\DestroyParticleSystem.cs" />
+     <Compile Include="Assets\_Scripts\DummyControls.cs" />
      <Compile Include="Assets\_Scripts\DynamicCamera.cs" />
      <Compile Include="Assets\_Scripts\ElevatorClip.cs" />
      <Compile Include="Assets\_Scripts\GUIManager.cs" />
@@ -93,6 +94,7 @@
      <Compile Include="Assets\_Scripts\GravZoneVanish.cs" />
      <Compile Include="Assets\_Scripts\Grounded.cs" />
      <Compile Include="Assets\_Scripts\Indicator.cs" />
+     <Compile Include="Assets\_Scripts\IntroSequenceCut.cs" />
      <Compile Include="Assets\_Scripts\Jupiter.cs" />
      <Compile Include="Assets\_Scripts\Key.cs" />
      <Compile Include="Assets\_Scripts\KeyPuzzleKey.cs" />

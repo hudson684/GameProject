@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\slowFade.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\DummyControls.cs">
     <Files>
-      <File FileName="Assets\_Scripts\noOxigen.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Socket.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\slowFade.cs" Line="19" Column="29" />
-      <File FileName="Assets\_Scripts\ClickToContinue.cs" Line="14" Column="36" />
+      <File FileName="Assets\_Scripts\DummyControls.cs" Line="26" Column="54" />
+      <File FileName="Assets\_Scripts\IntroSequenceCut.cs" Line="20" Column="4" />
+      <File FileName="Assets\_Scripts\Laser.cs" Line="61" Column="1" />
+      <File FileName="Assets\_Scripts\LevelLoad.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
