@@ -58,12 +58,17 @@ public class Mantle : MonoBehaviour {
 			if(Input.GetKeyDown(KeyCode.W)){
 				Debug.Log("should mantle");
 				mantlePosition = other.transform.position;
+
+				Debug.Log("other position: " + other.transform.position.ToString());
+				Debug.Log("other name: " +other.name.ToString());
+
 				Transform child = other.transform.GetChild(0);
-				Transform child2 = other.transform.GetChild(1);
+				//Transform child2 = other.transform.GetChild(1);
+
 				endPosition = child.transform.position;
 				//mantleFall = child2.transform.position;
 
-							
+
 			}
 			if (Input.GetKeyUp(KeyCode.W)){
 				mantling = true;
