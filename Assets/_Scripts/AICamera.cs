@@ -63,7 +63,10 @@ public class AICamera : MonoBehaviour {
 
 			if(triggered){
 
-				target.transform.position = player.transform.position;
+
+				Transform temp = player.transform.FindChild("mantle");
+				target.transform.position = temp.position;
+
 			} else {
 
 				light2D.setMainMaterial(normal);
@@ -108,10 +111,14 @@ public class AICamera : MonoBehaviour {
 		if (foundPlayer ()) {
 			triggered = true;
 
+			Transform temp = player.transform.FindChild("mantle");
 
+			Debug.Log(player.name);
+
+			Debug.Log("player position: " + player.transform.position.ToString());
+			Debug.Log("fake arm pos: " + temp.position.ToString());
 			target.SetActive(true);
-			target.transform.position = player.transform.position;
-
+			target.transform.position = temp.position;
 			origin.SetActive(true);
 
 

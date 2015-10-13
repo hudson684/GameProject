@@ -108,7 +108,7 @@ public class noOxigen : MonoBehaviour {
 			}
 
 			yield return new WaitForSeconds(0.3f);
-			Debug.Log("death part: " + i.ToString());
+			//Debug.Log("death part: " + i.ToString());
 			objectAudio.PlayOneShot(soundBreath);
 
 			if(i == timeTillDeath){
