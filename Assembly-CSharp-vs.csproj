@@ -65,7 +65,6 @@
      <Compile Include="Assets\Code\BaseMovement.cs" />
      <Compile Include="Assets\Code\NewBehaviourScript.cs" />
      <Compile Include="Assets\Code\parallaxing.cs" />
-     <Compile Include="Assets\DestroyParticleSystem.cs" />
      <Compile Include="Assets\IntroSequence\AnimationControl.cs" />
      <Compile Include="Assets\IntroSequence\DroneAnimator.cs" />
      <Compile Include="Assets\IntroSequence\NextScene.cs" />
@@ -80,11 +79,13 @@
      <Compile Include="Assets\_Scripts\CamFollowPlayer.cs" />
      <Compile Include="Assets\_Scripts\CheckPoint.cs" />
      <Compile Include="Assets\_Scripts\CheckPointMaker.cs" />
+     <Compile Include="Assets\_Scripts\ClickToContinue.cs" />
      <Compile Include="Assets\_Scripts\ControlNode.cs" />
      <Compile Include="Assets\_Scripts\Death.cs" />
      <Compile Include="Assets\_Scripts\DeathByBullet.cs" />
      <Compile Include="Assets\_Scripts\DeathNode.cs" />
      <Compile Include="Assets\_Scripts\DestroyBox.cs" />
+     <Compile Include="Assets\_Scripts\DestroyParticleSystem.cs" />
      <Compile Include="Assets\_Scripts\DynamicCamera.cs" />
      <Compile Include="Assets\_Scripts\ElevatorClip.cs" />
      <Compile Include="Assets\_Scripts\GUIManager.cs" />
@@ -101,6 +102,7 @@
      <Compile Include="Assets\_Scripts\LevelLoad.cs" />
      <Compile Include="Assets\_Scripts\Lock.cs" />
      <Compile Include="Assets\_Scripts\MainMenuController.cs" />
+     <Compile Include="Assets\_Scripts\MainMenuCursor.cs" />
      <Compile Include="Assets\_Scripts\Mantle.cs" />
      <Compile Include="Assets\_Scripts\MechanicsNode.cs" />
      <Compile Include="Assets\_Scripts\MoveStars.cs" />
@@ -132,6 +134,7 @@
      <Compile Include="Assets\_Scripts\blastParticles.cs" />
      <Compile Include="Assets\_Scripts\blinkSprites.cs" />
      <Compile Include="Assets\_Scripts\cursor.cs" />
+     <Compile Include="Assets\_Scripts\disableLaser.cs" />
      <Compile Include="Assets\_Scripts\displayText.cs" />
      <Compile Include="Assets\_Scripts\lightOnOff.cs" />
      <Compile Include="Assets\_Scripts\noOxigen.cs" />
@@ -141,12 +144,12 @@
      <Compile Include="Assets\_Scripts\playerAnimator.cs" />
      <Compile Include="Assets\_Scripts\playerStealth.cs" />
      <Compile Include="Assets\_Scripts\rotateToMouse.cs" />
+     <Compile Include="Assets\_Scripts\slowFade.cs" />
      <Compile Include="Assets\_Scripts\soundTriggered.cs" />
      <Compile Include="Assets\_Scripts\sweeperLaser.cs" />
      <Compile Include="Assets\_Scripts\triggerToBox.cs" />
      <Compile Include="Assets\_Scripts\triggerToLight.cs" />
      <Compile Include="Assets\_Scripts\zeroGravMovement.cs" />
-     <Compile Include="Assets\disableLaser.cs" />
      <None Include="Assets\_Materials\Temp.txt" />
      <None Include="Assets\_Scripts\Temp.txt" />
      <None Include="Assets\_Prefabs\Temp.txt" />
