@@ -7,6 +7,8 @@ public class ControlNode : MonoBehaviour
 	Canvas pauseCanvas;
 	
 	private static bool canGrapple = false;
+
+	public bool SHOULDLOG = true;
 	
 	private static bool canZeroGravMove = true;
 	
@@ -40,10 +42,12 @@ public class ControlNode : MonoBehaviour
 	private void gameControl(){
 		
 		if (Input.GetKeyDown (KeyCode.F1)) {
+			Destroy(CheckPointMarker);
 			Application.LoadLevel (levelIndex - 1);
 		}
 		
 		if(Input.GetKeyDown(KeyCode.F2)){
+			Destroy(CheckPointMarker);
 			Application.LoadLevel(levelIndex + 1);
 		}
 		

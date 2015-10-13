@@ -10,6 +10,7 @@ public class cursor : MonoBehaviour {
 	
 	public Sprite normal;
 	public Sprite toFar; 
+	public Sprite off;
 
 	private bool isOn = true;
 
@@ -41,7 +42,7 @@ public class cursor : MonoBehaviour {
 		transform.position = mousePosition;
 
 		isOn = contNode.getCanGrapple ();
-		this.GetComponent<SpriteRenderer>().enabled = isOn;
+		//this.GetComponent<SpriteRenderer>().enabled = isOn;
 
 		disFromPlayer = Vector3.Distance (this.transform.position, contNode.getPlayerPosition ());
 
@@ -53,7 +54,10 @@ public class cursor : MonoBehaviour {
 			} else {
 				this.GetComponent<SpriteRenderer> ().sprite = normal;
 			}
-		} 
+		} else {
+
+			this.GetComponent<SpriteRenderer> ().sprite = off;
+		}
 
 	}
 

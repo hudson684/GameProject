@@ -15,6 +15,8 @@ public class OptionMenuNewGUI : MonoBehaviour {
 	private bool titleMenu = false;
 	private Canvas canvas;
 
+	private bool logging = true;
+
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +43,15 @@ public class OptionMenuNewGUI : MonoBehaviour {
 
 	public void close(){
 		canvas.enabled = false;
+	}
+
+	public void setLogging(bool log){
+
+		logging = log;
+	}
+
+	public bool getLogging(){
+		return logging;
 	}
 
 
