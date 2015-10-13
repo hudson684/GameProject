@@ -28,6 +28,9 @@ public class noOxigen : MonoBehaviour {
 
 	//For Fake Arm + grapple sounds
 	private AudioSource grappleAudio;
+	private AudioSource playerAudio;
+	private Animator playerAnim;
+	private int airHash = Animator.StringToHash("Air");
 
 	// Use this for initialization
 	void Awake () {
@@ -43,6 +46,8 @@ public class noOxigen : MonoBehaviour {
 		randomAudioGeneratorNoOX = GameObject.Find("noOXsoundEffects").GetComponent<AudioSource>();
 
 		grappleAudio = GameObject.Find("fakeArm").GetComponent<AudioSource>();
+		playerAudio = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
+		playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -59,8 +64,9 @@ public class noOxigen : MonoBehaviour {
 			droneSource.clip = breathing;
 			randomAudioGenerator.mute = true;
 			randomAudioGeneratorNoOX.mute = false;
-			other.GetComponent<AudioSource>().mute = true;
+			playerAudio.mute = true;
 			grappleAudio.mute = true;
+			playerAnim.SetBool(airHash, false);
 		}
 
 
@@ -74,8 +80,9 @@ public class noOxigen : MonoBehaviour {
 			droneSource.Play();
 			randomAudioGenerator.mute = false;
 			randomAudioGeneratorNoOX.mute = true;
-			other.GetComponent<AudioSource>().mute = false;
+			playerAudio.mute = false;
 			grappleAudio.mute = false;
+			playerAnim.SetBool(airHash,true);
 		}
 	}
 

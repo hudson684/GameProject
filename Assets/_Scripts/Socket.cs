@@ -24,12 +24,16 @@ public class Socket : Key {
 	//laser
 	public Laser targetLaser;
 
+	//Player and Grapple
+	private GrappleControl grapple;
+
 
 	void Start(){
 		refTransform = transform.FindChild("DummyCore");
 		refRigid = refCore.GetComponent<Rigidbody2D>();
 		transitionTemp = transitionTime;
 		anim = transform.FindChild("Reactor Socket").GetComponent<Animator>();
+		grapple = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<GrappleControl>();
 	}
 
 	void Update(){
@@ -40,6 +44,7 @@ public class Socket : Key {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other == refCore){
+			grapple.retractGrapple();
 			refCore.transform.SetParent(transform);
 			Unlock();
 			refRigid.Sleep();
