@@ -4,7 +4,7 @@ using System.Collections;
 public class MainMenuController : MonoBehaviour {
 
 	public void loadNextScene(){
-		PlayerPrefs.DeleteAll ();
+		//PlayerPrefs.DeleteAll ();
 		Application.LoadLevel(Application.loadedLevel + 1);
 
 	}
