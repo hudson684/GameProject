@@ -31,7 +31,7 @@ public class ControlNode : MonoBehaviour
 	
 	void Update()
 	{
-		gameControl ();
+		//gameControl ();
 		
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			paused = togglePause ();
