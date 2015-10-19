@@ -105,7 +105,7 @@ public class Walker : MonoBehaviour {
 		
 		//finds all the childern of the patroler (for use in player detection);
 		hitBarrier = transform.GetComponentsInChildren<Transform>();
-		Debug.Log ("Hit barrier: " + hitBarrier.ToString ());
+		//Debug.Log ("Hit barrier: " + hitBarrier.ToString ());
 		
 		bodyControl = transform.FindChild ("GeometryHolder");
 		
@@ -152,7 +152,7 @@ public class Walker : MonoBehaviour {
 			triggered = foundPlayer();
 			//StartCoroutine("countDown");
 		}
-		Debug.Log ("Hit barrier: " + hitBarrier.ToString ());
+		//Debug.Log ("Hit barrier: " + hitBarrier.ToString ());
 		stopped = checkStoppedTest ();
 		lightControl ();
 		
@@ -170,7 +170,7 @@ public class Walker : MonoBehaviour {
 				} else {
 					nextPoint = player.transform.position;
 					
-					Debug.Log("player position: " + player.transform.position.ToString());
+					//Debug.Log("player position: " + player.transform.position.ToString());
 					
 					playerKillZone(); 
 				}
@@ -278,7 +278,7 @@ public class Walker : MonoBehaviour {
 		
 		if (curRotInt == RIGHT) {
 			if(direction.x < 0f){
-				Debug.Log("flipped left");
+				//Debug.Log("flipped left");
 				bodyControl.Rotate(new Vector3(0,180,0));
 				UpdateRotation(LEFT);
 				curRotInt = LEFT;
@@ -287,7 +287,7 @@ public class Walker : MonoBehaviour {
 			}
 		} else if (curRotInt == LEFT) {
 			if(direction.x > 0f){
-				Debug.Log("flipped right");
+				//Debug.Log("flipped right");
 				bodyControl.Rotate(new Vector3(0, 180, 0));
 				UpdateRotation(RIGHT);
 				curRotInt = RIGHT;
@@ -599,7 +599,7 @@ public class Walker : MonoBehaviour {
 				if(hit.collider != null){
 					if(hit.collider.tag == "Player"){
 						anim.SetTrigger(attackHash);
-						Debug.Log("Kill player");
+						//Debug.Log("Kill player");
 						deathNode.setDeath(true);
 						return true;
 					} 
@@ -639,16 +639,16 @@ public class Walker : MonoBehaviour {
 	private bool foundPlayer(){
 		for(int i = 0; i < (hitBarrier.Length -1); i++){
 			if(hitBarrier[i].tag == "PatrolViewNodes"){
-				Debug.Log(hitBarrier[i].tag.ToString());
+				//Debug.Log(hitBarrier[i].tag.ToString());
 				          float FoundDistance = Vector3.Distance(this.transform.position, hitBarrier[i].position);
 				          
 				          RaycastHit2D hit = Physics2D.Raycast (this.transform.position, (hitBarrier[i].position - this.transform.position), FoundDistance, toHit);
 				          
 				          if(hit.collider != null){
-					Debug.Log("COLLISION WITH: " + hit.collider.tag);
+					//Debug.Log("COLLISION WITH: " + hit.collider.tag);
 					if(hit.collider.tag == "Player"){
 						player = hit.collider.gameObject;
-						Debug.Log("hit player");
+						//Debug.Log("hit player");
 						return true;
 					} 
 				} 

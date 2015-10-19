@@ -26,7 +26,7 @@ public class lightOnOff : MonoBehaviour {
 			finishedLoop = false;
 			if(isRandom){
 				float randTime = Random.Range(minRan, maxRan);
-				Debug.Log(randTime.ToString());
+				//Debug.Log(randTime.ToString());
 				StartCoroutine(onOff(randTime));
 			} else {
 				StartCoroutine (onOff(lightTime));

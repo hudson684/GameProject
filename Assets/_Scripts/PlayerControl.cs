@@ -359,7 +359,7 @@ public class PlayerControl : MonoBehaviour {
 			}
 		}
 		
-		RaycastHit2D hit = Physics2D.Raycast (new Vector3(this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z), new Vector3 (0f, 1f, 0f), crouchDis, crouchMask);
+		RaycastHit2D hit = Physics2D.Raycast (new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3 (0f, 1f, 0f), crouchDis, crouchMask);
 		
 		
 		if (hit.collider != null) {
