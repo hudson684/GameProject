@@ -94,6 +94,7 @@ public class Mantle : MonoBehaviour {
 		mantling = false;
 		anim.SetBool(isMantleingHash, mantling);
 		playerCont.setMantling(mantling);
+		playerCont.checkCrouch();
 	}
 	
 }

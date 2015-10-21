@@ -353,12 +353,11 @@ public class PlayerControl : MonoBehaviour {
 			if(isCrouched){
 				crouch();
 			} else {
-				if(!shouldCrouch){
-					uncrouch();
-				}
+				checkCrouch();
 			}
 		}
-		
+
+		/*
 		RaycastHit2D hit = Physics2D.Raycast (new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3 (0f, 1f, 0f), crouchDis, crouchMask);
 		
 		
@@ -374,9 +373,9 @@ public class PlayerControl : MonoBehaviour {
 			}
 			
 		} else {
-			
 			shouldCrouch = false;
 		}
+		*/
 		
 	}
 	
@@ -388,7 +387,7 @@ public class PlayerControl : MonoBehaviour {
 		moveSpeed = 3f;
 		box.size = crouchedSize;
 		box.offset = crouchedOffset;
-		anim.SetBool(crouchHash,isCrouched);
+		anim.SetBool(crouchHash,true);
 		
 	} 
 	
@@ -396,7 +395,18 @@ public class PlayerControl : MonoBehaviour {
 		moveSpeed = 6f;
 		box.size = fullSize;
 		box.offset = fullOffset;
-		anim.SetBool(crouchHash, isCrouched);
+		anim.SetBool(crouchHash, false);
+	}
+
+	public void checkCrouch(){
+		RaycastHit2D hit = Physics2D.Raycast (new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3 (0f, 1f, 0f), crouchDis, crouchMask);
+
+		if (hit.collider != null) {
+			crouch ();
+		}else{
+			uncrouch();
+		}
+
 	}
 	
 	

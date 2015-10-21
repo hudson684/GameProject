@@ -1,11 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\DummyControls.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Mantle.cs">
     <Files>
-      <File FileName="Assets\_Scripts\DummyControls.cs" Line="26" Column="54" />
-      <File FileName="Assets\_Scripts\IntroSequenceCut.cs" Line="20" Column="4" />
-      <File FileName="Assets\_Scripts\Laser.cs" Line="61" Column="1" />
-      <File FileName="Assets\_Scripts\LevelLoad.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerControl.cs" Line="398" Column="33" />
+      <File FileName="Assets\_Scripts\Mantle.cs" Line="97" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
